@@ -34,7 +34,7 @@ export default function Home() {
   <div >
     
       <main className=' flex self-center place-content-center  bg-white text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
-      <SEO/>
+      
     
    
 
