@@ -1,9 +1,10 @@
 
 'use client'
-import { signOut } from "firebase/auth";
+
 import { useRouter } from "next/navigation";
 import { deleteCookie, getCookie } from "cookies-next";
-import { auth } from "../firebaseConfig";
+
+import { supabase } from "../lib/supabase";
 
 
 export default function LogOut(){
@@ -11,19 +12,22 @@ export default function LogOut(){
 
     const router=useRouter()
 
-    /*const logOut=()=>{
-        signOut(auth).then(()=>{
-          deleteCookie('useraidt')
-          router.push('/')
-          
-        })
-      }*/
+  
+    const signOut= async()=>{
+      const {error} = await supabase.auth.signOut()
+
+      if(error){
+        console.log(error)
+      }else{
+        router.push('/')
+      }
+    }
       
 
     return(
 
       <button
-      onClick={()=>{logOut()}}
+      onClick={()=>{signOut()}}
       class="fixed bottom-4 right-4 bg-white border border-gray-300 text-gray-400 px-4 py-2 rounded-full shadow-lg"
   >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

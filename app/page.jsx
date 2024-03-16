@@ -16,6 +16,7 @@ import SEO from './Components/SEO'
 import LandingDemo from './Components/LandingDemo'
 import { Element } from 'react-scroll'
 import LandingExamples from './Components/LandingExamples'
+import Link from 'next/link'
 
 
 
@@ -41,6 +42,8 @@ export default function Home() {
      <div className=' md:w-[70rem] lg:w-full justify-center w-[25rem] mr-0 flex-col '>
 
       <p className='text-black text-xl font-light'>Welcome to Yash's next template!</p>
+
+      <Link href='/auth' className='text-white p-2 rounded-2xl bg-black font-normal text-center mt-10 hover:shadow-md'>Auth </Link>
       
 
       
