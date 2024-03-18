@@ -64,7 +64,7 @@ export default function Auth() {
         if (error){
           console.log(error)
         }else{
-          router.push('/Dashboard')
+          router.push('/onboarding')
         
         }
       }
@@ -90,19 +90,19 @@ export default function Auth() {
  
     <>
  
- <div  className='mt-52 xl:mx-40 xl:w-[30%] md:w-[50%] fixed left-0 w-full'>
+ <div  className='mt-52 xl:mx-40 xl:w-[30%] md:w-[50%] text-white fixed left-0 w-full'>
 
  
           
 
             <>
 
-            <p className="mt-10 text-left font-normal text-black text-3xl md:text-2xl sm:text-xl  ml-10">{checked? "Log into Aruarian" : "Join Aruarian" }</p>
+            <p className="mt-10 text-left font-normal  text-3xl md:text-2xl sm:text-xl  ml-10">{checked? "Log into Aruarian" : "Join Aruarian" }</p>
            
 
 
             <div className='mt-2   mr-20  h-[380px]  w-full p-10 rounded-xl '>
-             {/* <button onClick={()=>{signupG()}} className='w-full p-4 rounded-lg text-white font-bold bg-rose-400 hover:bg-rose-500'>Sign In with Google</button> */}
+             {/* <button onClick={()=>{signupG()}} className='w-full p-4 rounded-lg  font-bold bg-rose-400 hover:bg-rose-500'>Sign In with Google</button> */}
              
  
             
@@ -111,8 +111,8 @@ export default function Auth() {
              <input onChange={(e)=>{setPassword(e.target.value)}} className='p-2 w-full bg-neutral-50 border border-stone-300 rounded-lg mt-2 text-gray-900 font-normal focus:outline-none ' type="password" placeholder='******'/>
              
              </div>
-             {checked?<motion.button whileTap={{scale:1.01}} id='login' onClick={()=>{login()}} className='w-full p-4 font-normal text-white bg-zinc-800 rounded-lg mt-3     hover:bg-zinc-900 '>Log In </motion.button>:
-             <motion.button whileTap={{scale:1.01}} onClick={()=>{signup()}}className='w-full p-4 font-normal text-white bg-zinc-800 rounded-lg mt-3     hover:bg-zinc-900 '>Sign Up </motion.button>}
+             {checked?<motion.button whileTap={{scale:1.01}} id='login' onClick={()=>{login()}} className='w-full p-4 font-normal  bg-zinc-800 rounded-lg mt-3     hover:bg-zinc-900 '>Log In </motion.button>:
+             <motion.button whileTap={{scale:1.01}} onClick={()=>{signup()}}className='w-full p-4 font-normal  bg-zinc-800 rounded-lg mt-3     hover:bg-zinc-900 '>Sign Up </motion.button>}
              <p  className='text-gray-500 mt-4 text-xs  cursor-pointer'>By signing up you agree to our <Link href='/TermsAndConditions'  className='text-gray-500 mt-4  cursor-pointer underline'>Terms and Conditions</Link> and our <Link href='/PrivacyPolicy' className='text-gray-500 mt-4  cursor-pointer underline'>Privacy Policy</Link> </p>
              
              

@@ -37,7 +37,7 @@ export default function LandingSteps(){
 
             </div>
 
-            <button onClick={()=>{router.push('/auth')}} className={`font-bold w-[40%] md:w-[25%] text-white text-xl rounded-xl bg-blue-300 hover:bg-blue-400 mt-20  md:h-14 p-2 mr-1`}>Start Now</button>
+            <button onClick={()=>{router.push('/auth')}} className={`font-bold w-[40%] md:w-[25%]  text-xl rounded-xl bg-blue-300 hover:bg-blue-400 mt-20  md:h-14 p-2 mr-1`}>Start Now</button>
         </div>
     )
 }

@@ -28,7 +28,7 @@ export default function Modal({showModal,setShowModal, children, Header, thin, h
             variants={variants}>
             <div className='grid grid-cols-2  p-2'>
             <p className='text-gray-400 font-bold text-md p-2'>{Header}</p>
-            <button onClick={()=>{setShowModal(false)}} className={`rounded-md text-white md:ml-[90%] ml-[30%]   p-2`}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <button onClick={()=>{setShowModal(false)}} className={`rounded-md  md:ml-[90%] ml-[30%]   p-2`}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
             </button>

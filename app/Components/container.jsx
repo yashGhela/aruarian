@@ -17,7 +17,7 @@ function Container() {
       <p className="-mt-1 text-sm font-light text-left text-[#dc7a7a]">16:00 Today</p>
     </div>
   </div>
-  <p className="w-[70%] ml-5 mt-2 h-12 text-lg font-light text-left text-white">
+  <p className="w-[70%] ml-5 mt-2 h-12 text-lg font-light text-left ">
     Build out type sense for Aruarian
   </p>
   <div className="w-10 h-[33px] -mt-[10%] ml-[80%] rounded-md bg-white/[0.14] border border-white/10"></div>
@@ -32,7 +32,7 @@ function Container() {
       <p className="-mt-1 text-sm font-light text-left text-[#526C94]">22:00 Today</p>
     </div>
   </div>
-  <p className="w-[70%] ml-5 mt-2 h-12 text-lg font-light text-left text-white">
+  <p className="w-[70%] ml-5 mt-2 h-12 text-lg font-light text-left ">
     Date night with Anna at the Bolstro
   </p>
   <div className="w-10 h-[33px] -mt-[10%] ml-[80%] rounded-md bg-white/[0.14] border border-white/10"></div>

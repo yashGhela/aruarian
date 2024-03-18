@@ -34,7 +34,7 @@ export default function Home() {
     
   <div >
     
-      <main className=' flex self-center place-content-center  bg-white text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      <main className=' flex self-center place-content-center text-white  bg-white text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    
@@ -43,7 +43,7 @@ export default function Home() {
 
       <p className='text-black text-xl font-light'>Welcome to Yash's next template!</p>
 
-      <Link href='/auth' className='text-white p-2 rounded-2xl bg-black font-normal text-center mt-20 hover:shadow-md'>Auth </Link>
+      <Link href='/auth' className=' p-2 rounded-2xl bg-black font-normal text-center mt-20 hover:shadow-md'>Auth </Link>
       
 
       

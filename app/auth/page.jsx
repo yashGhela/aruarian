@@ -14,7 +14,7 @@ export default function AuthPage() {
 
 
   return (
-    <div   className={`flex  self-center place-content-center  bg-neutral-50 text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-auto`}>
+    <div style={{backgroundImage:'url(https://images.unsplash.com/photo-1604275344754-22da9779c2ff?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundPosition: '50% 70%', backgroundRepeat:'no-repeat'}}   className={`flex  self-center place-content-center  bg-neutral-50 text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-auto`}>
 
     <SEO title={'Auth'}/>
 
@@ -24,7 +24,7 @@ export default function AuthPage() {
 
     <img onClick={()=>{router.push('/')}}  className="h-20 w-20 shadow-xl lg:ml-[48%] sm:ml-[55%] mt-20 cursor-pointer " src="https://firebasestorage.googleapis.com/v0/b/artfolio-one.appspot.com/o/Resources%2Flogo5.png?alt=media&token=7c137d40-0712-4a16-9bf8-f45ebe35d441" alt="" />
 
-    <p className="mt-20 text-center font-bold text-white text-3xl md:text-2xl sm:text-xl sm:ml-[50%] md:ml-[55%] lg:ml-[40%]">Supercharge your career now!</p>
+    <p className="mt-20 text-center font-bold  text-3xl md:text-2xl sm:text-xl sm:ml-[50%] md:ml-[55%] lg:ml-[40%]">Supercharge your career now!</p>
 
     <img className=' rounded-lg sm:invisible invisible sm:w-[40%] md:ml-[55%] lg:ml-[48%] sm:ml-[65%] mt-10  md:visible md:w-[40%] md:h-[40%] lg:h-[50%] lg:w-[40%] border shadow-xl ' src="https://firebasestorage.googleapis.com/v0/b/artfolio-one.appspot.com/o/Resources%2FUntitled%20design%20(1).gif?alt=media&token=38672d5b-719c-4758-9049-8f7f960cc24c" alt="" /> 
              

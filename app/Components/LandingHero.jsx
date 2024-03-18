@@ -32,7 +32,7 @@ export default function LandingHero(){
           
     
         <div className="flex-col  w-full  lg:w-[50%] mt-5 ">
-        <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className={`font-bold shadow-lg md:h-20  sm:h-28 lg:h-full w-full md:w-full text-white text-xl rounded-xl bg-blue-400 hover:bg-blue-600 mt-5   p-2 mr-1`}>Get started for Free</motion.button>
+        <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className={`font-bold shadow-lg md:h-20  sm:h-28 lg:h-full w-full md:w-full  text-xl rounded-xl bg-blue-400 hover:bg-blue-600 mt-5   p-2 mr-1`}>Get started for Free</motion.button>
         
 
  

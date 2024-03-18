@@ -71,12 +71,12 @@ export default function Pricing({landing}){
 
                     </div>
                     {landing?
-                    <button onClick={()=>{router.push('/auth')}} className=" w-[90%] mt-10 font-bold text-white p-5 rounded-xl bg-neutral-800 hover:bg-neutral-800 ">
+                    <button onClick={()=>{router.push('/auth')}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl bg-neutral-800 hover:bg-neutral-800 ">
                    
                     Start Now!
                     </button>:
 
-                    <motion.button whileHover={{scale:1.02}} onClick={()=>{handleFree()}} className=" w-[90%] mt-10 font-bold text-white p-5 rounded-xl bg-neutral-800 hover:bg-neutral-900 ">
+                    <motion.button whileHover={{scale:1.02}} onClick={()=>{handleFree()}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl bg-neutral-800 hover:bg-neutral-900 ">
                                     
                     Start Now!
                     </motion.button>
@@ -113,11 +113,11 @@ export default function Pricing({landing}){
 
                     </div>
                    {landing?
-                    <button onClick={()=>{router.push('/auth')}} className=" w-[90%] mt-10 font-bold text-white p-5 rounded-xl bg-blue-300 hover:bg-blue-400 ">
+                    <button onClick={()=>{router.push('/auth')}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl bg-blue-300 hover:bg-blue-400 ">
                    
                     Start Now!
                     </button>:
-                    <button  className=" w-[90%] mt-10 font-bold text-white p-5 rounded-xl bg-blue-300 hover:bg-blue-400 ">
+                    <button  className=" w-[90%] mt-10 font-bold  p-5 rounded-xl bg-blue-300 hover:bg-blue-400 ">
                    {/*Your link here: <a href="https://artfolio.lemonsqueezy.com/checkout/buy/c9ae10bc-5a85-4896-9730-4a4a195bd4fd?embed=1" class="lemonsqueezy-button">Buy Artfolio Subscription</a><script src="https://assets.lemonsqueezy.com/lemon.js" defer></script> */}
                     </button>
                     }
