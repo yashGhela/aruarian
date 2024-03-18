@@ -43,7 +43,7 @@ export default function Home() {
 
       <p className='text-black text-xl font-light'>Welcome to Yash's next template!</p>
 
-      <Link href='/auth' className='text-white p-2 rounded-2xl bg-black font-normal text-center mt-10 hover:shadow-md'>Auth </Link>
+      <Link href='/auth' className='text-white p-2 rounded-2xl bg-black font-normal text-center mt-20 hover:shadow-md'>Auth </Link>
       
 
       

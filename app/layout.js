@@ -1,8 +1,8 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-import "@fontsource/montserrat"; 
+import { Inter, Montserrat } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const inter = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Aruarian || Next Generation Productivity',
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       
       
-      <body style={{fontFamily:'montserrat'}} className={inter.className}>{children}</body>
+      <body  className={inter.className}>{children}</body>
     </html>
   )
 }

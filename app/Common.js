@@ -1,6 +1,8 @@
 //import { doc, getDoc } from "firebase/firestore"
 //import { auth,db } from "./firebaseConfig"
 
+import { useRouter } from "next/navigation"
+
 export const grabPro=async({user, setisPro})=>{
 
     let ref=doc(db,'Users',user)
