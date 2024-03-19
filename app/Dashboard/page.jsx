@@ -13,6 +13,7 @@ import LogOut from "../Components/LogOut"
 import img from '../assets/image 3.png'
 import Container from "../Components/container"
 import Overlay from "../Components/Overlay"
+import { motion } from "framer-motion"
 
 
 
@@ -29,6 +30,8 @@ import Overlay from "../Components/Overlay"
 
 
     const [currentTime, setCurrentTime] = useState('');
+    const [todos, setTodos]=useState([])
+    const [mesSent, setMesSent]=useState(false)
  
 
     
@@ -42,6 +45,23 @@ import Overlay from "../Components/Overlay"
     const getUser=async()=>{
       user = (await supabase.auth.getUser()).data.user.id
       console.log(user)
+
+      getTodos()
+    }
+    
+
+    const getTodos=async()=>{
+      const {data, error} = supabase.from('To-Dos')
+      .select()
+      .eq("UID", user)
+
+      if(data){
+        setTodos(data)
+      }else{
+        console.log(error)
+      }
+
+
     }
 
     useEffect( ()=>{
@@ -80,38 +100,57 @@ import Overlay from "../Components/Overlay"
 
      <div className=' md:w-[70rem] lg:w-[80rem] w-[40rem] mr-0 flex-col'>
         
-     <div className="flex mt-[25%] mx-20">
-     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4  mt-[2px] font-thin ">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    {mesSent ?
+
+     <div> HELLLO </div>
+       :
+       <div id="first open ">
+
+       <div className="flex mt-[20%] mx-20">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4  mt-[2px] font-thin ">
+ <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>
 
-        <p className=' text-sm text-left ml-2  font-thin'>{currentTime}</p>
+       <p className=' text-sm text-left ml-2  font-thin'>{currentTime}</p>
 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  ml-10 mt-[2px] font-thin ">
-  <path strokeLinecap="round" strokeLinejoin="round" d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64" />
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  ml-10 mt-[2px] font-thin ">
+ <path strokeLinecap="round" strokeLinejoin="round" d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64" />
 </svg>
 
 <p className=' text-sm text-left ml-2  font-thin'>Later</p>
 
 
-      </div>
-      
-     <div className="mt-10 mx-20 xs:flex-col lg:flex  xl:flex">
-      
-     <p className=' text-4xl text-left  font-thin'>Good Evening Yash, <br/> You have 2 <span className="font-normal">To-Dos </span> left for <br/> the day</p>
-
-
-     <div className="lg:ml-[20%] -mt-10" id="to-dos container ">
-
-     <Container/>
-
-      
-
-
      </div>
+     
+    <div className="mt-8 mx-20 xs:flex-col lg:flex  xl:flex">
+     
+    <p className=' text-4xl text-left  font-thin'>Good Evening Yash, <br/> You have  <span className="font-normal">{todos.length} To-Dos </span> left for <br/> the day</p>
 
 
-     </div>
+    <div className="lg:ml-[20%] -mt-10" id="to-dos container ">
+
+    <Container/>
+
+
+    
+
+     
+
+
+    </div>
+
+
+    </div>
+    </div>
+}
+        
+
+     
+     <input type="text"  className="fixed flex bottom-8 z-50 left-[20%] w-1/2 focus:outline-none p-2 rounded-lg bg-white/20 border   border-white/[0.06]" />
+     <motion.button whileHover={{scale:1.02}} className="fixed flex bottom-8 z-50 left-[71%] w-10focus:outline-none p-2 rounded-lg bg-white/20 border hover:bg-white/30   border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
+</svg>
+</ motion.button>
 
  
 
