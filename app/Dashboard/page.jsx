@@ -32,8 +32,28 @@ import { motion } from "framer-motion"
     const [currentTime, setCurrentTime] = useState('');
     const [todos, setTodos]=useState([])
     const [mesSent, setMesSent]=useState(false)
+
+    const [conversation, setConversation] = useState([]);
+
+    const [prompt, setPrompt] = useState('')
  
 
+
+    const sendPrompt= async()=>{
+      const response = await fetch('api/openai',{
+        method:'POST',
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body:{
+          prompt: prompt
+        }
+      })
+
+      const {response: assistantResponse}= await response.json()
+
+      setConversation([...conversation, { message, isUser: true }, { message: assistantResponse, isUser: false }]);
+    }
     
 
 
@@ -93,14 +113,14 @@ import { motion } from "framer-motion"
         <header>
            <title>Dashboard</title>
          </header>
-         <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1604275344754-22da9779c2ff?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundPosition: '50% 70%', backgroundRepeat:'no-repeat'}} className=' flex text-neutral-100 self-center place-content-center     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         <main  className=' flex text-neutral-100 self-center place-content-center bg-neutral-800     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay/>
    
 
      <div className=' md:w-[70rem] lg:w-[80rem] w-[40rem] mr-0 flex-col'>
         
-    {mesSent ?
+    {/* {mesSent ?
 
      <div> HELLLO </div>
        :
@@ -143,18 +163,32 @@ import { motion } from "framer-motion"
     </div>
     </div>
 }
-        
+         */}
+
+{conversation && (
+        <div>
+            {conversation && (
+              <div className=' p-2'>
+             
+              <p className="mt-10 text-black text-left"> {conversation}</p>
+              </div>
+            )}
+       
+        </div>
+      )}
 
      
-     <input type="text"  className="fixed flex bottom-8 z-50 left-[20%] w-1/2 focus:outline-none p-2 rounded-lg bg-white/20 border   border-white/[0.06]" />
-     <motion.button whileHover={{scale:1.02}} className="fixed flex bottom-8 z-50 left-[71%] w-10focus:outline-none p-2 rounded-lg bg-white/20 border hover:bg-white/30   border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+     <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className="fixed flex bottom-8 z-50 md:left-[20%] w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/20 border   border-white/[0.06]" />
+     <motion.button onClick={()=>{sendPrompt()}} whileHover={{scale:1.02}} className="fixed flex bottom-8 z-50 md:left-[71%] left-[84%] w-10focus:outline-none p-2 rounded-lg bg-white/20 border hover:bg-white/30   border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
   <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
 </svg>
 </ motion.button>
 
  
-
-     <LogOut/>
+   <div className="invisible md:visible">
+    
+   <LogOut/>
+   </div>
      
         </div>
    
