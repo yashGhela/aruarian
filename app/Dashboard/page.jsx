@@ -45,14 +45,17 @@ import { motion } from "framer-motion"
         headers:{
           'Content-Type': 'application/json',
         },
-        body:{
-          prompt: prompt
-        }
+        body:
+         JSON.stringify(
+          {prompt:prompt}
+         )
+        
       })
 
       const {response: assistantResponse}= await response.json()
+      console.log(assistantResponse)
 
-      setConversation([...conversation, { message, isUser: true }, { message: assistantResponse, isUser: false }]);
+      // setConversation([...conversation, { message: prompt, isUser: true }, { message: assistantResponse, isUser: false }]);
     }
     
 

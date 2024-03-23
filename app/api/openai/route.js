@@ -7,9 +7,10 @@ export async function POST (req, res){
 
     const body = await req.json()
 
-    console.log(body)
 
     const openai = new OpenAI({apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY});
+
+    // console.log(openai)
 
     const assistantID = process.env.NEXT_PUBLIC_ASSISTANT_ID
 
@@ -32,6 +33,8 @@ export async function POST (req, res){
             }
         )
     }
+
+    console.log(run)
 
     const response= JSON.stringify(run)
 
