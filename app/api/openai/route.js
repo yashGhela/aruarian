@@ -11,10 +11,12 @@ export async function POST (req, res){
     const openai = new OpenAI({apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY});
 
     // console.log(openai)
+    let messages;
+    let response;
 
     const assistantID = process.env.NEXT_PUBLIC_ASSISTANT_ID
 
-    const run = await openai.beta.threads.createAndRun({
+    let run = await openai.beta.threads.createAndRun({
         assistant_id: assistantID,
         thread:{
             messages:[
@@ -34,11 +36,46 @@ export async function POST (req, res){
         )
     }
 
-    console.log(run)
+    while (['queued', 'in_progress', 'cancelling'].includes(run.status)) {
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
+        run = await openai.beta.threads.runs.retrieve(
+          run.thread_id,
+          run.id,
+          
+        );
+      }
 
-    const response= JSON.stringify(run)
+
+
+        if (run.status === 'completed') {
+         messages = await openai.beta.threads.messages.list(
+            run.thread_id
+        );
+        for (const message of messages.data.reverse()) {
+            
+
+
+            let text = message.content[0].text.value;
+            const jsonStartIndex = text.indexOf('{');
+            const jsonEndIndex = text.lastIndexOf('}') + 1;
+            let jsonPart = text.slice(jsonStartIndex, jsonEndIndex).trim();
+
+            if (jsonPart && jsonPart.startsWith('{') && jsonPart.endsWith('}')) {
+                try {
+                  
+                    const jsonObject = JSON.parse(jsonPart);
+                    response = jsonObject;
+                    console.log(response);
+                } catch (error) {
+                    console.error("Error parsing JSON:", error);
+                }
+            } 
+        }
+        }
+
+
 
     res.statusCode=201
 
-    return NextResponse.json(response, {status:201})
+    return NextResponse.json(JSON.stringify(response), {status:201})
 }
