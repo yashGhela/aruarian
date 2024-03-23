@@ -39,9 +39,13 @@ function Overlay({user}) {
 
 <Modal setShowModal={setShowModal} showModal={showModal} thin={true} Header={'Add a new board'}>
 
+<p className='text-md text-neutral-200  p-2 mt-2  text-left '>Icon</p>
+
+<input  type="text"  className="  w-full focus:outline-none p-2 rounded-lg bg-white/20 border text-white  border-white/[0.06]" />
+
 <p className='text-md text-neutral-200  p-2 mt-2  text-left '>Name your board</p>
 
-<input  type="text"  className="  w-full focus:outline-none p-2 rounded-lg bg-white/20 border  border-white/[0.06]" />
+<input  type="text"  className="  w-full focus:outline-none p-2 rounded-lg bg-white/20 border text-white  border-white/[0.06]" />
    
 
 </Modal>
