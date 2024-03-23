@@ -5,7 +5,7 @@ function Container() {
     <div>
         <div class="w-full h-full  md:w-1/2 lg:w-full mt-20 lg:mt-0">
   <div
-    className="w-full h-full    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]"
+    className="w-full h-full    rounded-[40px] bg-stone-700/60 border p-3  border-white/[0.06]"
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
 <div id='to-do container' className="w-full h-[114px] rounded-[30px] mb-3 bg-white/[0.13] border border-white/10">

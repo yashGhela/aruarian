@@ -116,9 +116,9 @@ import { motion } from "framer-motion"
         <header>
            <title>Dashboard</title>
          </header>
-         <main  className=' flex text-neutral-100 self-center place-content-center bg-neutral-800     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         <main  style={{backgroundImage:'url(https://images.unsplash.com/reserve/unsplash_52a1c2d7d6f4f_1.JPG?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundPosition: '50% 70%', backgroundRepeat:'no-repeat'}}  className=' flex text-neutral-100 self-center place-content-center bg-neutral-800     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
-     <Overlay/>
+     <Overlay user={user}/>
    
 
      <div className=' md:w-[70rem] lg:w-[80rem] w-[40rem] mr-0 flex-col'>
@@ -181,11 +181,15 @@ import { motion } from "framer-motion"
       )}
 
      
+     <motion.div initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: false  }}>
      <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className="fixed flex bottom-8 z-50 md:left-[20%] w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/20 border   border-white/[0.06]" />
      <motion.button onClick={()=>{sendPrompt()}} whileHover={{scale:1.02}} className="fixed flex bottom-8 z-50 md:left-[71%] left-[84%] w-10focus:outline-none p-2 rounded-lg bg-white/20 border hover:bg-white/30   border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
   <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
 </svg>
 </ motion.button>
+     </motion.div>
 
  
    <div className="invisible md:visible">
