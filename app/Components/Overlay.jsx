@@ -3,24 +3,49 @@ import { motion } from 'framer-motion'
 import Modal from './Modal'
 import InputEmoji from "react-input-emoji";
 import EmojiPicker from 'emoji-picker-react';
+import { supabase } from '../lib/supabase';
 
 function Overlay({user}) {
 
+  
+
+
+  let userDetails=user
+  
+
 
    const [showModal, setShowModal]=useState(false)
+      
+
 
    const [icon, setIcon]=useState('')
    const [emojiopen, setEmojiOpen]=useState(false)
    const [boardname, setboardname]=useState('')
+
+   const addBoard= async()=>{
+
+    
+    const {data, error}= await supabase.from('Users').update({
+      todoboards: {icon:icon, boardname:boardname}
+    }).eq('UID', userDetails)
+
+    if(data){
+      setShowModal(false)
+      console.log(data)
+   
+    }
+
+    if (error){
+      console.log(error)
+    }
+   }
 
 
   const getUserBoards=async()=>{
 
   }
 
-  const addNewBoard=async()=>{
-    
-  }
+
   return (
     <motion.div initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
@@ -43,7 +68,7 @@ function Overlay({user}) {
 </svg><p className='text-md ml-2 '>Add a board</p>
 </motion.button>
 
-<Modal setShowModal={setShowModal} showModal={showModal} thin={true} Header={'Add a new board'}>
+<Modal setShowModal={setShowModal} showModal={showModal} height={'h-self'} thin={true} Header={'Add a new board'}>
 
 <p className='text-md text-neutral-200  p-2 mt-2  text-left '>Icon</p>
 
@@ -54,7 +79,7 @@ function Overlay({user}) {
 style={{
   marginTop: '2.5rem', // Adjust the value as needed
   borderRadius: '0.5rem',
-  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+  backgroundColor: 'rgba(255, 255, 255, 0.4)',
   border: '1px solid #fff',
   color: '#fff',
   
@@ -63,7 +88,10 @@ style={{
 
 <p className='text-md text-neutral-200  p-2 mt-10  text-left '>Name your board</p>
 
-<input  type="text"  className="  w-full focus:outline-none p-2 rounded-lg bg-white/20 border text-white  border-white/[0.06]" />
+<input onChange={(e)=>{setboardname(e.target.value)}}  type="text"  className="  w-full focus:outline-none p-2 rounded-lg bg-white/20 border text-white  border-white/[0.06]" />
+
+<motion.button onClick={()=>{addBoard()}} className=' text-white p-4 mt-5 w-full rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] ' whileHover={{scale:1.02}}>Add board
+</motion.button>
    
 
 </Modal>

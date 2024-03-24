@@ -119,7 +119,7 @@ import { motion } from "framer-motion"
          <main  style={{backgroundImage:'url(https://cdna.artstation.com/p/assets/images/images/018/383/728/large/g-host-lee-15-04-2019-02.jpg?1559161185)', backgroundPosition: '50% 70%', backgroundRepeat:'no-repeat'}}  className=' flex text-neutral-100 bg-fit self-center place-content-center bg-neutral-800     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay user={user}/>
-<div className="fixed inset-0   bg-black opacity-10"></div>
+     <div className="fixed inset-0   bg-black opacity-10"></div>
 
    
 
@@ -186,7 +186,7 @@ import { motion } from "framer-motion"
      <motion.div className=" fixed flex mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
-     <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[6%] w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/20 border   border-white/[0.06]" />
+     <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[22%] lg:ml-[22%] 2xl:ml-[6%] xl:ml-[12%] w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/20 border   border-white/[0.06]" />
      <motion.button onClick={()=>{sendPrompt()}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-lg bg-white/20 border hover:bg-white/30   border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
   <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
 </svg>
