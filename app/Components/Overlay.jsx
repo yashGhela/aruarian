@@ -50,7 +50,16 @@ function Overlay({user}) {
 <motion.button onClick={()=>{if(emojiopen){setEmojiOpen(false)}else{setEmojiOpen(true)}}} className=' text-white p-2 rounded-lg bg-white/20 border  float-left  border-white/[0.06] ' whileHover={{scale:1.02}}>{icon===''?"Choose an Icon":<img src={icon}/>}
 </motion.button><br/><br/>
 
-<EmojiPicker className=' mt-2  EmojiPickerReact ' open={emojiopen} onEmojiClick={(e)=>{setEmojiOpen(false); setIcon(e.imageUrl); console.log(icon)}} />
+<EmojiPicker
+style={{
+  marginTop: '2.5rem', // Adjust the value as needed
+  borderRadius: '0.5rem',
+  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+  border: '1px solid #fff',
+  color: '#fff',
+  
+
+}} className=' mt-2  EmojiPickerReact ' open={emojiopen} onEmojiClick={(e)=>{setEmojiOpen(false); setIcon(e.imageUrl); console.log(icon)}} />
 
 <p className='text-md text-neutral-200  p-2 mt-10  text-left '>Name your board</p>
 
