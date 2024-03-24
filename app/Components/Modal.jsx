@@ -7,7 +7,7 @@ export default function Modal({showModal,setShowModal, children, Header, thin, h
 
     const variants = {
         open: { opacity: 1, y: 0 },
-        closed: { opacity: 0, y: "-100%" },
+        closed: { opacity: 0, y: 0 }, //original is 100%    
         
       }
 

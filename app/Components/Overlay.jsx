@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Modal from './Modal'
+import InputEmoji from "react-input-emoji";
+import EmojiPicker from 'emoji-picker-react';
 
 function Overlay({user}) {
 
 
    const [showModal, setShowModal]=useState(false)
+
+   const [icon, setIcon]=useState('')
+   const [emojiopen, setEmojiOpen]=useState(false)
+   const [boardname, setboardname]=useState('')
 
 
   const getUserBoards=async()=>{
@@ -41,9 +47,12 @@ function Overlay({user}) {
 
 <p className='text-md text-neutral-200  p-2 mt-2  text-left '>Icon</p>
 
-<input  type="text"  className="  w-full focus:outline-none p-2 rounded-lg bg-white/20 border text-white  border-white/[0.06]" />
+<motion.button onClick={()=>{if(emojiopen){setEmojiOpen(false)}else{setEmojiOpen(true)}}} className=' text-white p-2 rounded-lg bg-white/20 border  float-left  border-white/[0.06] ' whileHover={{scale:1.02}}>{icon===''?"Choose an Icon":<img src={icon}/>}
+</motion.button><br/><br/>
 
-<p className='text-md text-neutral-200  p-2 mt-2  text-left '>Name your board</p>
+<EmojiPicker className=' mt-2  EmojiPickerReact ' open={emojiopen} onEmojiClick={(e)=>{setEmojiOpen(false); setIcon(e.imageUrl); console.log(icon)}} />
+
+<p className='text-md text-neutral-200  p-2 mt-10  text-left '>Name your board</p>
 
 <input  type="text"  className="  w-full focus:outline-none p-2 rounded-lg bg-white/20 border text-white  border-white/[0.06]" />
    
