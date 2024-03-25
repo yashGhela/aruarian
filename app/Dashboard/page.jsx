@@ -22,14 +22,11 @@ import { motion } from "framer-motion"
 
     const router= useRouter()
 
-    const getTime = () => {
-      const date = new Date();
-      return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Adjust format as needed
-    };
-    
+  
 
 
     const [currentTime, setCurrentTime] = useState('');
+    const [greeting, setGreeting]=useState('')
     const [todos, setTodos]=useState([])
     const [mesSent, setMesSent]=useState(false)
 
@@ -37,7 +34,28 @@ import { motion } from "framer-motion"
 
     const [prompt, setPrompt] = useState('')
  
+  
 
+
+    const getGreeting=()=>{
+      const currentTime = parseInt(getTime().split(':')[0]);
+      if (currentTime >= 2 && currentTime < 12) {
+        setGreeting("Good morning") ;
+    } else if (currentTime >= 12 && currentTime < 18) {
+        setGreeting("Good afternoon");
+    } else {
+        setGreeting("Good evening") ;
+    }
+    }
+
+
+    const getTime = () => {
+      const date = new Date();
+      return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }); // Adjust format as needed
+
+      
+    };
+    
 
     const sendPrompt= async()=>{
       const response = await fetch('api/openai',{
@@ -90,11 +108,13 @@ import { motion } from "framer-motion"
     useEffect( ()=>{
 
       getUser()
+      getGreeting()
 
 
       const updateTime = () => {
         setCurrentTime(getTime());
       };
+
   
      
   
@@ -125,7 +145,7 @@ import { motion } from "framer-motion"
 
      <div className=' md:w-[70rem] lg:w-[80rem] w-[40rem] mr-0 flex-col'>
         
-    {/* {mesSent ?
+    {mesSent ?
 
      <div> HELLLO </div>
        :
@@ -149,7 +169,7 @@ import { motion } from "framer-motion"
      
     <div className="mt-8 mx-20 xs:flex-col lg:flex  xl:flex">
      
-    <p className=' text-4xl text-left  font-thin'>Good Evening Yash, <br/> You have  <span className="font-normal">{todos.length} To-Dos </span> left for <br/> the day</p>
+    <p className=' text-4xl text-left  font-thin'>{greeting} Yash, <br/> You have  <span className="font-normal">{todos.length} To-Dos </span> left for <br/> the day</p>
 
 
     <div className="lg:ml-[20%] -mt-10" id="to-dos container ">
@@ -168,7 +188,7 @@ import { motion } from "framer-motion"
     </div>
     </div>
 }
-         */}
+        
 
 {conversation && (
         <div>
