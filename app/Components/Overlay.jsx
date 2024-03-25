@@ -112,7 +112,7 @@ function Overlay() {
 </svg><p className='text-md ml-2 '>Add a board</p>
 </motion.button>
 
- <div className='mt-20'>
+ <div className='mt-20 invisible  md:visible'>
  {boards.map((i)=>{
       return(
         <motion.button whileHover={{scale:1.02, rotate:1}} className='flex mt-5 rounded-lg  w-full p-1  '>

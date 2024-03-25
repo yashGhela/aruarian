@@ -149,7 +149,7 @@ import { motion } from "framer-motion"
 
      <div> HELLLO </div>
        :
-       <div id="first open ">
+       <div className=" md:ml-40  lg:ml-40 2xl:ml-0" id="first open ">
 
        <div className="flex mt-[20%] mx-20">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4  mt-[2px] font-thin ">
@@ -206,7 +206,7 @@ import { motion } from "framer-motion"
      <motion.div className=" fixed flex mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
-     <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[22%] lg:ml-[22%] 2xl:ml-[6%] xl:ml-[12%] w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/20 border   border-white/[0.06]" />
+     <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[22%] lg:ml-[22%] 2xl:ml-[6%] xl:ml-[12%] ml-12 w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/20 border   border-white/[0.06]" />
      <motion.button onClick={()=>{sendPrompt()}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-lg bg-white/20 border hover:bg-white/30   border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
   <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
 </svg>
