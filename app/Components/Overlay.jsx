@@ -1,20 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Modal from './Modal'
 import InputEmoji from "react-input-emoji";
 import EmojiPicker from 'emoji-picker-react';
 import { supabase } from '../lib/supabase';
 
-function Overlay({user}) {
+function Overlay() {
 
   
 
 
-  let userDetails=user
+  
+  let user;
+
+  const getUser=async()=>{
+    user = (await supabase.auth.getUser()).data.user.id
+    console.log(user)
+
+    
+  }
   
 
 
    const [showModal, setShowModal]=useState(false)
+
+   const [boards, setBoards]=useState([])
       
 
 
@@ -24,26 +34,59 @@ function Overlay({user}) {
 
    const addBoard= async()=>{
 
+    await getUser().then(async ()=>{
+
+      const {data, error}= await supabase.from('Boards').insert({
+        icon:icon,
+        UID: user,
+        name: boardname,
+
+      })
+  
+      
+  
+      if (error){
+        console.log(error)
+      }else{
+       
+          setShowModal(false)
+          console.log(data)
+       
+       
+      }
+      
+    })
+
     
-    const {data, error}= await supabase.from('Users').update({
-      todoboards: {icon:icon, boardname:boardname}
-    }).eq('UID', userDetails)
-
-    if(data){
-      setShowModal(false)
-      console.log(data)
-   
-    }
-
-    if (error){
-      console.log(error)
-    }
+  
    }
 
 
   const getUserBoards=async()=>{
 
+    await getUser().then(async ()=>{
+
+    const {data, error}= await supabase.from('Boards').select('*').eq('UID',user)
+
+
+    if (error){
+      console.log(error)
+    }else{
+      setBoards(data)
+      console.log(data)
+    }
+
+  })
+
+
   }
+
+  useEffect(()=>{
+
+    getUser()
+    getUserBoards()
+
+  },[])
 
 
   return (
@@ -63,10 +106,21 @@ function Overlay({user}) {
 
 
 
-      <motion.button onClick={()=>{setShowModal(true)}} className='fixed flex top-40 z-20 left-8 invisible md:visible p-2 rounded-lg bg-white/20 border   border-white/[0.06] ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mt-[1px]">
+    <div className='fixed  top-40 z-20 left-8 '>
+    <motion.button onClick={()=>{setShowModal(true)}} className='invisible flex md:visible p-2 rounded-lg bg-white/20 border   border-white/[0.06] ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mt-[1px]">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
 </svg><p className='text-md ml-2 '>Add a board</p>
 </motion.button>
+
+    {boards.map((i)=>{
+      return(
+        <motion.button whileHover={{scale:1.02, rotate:1}} className='flex mt-5 rounded-lg  w-full p-1  '>
+          <img src={i.icon} className=' w-8 h-8 ml-2 ' />
+          <p className='mt-1 ml-4'>{i.name}</p>
+        </motion.button>
+      )
+    })}
+    </div>
 
 <Modal setShowModal={setShowModal} showModal={showModal} height={'h-self'} thin={true} Header={'Add a new board'}>
 

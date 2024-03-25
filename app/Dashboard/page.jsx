@@ -118,7 +118,7 @@ import { motion } from "framer-motion"
          </header>
          <main  style={{backgroundImage:'url(https://cdna.artstation.com/p/assets/images/images/018/383/728/large/g-host-lee-15-04-2019-02.jpg?1559161185)', backgroundPosition: '50% 70%', backgroundRepeat:'no-repeat'}}  className=' flex text-neutral-100 bg-fit self-center place-content-center bg-neutral-800     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
-     <Overlay user={user}/>
+     <Overlay />
      <div className="fixed inset-0   bg-black opacity-10"></div>
 
    
