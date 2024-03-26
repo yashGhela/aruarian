@@ -62,7 +62,7 @@ import { motion } from "framer-motion"
       user = (await supabase.auth.getUser()).data.user.id
       console.log(user)
 
-      getTodos()
+      
     }
     
 
@@ -114,6 +114,7 @@ import { motion } from "framer-motion"
         console.log(error)
       }else{
         setTodos(data)
+        console.log(todos)
         
         
       }
@@ -123,7 +124,7 @@ import { motion } from "framer-motion"
 
     useEffect( ()=>{
 
-      getUser()
+      getUser().then(()=>{getTodos()})
       getGreeting()
 
 

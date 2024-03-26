@@ -19,6 +19,7 @@ function Container() {
       console.log(error)
     }else{
       setTodos(data)
+      console.log(data)
       
       
       
@@ -33,7 +34,7 @@ function Container() {
     user = (await supabase.auth.getUser()).data.user.id
     console.log(user)
 
-    getTodos()
+   
   }
 
 

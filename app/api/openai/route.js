@@ -95,6 +95,18 @@ export async function POST (req, res){
 
                               return NextResponse.json(JSON.stringify("Successfully uploaded to db"), {status:201})
                         }
+                    }else if (response.function==='readspecific' || response.action==='readspecific'){
+                        const {data, error}= await supabase.from('To-Dos').select('*').eq('content',response.content).eq('UID', body.userid).eq('board',response.board)
+
+                        if (error){
+                            console.log(error)
+                        }else{
+                            console.log('Your to-do '+ data)
+                            res.statusCode=201
+
+                              return NextResponse.json(JSON.stringify("Successfully uploaded to db"), {status:201})
+                        }
+
                     }
                 } catch (error) {
                     console.error("Error parsing JSON:", error);
