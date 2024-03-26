@@ -50,7 +50,7 @@ function Overlay() {
       }else{
        
           setShowModal(false)
-          console.log(data)
+         
        
        
       }
@@ -73,7 +73,7 @@ function Overlay() {
       console.log(error)
     }else{
       setBoards(data)
-      console.log(data)
+     
     }
 
   })

@@ -106,7 +106,7 @@ import { motion } from "framer-motion"
 
     const getTodos=async()=>{
       
-      const {data, error} = supabase.from('To-Dos')
+      const {data, error} = await supabase.from('To-Dos')
       .select('*')
       .eq("UID", user)
 
@@ -114,7 +114,7 @@ import { motion } from "framer-motion"
         console.log(error)
       }else{
         setTodos(data)
-        console.log(todos)
+        console.log(data)
         
         
       }
@@ -186,12 +186,12 @@ import { motion } from "framer-motion"
      
     <div className="mt-8 mx-20 xs:flex-col lg:flex  xl:flex">
      
-    <p className=' text-4xl text-left  font-thin'>{greeting} Yash, <br/> You have  <span className="font-normal">{todos} To-Dos </span> left for <br/> the day</p>
+    <p className=' text-4xl text-left  font-thin'>{greeting} Yash, <br/> You have  <span className="font-normal">{todos.length} To-Dos </span> left for <br/> the day</p>
 
 
     <div className="lg:ml-[20%] -mt-10" id="to-dos container ">
 
-    <Container/>
+    <Container todos={todos}/>
 
 
     
