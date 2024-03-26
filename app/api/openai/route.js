@@ -1,4 +1,5 @@
 
+import {  createClient as createAdminClient  } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
@@ -7,8 +8,18 @@ export async function POST (req, res){
 
     const body = await req.json()
 
+    const supabaseURL= process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseKey = process.env.NEXT_PUBLIC_SERVICE_ROLE_KEY
+
 
     const openai = new OpenAI({apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY});
+    
+    const supabase = createAdminClient(supabaseURL, supabaseKey)
+
+
+    console.log(body.prompt)
+
+    console.log(body.userid)
 
     // console.log(openai)
     let messages;
@@ -66,16 +77,36 @@ export async function POST (req, res){
                     const jsonObject = JSON.parse(jsonPart);
                     response = jsonObject;
                     console.log(response);
+                    console.log(response.action)
+
+                    if (response.function==='insert' || response.action==='insert'){
+                        const {data, error} =  await supabase.from('To-Dos').insert({
+                            content: response.content, 
+                            UID: body.userid,
+                            due_date: response.due_date,
+                            board: response.board
+                        })
+        
+                        if (error){
+                            console.log(error)
+                        }else{
+                            console.log('Successfully uploaded to db: '+ data)
+                            res.statusCode=201
+
+                              return NextResponse.json(JSON.stringify("Successfully uploaded to db"), {status:201})
+                        }
+                    }
                 } catch (error) {
                     console.error("Error parsing JSON:", error);
                 }
             } 
+
+
+            
         }
         }
 
 
 
-    res.statusCode=201
-
-    return NextResponse.json(JSON.stringify(response), {status:201})
+    
 }
