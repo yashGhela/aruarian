@@ -98,6 +98,38 @@ export async function POST (req, res){
 
                             return NextResponse.json( {status:201, message:`Successfully added task to ${response.board}`})
                         }
+                    }else if( response.action==='batchread'){
+                        const {data, error} = await supabase.from('To-Dos').select('*').eq('board', response.board).eq('UID', body.userid)
+
+
+                        if(error){
+                            console.log(error)
+                            res.statusCode=500
+                            return NextResponse.json({error:error})
+                        }else{
+
+                            let run2= await openai.beta.threads.createAndRun({
+                                assistant_id: assistantID,
+                                thread:{messages:[
+                                    messages, {role:'system', content:'The data from our batch read is '+ data}
+                                ]}
+                                
+                            })
+
+                            if (run2.status === 'completed') {
+                                messages = await openai.beta.threads.messages.list(
+                                   run2.thread_id
+                               );
+                               for (const message of messages.data.reverse()) {
+                                   
+                       
+                       
+                                   let text = message.content[0].text.value;
+
+                                   console.log(text)
+                               }
+                            }
+                        }
                     }
                 } catch (error) {
                     console.error("Error parsing JSON:", error);
