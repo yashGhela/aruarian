@@ -90,24 +90,14 @@ export async function POST (req, res){
         
                         if (error){
                             console.log(error)
+                            res.statusCode=500
+                            return NextResponse.json({error:error})
                         }else{
-                            console.log('Successfully uploaded to db: '+ data)
+                            console.log('Successfully uploaded to db!')
                             res.statusCode=201
 
-                              return NextResponse.json(JSON.stringify("Successfully uploaded to db"), {status:201})
+                            return NextResponse.json( {status:201, message:`Successfully added task to ${response.board}`})
                         }
-                    }else if (response.function==='readspecific' || response.action==='readspecific'){
-                        const {data, error}= await supabase.from('To-Dos').select('*').eq('content',response.content).eq('UID', body.userid).eq('board',response.board)
-
-                        if (error){
-                            console.log(error)
-                        }else{
-                            console.log('Your to-do '+ data)
-                            res.statusCode=201
-
-                              return NextResponse.json(JSON.stringify("Successfully uploaded to db"), {status:201})
-                        }
-
                     }
                 } catch (error) {
                     console.error("Error parsing JSON:", error);
@@ -123,3 +113,19 @@ export async function POST (req, res){
 
     
 }
+
+
+
+//else if (response.function==='readspecific' || response.action==='readspecific'){
+//     const {data, error}= await supabase.from('To-Dos').select('*').eq('content',response.content).eq('UID', body.userid).eq('board',response.board)
+
+//     if (error){
+//         console.log(error)
+//     }else{
+//         console.log('Your to-do '+ data)
+//         res.statusCode=201
+
+//           return NextResponse.json(JSON.stringify("Successfully uploaded to db"), {status:201})
+//     }
+
+// }

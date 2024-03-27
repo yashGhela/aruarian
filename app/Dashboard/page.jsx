@@ -33,6 +33,10 @@ import { motion } from "framer-motion"
     const [conversation, setConversation] = useState([]);
 
     const [prompt, setPrompt] = useState('')
+
+    const [responseAI, setResponseAI]=useState([])
+
+    const [IsLoading, setIsLoading]=useState(false)
  
   
 
@@ -86,8 +90,13 @@ import { motion } from "framer-motion"
         
       })
 
-      const {response: assistantResponse}= await response.json()
-      console.log(assistantResponse)
+      await response.json().then((snap)=>{
+        setResponseAI(snap)
+
+        console.log(snap)
+        setIsLoading(false)
+      })
+    
 
       })
 
@@ -132,6 +141,7 @@ import { motion } from "framer-motion"
         setCurrentTime(getTime());
       };
 
+      
   
      
   
@@ -164,7 +174,24 @@ import { motion } from "framer-motion"
         
     {mesSent ?
 
-     <div> HELLLO </div>
+     <div className="mt-[20%] ml-[40%] w-[300px] h-[300px]  backdrop-blur-sm    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]">
+
+       {IsLoading ?
+
+        <div>
+        <l-jelly color='white'></l-jelly>
+        </div>
+
+       :
+       <p className="text-center text-xl font-normal mt-24 text-white">{responseAI.message}</p>
+       
+
+       
+      }
+
+
+      
+       </div>
        :
        <div className=" md:ml-40  lg:ml-40 2xl:ml-0" id="first open ">
 
@@ -207,7 +234,7 @@ import { motion } from "framer-motion"
 }
         
 
-{conversation && (
+{/* {conversation && (
         <div>
             {conversation && (
               <div className=' p-2'>
@@ -217,14 +244,14 @@ import { motion } from "framer-motion"
             )}
        
         </div>
-      )}
+      )} */}
 
      
      <motion.div className=" fixed flex mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
      <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[22%] lg:ml-[22%] 2xl:ml-[6%] xl:ml-[12%] ml-12 w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/20 border  backdrop-blur-sm   border-white/[0.06]" />
-     <motion.button onClick={()=>{sendPrompt()}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-lg bg-white/20 border hover:bg-white/30   border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+     <motion.button onClick={()=>{sendPrompt(); setMesSent(true); setIsLoading(true)}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-lg bg-white/20 border hover:bg-white/30   border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
   <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
 </svg>
 </ motion.button>

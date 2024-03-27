@@ -10,7 +10,7 @@ function Container({todos}) {
     <div>
         <div className="w-[300px] h-[300px]    md:w-[300px] lg:w-full mt-20 lg:mt-0">
   <div
-    className="w-full h-full overflow-y-auto  backdrop-blur-sm    rounded-[40px] bg-stone-700/60 border p-3  border-white/[0.06]"
+    className="w-full h-full overflow-y-auto  backdrop-blur-sm    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]"
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
   { todos.map((i)=>{
