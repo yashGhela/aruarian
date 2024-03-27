@@ -15,6 +15,7 @@ export async function POST (req, res){
     const openai = new OpenAI({apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY});
     
     const supabase = createAdminClient(supabaseURL, supabaseKey)
+    var currentDate = new Date();
 
 
     console.log(body.prompt)
@@ -31,7 +32,7 @@ export async function POST (req, res){
         assistant_id: assistantID,
         thread:{
             messages:[
-                {role:'user', content: body.prompt}
+                {role:'user', content: body.prompt+` todays date is ${currentDate}`}
             ]
         }
     })
