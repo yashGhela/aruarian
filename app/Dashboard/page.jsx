@@ -220,7 +220,7 @@ import { motion } from "framer-motion"
        :
       <div>
 
-    <p className="text-center text-xl font-normal mt-24 text-white">{responseAI.message}</p>
+    <p className="text-center text-md font-normal mt-24 text-white">{responseAI.message}</p>
 
     <button onClick={()=>{setMesSent(false)}} className=' text-white p-4 mt-14 w-full rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
         
