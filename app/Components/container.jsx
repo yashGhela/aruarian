@@ -52,7 +52,7 @@ function Container({todos}) {
   
   return (
     <div>
-        <div className="w-[120%] sm:w-full h-[300px]    md:w-[400px] lg:w-full mt-20 lg:mt-0">
+        <div className="w-[120%] sm:w-full h-[300px]    md:w-[370px] lg:w-full mt-20 lg:mt-0">
   <div
     className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]"
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>

@@ -99,24 +99,51 @@ export async function POST (req, res){
                             return NextResponse.json( {status:201, message:`Successfully added task to ${response.board}`})
                         }
                     }else if( response.action==='batchread'){
+
+                        console.log('beginning batchread')
                         const {data, error} = await supabase.from('To-Dos').select('*').eq('board', response.board).eq('UID', body.userid)
 
-
+                        console.log('sql statement run ')
                         if(error){
-                            console.log(error)
+                            console.log('the error is '+ error)
+                            
                             res.statusCode=500
-                            return NextResponse.json({error:error})
+                            return NextResponse.json({error:error,status:500})
                         }else{
 
-                            let run2= await openai.beta.threads.createAndRun({
+
+                            console.log(data)
+
+
+                            const messagesArray = messages.data.map(message => ({ role: 'user', content: message.content[0].text.value }));
+                            messagesArray.push({ role: 'user', content: 'The data from our batch read is ' + JSON.stringify(data) });
+
+
+                            console.log(messagesArray)
+
+                            console.log('attempting run ')
+
+                          try{
+                            let run2 = await openai.beta.threads.createAndRun({
                                 assistant_id: assistantID,
-                                thread:{messages:[
-                                    messages, {role:'system', content:'The data from our batch read is '+ data}
-                                ]}
+                                thread: { messages: messagesArray }
+                            });
+
+                            
+                            while (['queued', 'in_progress', 'cancelling'].includes(run2.status)) {
+                                await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
+                                run2 = await openai.beta.threads.runs.retrieve(
+                                    run2.thread_id,
+                                    run2.id,
                                 
-                            })
+                                );
+                            }
+
+
+
 
                             if (run2.status === 'completed') {
+                                console.log(run2)
                                 messages = await openai.beta.threads.messages.list(
                                    run2.thread_id
                                );
@@ -124,11 +151,21 @@ export async function POST (req, res){
                                    
                        
                        
-                                   let text = message.content[0].text.value;
+                                let text = messages.data[messages.data.length - 1].content[0].text.value;
 
                                    console.log(text)
+
+                                   res.statusCode=201
+
+                                   return NextResponse.json( {status:201, message:text})
                                }
+                            }else if (run2.status==='failed'){
+                                console.log('run failed')
+                                console.log(run2.last_error)
                             }
+                          }catch(error){
+                            console.error('Error: '+error)
+                          }
                         }
                     }
                 } catch (error) {
