@@ -199,7 +199,7 @@ import { motion } from "framer-motion"
 
    
 
-     <div className=' md:w-[70rem] lg:w-[80rem] w-[40rem] mr-0 flex-col'>
+     <div className=' md:w-[70rem] lg:w-[80rem] w-[50rem] mr-0 flex-col'>
         
     {mesSent ?
 

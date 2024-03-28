@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 function Container({todos}) {
 
 
-  function convertTimestampToDateTime({timestamp, boards}) {
+  function convertTimestampToDateTime(timestamp) {
     // Create a new Date object with the timestamp (in milliseconds)
     const date = new Date(timestamp);
     const currentDate = new Date();
@@ -21,26 +21,13 @@ function Container({todos}) {
         return `Today ${hours}:${minutes}`;
     }
 
-    // Otherwise, return the date in the format "14th January"
-    const day = date.getDate();
-    const month = date.toLocaleString('default', { month: 'long' });
+    // Otherwise, return the date in the format YYYY-MM-DD
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
 
-    // Function to get the ordinal suffix for the day
-    function getOrdinalSuffix(day) {
-        if (day > 3 && day < 21) return 'th';
-        switch (day % 10) {
-            case 1: return "st";
-            case 2: return "nd";
-            case 3: return "rd";
-            default: return "th";
-        }
-    }
-
-    const ordinalSuffix = getOrdinalSuffix(day);
-
-    return `${day}${ordinalSuffix} ${month}`;
+    return `${year}-${month}-${day}`;
 }
-
 
   const completeToDo= async({id})=>{
 
@@ -65,9 +52,9 @@ function Container({todos}) {
   
   return (
     <div>
-        <div className="w-full h-[278px]    md:w-[300px] lg:w-full mt-20 lg:mt-0">
+        <div className="w-[120%] sm:w-full h-[300px]    md:w-[400px] lg:w-full mt-20 lg:mt-0">
   <div
-    className="w-full h-full overflow-y-auto  backdrop-blur-sm    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]"
+    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]"
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
   { todos.map((i)=>{
@@ -77,7 +64,7 @@ function Container({todos}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full h-[145px] rounded-[30px] mb-3 bg-white/[0.13] border border-white/10">
+    id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.13] border border-white/10">
     <div className="flex">
       <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-[#b9e7c9]/[0.38]">
         <p className="-mt-1 text-sm font-light text-left text-[#a8d4a7]">{i.board} </p>
@@ -86,7 +73,7 @@ function Container({todos}) {
         <p className="-mt-1 text-sm font-light text-left text-[#dc7a7a]">{convertTimestampToDateTime(i.due_date)}</p>
       </div>
     </div>
-    <p className="w-[70%] p-2 ml-5 mt-2 h-12 text-lg font-light text-left ">
+    <p className="w-[70%]  p-2 ml-5 mt-1 h-12 text-[17px] font-light text-left ">
       {i.content}
     </p>
 
