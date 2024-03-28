@@ -4,6 +4,7 @@ import Modal from './Modal'
 import InputEmoji from "react-input-emoji";
 import EmojiPicker from 'emoji-picker-react';
 import { supabase } from '../lib/supabase';
+import { BlockPicker } from 'react-color';
 
 function Overlay({boards}) {
 
@@ -23,6 +24,8 @@ function Overlay({boards}) {
 
    const [icon, setIcon]=useState('')
    const [emojiopen, setEmojiOpen]=useState(false)
+   const [colorOpen, setColorOpen]=useState(false)
+   const [color, setColor]=useState('')
    const [boardname, setboardname]=useState('')
 
    const addBoard= async()=>{
@@ -110,6 +113,13 @@ style={{
   
 
 }} className=' mt-2  EmojiPickerReact ' open={emojiopen} onEmojiClick={(e)=>{setEmojiOpen(false); setIcon(e.imageUrl); console.log(icon)}} />
+
+<p className='text-md text-neutral-200  p-2 mt-2  text-left '>Color</p>
+
+<motion.button onClick={()=>{if(colorOpen){setColorOpen(false)}else{setColorOpen(true)}}} className=' text-white p-2 rounded-lg bg-white/20 border  float-left  border-white/[0.06] ' whileHover={{scale:1.02}}>{color===''?"Choose a color":`${color}`}
+</motion.button><br/><br/>
+
+{/* <BlockPicker /> */}
 
 <p className='text-md text-neutral-200  p-2 mt-10  text-left '>Name your board</p>
 
