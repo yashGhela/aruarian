@@ -65,7 +65,7 @@ function Container({todos}) {
   
   return (
     <div>
-        <div className="w-[300px] h-[278px]    md:w-[300px] lg:w-full mt-20 lg:mt-0">
+        <div className="w-full h-[278px]    md:w-[300px] lg:w-full mt-20 lg:mt-0">
   <div
     className="w-full h-full overflow-y-auto  backdrop-blur-sm    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]"
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
@@ -77,7 +77,7 @@ function Container({todos}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full h-[114px] rounded-[30px] mb-3 bg-white/[0.13] border border-white/10">
+    id='to-do container' className="w-full h-[145px] rounded-[30px] mb-3 bg-white/[0.13] border border-white/10">
     <div className="flex">
       <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-[#b9e7c9]/[0.38]">
         <p className="-mt-1 text-sm font-light text-left text-[#a8d4a7]">{i.board} </p>
@@ -86,7 +86,7 @@ function Container({todos}) {
         <p className="-mt-1 text-sm font-light text-left text-[#dc7a7a]">{convertTimestampToDateTime(i.due_date)}</p>
       </div>
     </div>
-    <p className="w-[70%] ml-5 mt-2 h-12 text-lg font-light text-left ">
+    <p className="w-[70%] p-2 ml-5 mt-2 h-12 text-lg font-light text-left ">
       {i.content}
     </p>
 
