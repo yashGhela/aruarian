@@ -31,6 +31,8 @@ import { motion } from "framer-motion"
     const [todos, setTodos]=useState([])
     const [mesSent, setMesSent]=useState(false)
 
+    const [boards, setBoards]=useState([])
+
     const [conversation, setConversation] = useState([]);
 
     const [prompt, setPrompt] = useState('')
@@ -136,10 +138,32 @@ import { motion } from "framer-motion"
 
     }
 
+          
+        const getUserBoards=async()=>{
+
+          await getUser().then(async ()=>{
+
+          const {data, error}= await supabase.from('Boards').select('*').eq('UID',user)
+
+
+          if (error){
+            console.log(error)
+          }else{
+            setBoards(data)
+          
+          }
+
+        })
+
+
+        }
+
     useEffect( ()=>{
 
       getUser().then(()=>{getTodos()})
       getGreeting()
+
+      getUserBoards()
 
 
       const updateTime = () => {
@@ -168,9 +192,9 @@ import { motion } from "framer-motion"
         <header>
            <title>Dashboard</title>
          </header>
-         <main  style={{backgroundImage:'url(https://cdnb.artstation.com/p/assets/images/images/018/383/729/large/g-host-lee-15-04-2019-04.jpg?1559161094)',backgroundRepeat:'no-repeat'}}  className=' flex text-neutral-100 bg-cover self-center place-content-center bg-neutral-800     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         <main  style={{backgroundImage:'url(https://images.unsplash.com/photo-1701716420752-de578c44560a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}  className=' flex text-neutral-100 bg-cover self-center place-content-center bg-neutral-800     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
-     <Overlay />
+     <Overlay boards={boards} />
      <div className="fixed inset-0   bg-black opacity-10"></div>
 
    
@@ -235,7 +259,7 @@ import { motion } from "framer-motion"
 
     <div className="lg:ml-[20%] -mt-10" id="to-dos container ">
 
-    <Container todos={todos}/>
+    <Container boards={boards} todos={todos}/>
 
 
     

@@ -5,26 +5,19 @@ import InputEmoji from "react-input-emoji";
 import EmojiPicker from 'emoji-picker-react';
 import { supabase } from '../lib/supabase';
 
-function Overlay() {
+function Overlay({boards}) {
 
   
 
 
   
-  let user;
 
-  const getUser=async()=>{
-    user = (await supabase.auth.getUser()).data.user.id
-    console.log(user)
-
-    
-  }
   
 
 
    const [showModal, setShowModal]=useState(false)
 
-   const [boards, setBoards]=useState([])
+   
       
 
 
@@ -62,31 +55,7 @@ function Overlay() {
    }
 
 
-  const getUserBoards=async()=>{
 
-    await getUser().then(async ()=>{
-
-    const {data, error}= await supabase.from('Boards').select('*').eq('UID',user)
-
-
-    if (error){
-      console.log(error)
-    }else{
-      setBoards(data)
-     
-    }
-
-  })
-
-
-  }
-
-  useEffect(()=>{
-
-    getUser()
-    getUserBoards()
-
-  },[])
 
 
   return (
