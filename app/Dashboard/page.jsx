@@ -121,10 +121,19 @@ import { motion } from "framer-motion"
     
 
     const getTodos=async()=>{
+
+      const todayStart = new Date();
+      todayStart.setHours(0, 0, 0, 0); // Set time to the start of the day
+
+      const todayEnd = new Date();
+      todayEnd.setHours(23, 59, 59, 999); 
       
       const {data, error} = await supabase.from('To-Dos')
       .select('*')
       .eq("UID", user)
+      .eq('completed', false)
+      .gte('due_date', todayStart.toISOString())
+      .lt('due_date', todayEnd.toISOString());
 
       if(error){
         console.log(error)
