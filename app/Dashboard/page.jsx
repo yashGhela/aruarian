@@ -174,6 +174,8 @@ import { motion } from "framer-motion"
 
       getUserBoards()
 
+      
+
 
       const updateTime = () => {
         setCurrentTime(getTime());
