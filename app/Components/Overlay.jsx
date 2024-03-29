@@ -6,7 +6,7 @@ import EmojiPicker from 'emoji-picker-react';
 import { supabase } from '../lib/supabase';
 import { BlockPicker } from 'react-color';
 
-function Overlay({boards}) {
+function Overlay({boards, setQueried, setBoardQuery}) {
 
   
 
