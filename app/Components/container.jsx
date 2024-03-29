@@ -66,11 +66,11 @@ function Container({todos}) {
     
     id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.13] border border-white/10">
     <div className="flex">
-      <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-[#b9e7c9]/[0.38]">
-        <p className="-mt-1 text-sm font-light text-left text-[#a8d4a7]">{i.board} </p>
+      <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
+        <p className="-mt-1 text-sm font-light text-left text-gray-700">{i.board} </p>
       </div>
-      <div className="w-self ml-2 h-[20px] mt-2 p-1 rounded-lg bg-[#eab3b3]/[0.38]">
-        <p className="-mt-1 text-sm font-light text-left text-[#dc7a7a]">{convertTimestampToDateTime(i.due_date)}</p>
+      <div className="w-self ml-2 h-[20px] mt-2 p-1 rounded-lg bg-blue-200/[0.38]">
+        <p className="-mt-1 text-sm font-light text-left text-slate-600">{convertTimestampToDateTime(i.due_date)}</p>
       </div>
     </div>
     <p className="w-[70%]  p-2 ml-5 mt-1 h-12 text-[17px] font-light text-left ">
