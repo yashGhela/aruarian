@@ -8,8 +8,8 @@ export async function POST (req, res){
 
     const body = await req.json()
 
-    const supabaseURL= process.env.NEXT_PUBLIC_SUPABASE_URL
-    const supabaseKey = process.env.NEXT_PUBLIC_SERVICE_ROLE_KEY
+    const supabaseURL= process.env.SUPABASE_URL
+    const supabaseKey = process.env.SERVICE_ROLE_KEY
 
 
     const openai = new OpenAI({apiKey: process.env.OPENAI_KEY});
@@ -26,7 +26,7 @@ export async function POST (req, res){
     let messages;
     let response;
 
-    const assistantID = process.env.NEXT_PUBLIC_ASSISTANT_ID
+    const assistantID = process.env.ASSISTANT_ID
 
     let run = await openai.beta.threads.createAndRun({
         assistant_id: assistantID,
