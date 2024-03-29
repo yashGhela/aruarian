@@ -12,7 +12,7 @@ export async function POST (req, res){
     const supabaseKey = process.env.NEXT_PUBLIC_SERVICE_ROLE_KEY
 
 
-    const openai = new OpenAI({apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY});
+    const openai = new OpenAI({apiKey: process.env.OPENAI_KEY});
     
     const supabase = createAdminClient(supabaseURL, supabaseKey)
     var currentDate = new Date();
@@ -162,14 +162,20 @@ export async function POST (req, res){
                             }else if (run2.status==='failed'){
                                 console.log('run failed')
                                 console.log(run2.last_error)
+                                res.statusCode=500
+                                return NextResponse.json({error:error,status:500})
                             }
                           }catch(error){
                             console.error('Error: '+error)
+                            res.statusCode=500
+                            return NextResponse.json({error:error,status:500})
                           }
                         }
                     }
                 } catch (error) {
                     console.error("Error parsing JSON:", error);
+                    res.statusCode=500
+                    return NextResponse.json({error:error,status:500})
                 }
             } 
 
