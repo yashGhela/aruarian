@@ -100,10 +100,10 @@ export async function POST (req, res){
                         }
                     }else if( response.action==='batchread'){
 
-                        console.log('beginning batchread')
+                       
                         const {data, error} = await supabase.from('To-Dos').select('*').eq('board', response.board).eq('UID', body.userid)
 
-                        console.log('sql statement run ')
+                      
                         if(error){
                             console.log('the error is '+ error)
                             
@@ -112,7 +112,7 @@ export async function POST (req, res){
                         }else{
 
 
-                            console.log(data)
+                           
 
 
                             const messagesArray = messages.data.map(message => ({ role: 'user', content: message.content[0].text.value }));
@@ -121,7 +121,7 @@ export async function POST (req, res){
 
                             console.log(messagesArray)
 
-                            console.log('attempting run ')
+                            
 
                           try{
                             let run2 = await openai.beta.threads.createAndRun({
@@ -143,7 +143,7 @@ export async function POST (req, res){
 
 
                             if (run2.status === 'completed') {
-                                console.log(run2)
+                                
                                 messages = await openai.beta.threads.messages.list(
                                    run2.thread_id
                                );

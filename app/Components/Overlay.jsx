@@ -28,6 +28,15 @@ function Overlay({boards}) {
    const [color, setColor]=useState('')
    const [boardname, setboardname]=useState('')
 
+   let user;
+
+   const getUser=async()=>{
+     user = (await supabase.auth.getUser()).data.user.id
+     console.log(user)
+
+     
+   }
+
    const addBoard= async()=>{
 
     await getUser().then(async ()=>{
