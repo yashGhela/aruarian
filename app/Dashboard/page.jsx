@@ -218,7 +218,7 @@ import { motion } from "framer-motion"
         
     {mesSent ?
 
-     <div className="md:mt-[20%] md:ml-[40%] mt-[90%] ml-10 w-[300px] h-self  backdrop-blur-sm    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]">
+     <div className="md:mt-[20%] md:ml-[40%] mt-[90%] ml-10 w-[350px] h-self  backdrop-blur-sm    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]">
 
        {IsLoading ?
 
@@ -235,7 +235,7 @@ import { motion } from "framer-motion"
        :
       <div>
 
-    <p className="text-center text-md font-normal mt-2 p-3 text-white">{responseAI.message}</p>
+    <p className="text-center text-md font-normal mt-2 p-5 text-white">{responseAI.message}</p>
 
     <button onClick={()=>{setMesSent(false)}} className=' text-white p-4 mt-14 w-full rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
         
