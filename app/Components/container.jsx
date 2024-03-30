@@ -54,7 +54,7 @@ function Container({todos}) {
     <div>
         <div className="w-[120%] sm:w-full h-[300px]    md:w-[370px] lg:w-full mt-20 lg:mt-0">
   <div
-    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]"
+    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[40px] bg-[#b6b1ad]  p-3  "
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
   { todos.map((i)=>{
@@ -64,21 +64,21 @@ function Container({todos}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.13] border border-white/10">
+    id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-[#c5c0bc] ">
     <div className="flex">
       <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
-        <p className="-mt-1 text-sm font-light text-left text-gray-700">{i.board} </p>
+        <p className="-mt-1 text-sm font-normal text-left text-gray-700">{i.board} </p>
       </div>
       <div className="w-self ml-2 h-[20px] mt-2 p-1 rounded-lg bg-blue-200/[0.38]">
         <p className="-mt-1 text-sm font-light text-left text-slate-600">{convertTimestampToDateTime(i.due_date)}</p>
       </div>
     </div>
-    <p className="w-[70%]  p-2 ml-5 mt-1 h-12 text-[17px] font-light text-left ">
+    <p className="w-[70%]  p-2 ml-5 mt-1 h-12 text-[17px] font-normal text-left ">
       {i.content}
     </p>
 
   
-    <motion.div onClick={()=>{completeToDo({id: i.tid})}} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md ${i.completed? 'bg-white/[0.50]':'bg-white/[0.14]'}  border border-white/10`}></motion.div>
+    <motion.div onClick={()=>{completeToDo({id: i.tid})}} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md ${i.completed? 'bg-[#95918C]':''}  border-2 border-[#95918C]`}></motion.div>
   </motion.div>
    )
   })}

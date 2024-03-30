@@ -74,7 +74,7 @@ function Overlay({boards, setQueried, setBoardQuery}) {
     <motion.div initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
-        <motion.div whileHover={{scale:1.05}}    className={`flex z-20 fixed cursor-pointer hover:shadow-inner  top-8 left-8 rounded-full p-1 `}>
+        {/* <motion.div whileHover={{scale:1.05}}    className={`flex z-20 fixed cursor-pointer hover:shadow-inner  top-8 left-8 rounded-full p-1 `}>
 
         <svg className='w-8 h-8' viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M15 22H112" stroke="white" stroke-width="10" stroke-linecap="round"/>
@@ -83,14 +83,14 @@ function Overlay({boards, setQueried, setBoardQuery}) {
 </svg>
       
     
-      </motion.div>
+      </motion.div> */}
 
 
 
     <div className='fixed  top-40 z-20 left-8 '>
-    <motion.button onClick={()=>{setShowModal(true)}} className='invisible flex md:visible p-2 rounded-lg bg-white/20 border   border-white/[0.06] ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mt-[1px]">
+    <motion.button onClick={()=>{setShowModal(true)}} className='invisible flex md:visible p-2 rounded-lg ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ml-1 mt-[1px]">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-</svg><p className='text-md ml-2 '>Add a board</p>
+ </svg>{/*<p className='text-md ml-2 '>Add a board</p> */}
 </motion.button>
 
  <div className='mt-20 invisible  md:visible'>
@@ -98,7 +98,7 @@ function Overlay({boards, setQueried, setBoardQuery}) {
       return(
         <motion.button whileHover={{scale:1.02, rotate:1}} className='flex mt-5 rounded-lg  w-full p-1  '>
           <img src={i.icon} className=' w-6 h-6 ml-2 ' />
-          <p className='mt-1 ml-4 text-sm'>{i.name}</p>
+          {/* <p className='mt-1 ml-4 text-sm'>{i.name}</p> */}
         </motion.button>
       )
     })}
