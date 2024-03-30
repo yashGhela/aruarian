@@ -207,7 +207,7 @@ import { motion } from "framer-motion"
         <header>
            <title>Dashboard</title>
          </header>
-         <main    className=' flex text-neutral-900 bg-cover self-center place-content-center bg-gradient-to-b from-red-50 via-orange-200 to-indigo-200     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         <main  style={{backgroundImage:'url(https://images.unsplash.com/photo-1554147090-e1221a04a025?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}  className=' flex text-neutral-100 bg-cover self-center place-content-center bg-neutral-800     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      <div className="fixed inset-0   bg-black opacity-10"></div>
