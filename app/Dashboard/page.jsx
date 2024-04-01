@@ -135,7 +135,6 @@ import { motion } from "framer-motion"
       const {data, error} = await supabase.from('To-Dos')
       .select('*')
       .eq("UID", user)
-      .eq('completed', false)
       .gte('due_date', todayStart.toISOString())
       .lt('due_date', todayEnd.toISOString());
 

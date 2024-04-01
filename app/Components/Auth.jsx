@@ -107,12 +107,12 @@ export default function Auth() {
  
             
              <div className='flex gap-2'>
-             <input  onChange={(e)=>{setEmail(e.target.value)}}  className='p-2 w-full bg-neutral-50 border border-stone-300 rounded-lg mt-2 text-gray-900 font-normal focus:outline-none ' type="email" placeholder='leodavinci@email.com'/>
-             <input onChange={(e)=>{setPassword(e.target.value)}} className='p-2 w-full bg-neutral-50 border border-stone-300 rounded-lg mt-2 text-gray-900 font-normal focus:outline-none ' type="password" placeholder='******'/>
+             <input  onChange={(e)=>{setEmail(e.target.value)}}  className='p-2 w-full rounded-lg bg-white/40 border  backdrop-blur-sm   border-white/[0.06] font-normal focus:outline-none ' type="email" placeholder='leodavinci@email.com'/>
+             <input onChange={(e)=>{setPassword(e.target.value)}} className='p-2 w-full rounded-lg bg-white/40 border  backdrop-blur-sm   border-white/[0.06]  font-normal focus:outline-none ' type="password" placeholder='******'/>
              
              </div>
-             {checked?<motion.button whileTap={{scale:1.01}} id='login' onClick={()=>{login()}} className='w-full p-4 font-normal  bg-zinc-800 rounded-lg mt-3     hover:bg-zinc-900 '>Log In </motion.button>:
-             <motion.button whileTap={{scale:1.01}} onClick={()=>{signup()}}className='w-full p-4 font-normal  bg-zinc-800 rounded-lg mt-3     hover:bg-zinc-900 '>Sign Up </motion.button>}
+             {checked?<motion.button whileTap={{scale:1.01}} id='login' onClick={()=>{login()}} className='w-full p-4 font-normal  bg-white/40 rounded-lg mt-3     hover:bg-white/50 '>Log In </motion.button>:
+             <motion.button whileTap={{scale:1.01}} onClick={()=>{signup()}}className='w-full p-4 font-normal bg-white/40 rounded-lg mt-3     hover:bg-white/50  '>Sign Up </motion.button>}
              <p  className='text-gray-500 mt-4 text-xs  cursor-pointer'>By signing up you agree to our <Link href='/TermsAndConditions'  className='text-gray-500 mt-4  cursor-pointer underline'>Terms and Conditions</Link> and our <Link href='/PrivacyPolicy' className='text-gray-500 mt-4  cursor-pointer underline'>Privacy Policy</Link> </p>
              
              
