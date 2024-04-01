@@ -3,7 +3,7 @@ import Head from "next/head"
 import Auth from "../Components/Auth"
 import SEO from "../Components/SEO"
 import { useRouter } from "next/navigation"
-// import img1 from  '../../public/assets/logo.png'
+import img1 from  '../assets/logo.png'
 //import { auth } from "../firebaseConfig"
 
 export default function AuthPage() {
@@ -37,8 +37,8 @@ export default function AuthPage() {
    <Auth/>
 
    <div  className="h-[62rem] bg-fit sm:invisible invisible md:visible sm:w-[50%] fixed right-0 -mb-20 lg:w-[50%] md:w-[90%]  mt-10  ">
-{/* 
-    <img onClick={()=>{router.push('/')}}  className="h-20 w-20 shadow-xl md:ml-[24rem] lg:ml-40 ml-40 mt-20 cursor-pointer " src={img1} alt="" /> */}
+
+    <img onClick={()=>{router.push('/')}}  className="h-20 w-20 shadow-xl md:ml-[24rem] lg:ml-40 ml-40 mt-20 cursor-pointer " src={img1} alt="" />
 
     
 
