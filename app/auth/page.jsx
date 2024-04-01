@@ -3,6 +3,7 @@ import Head from "next/head"
 import Auth from "../Components/Auth"
 import SEO from "../Components/SEO"
 import { useRouter } from "next/navigation"
+import img1 from  '../../public/assets/logo.png'
 //import { auth } from "../firebaseConfig"
 
 export default function AuthPage() {
@@ -14,9 +15,11 @@ export default function AuthPage() {
 
 
   return (
-    <div style={{backgroundImage:'url(https://images.unsplash.com/photo-1604275344754-22da9779c2ff?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundPosition: '50% 70%', backgroundRepeat:'no-repeat'}}   className={`flex  self-center place-content-center  bg-neutral-50 text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-auto`}>
+    <div style={{backgroundImage:'url(https://images.unsplash.com/photo-1711619034500-8f562ce7bf4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundPosition: '50% 70%', backgroundRepeat:'no-repeat'}}   className={`flex  self-center place-content-center  bg-neutral-50 text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-auto`}>
 
     <SEO title={'Auth'}/>
+
+    <div className="fixed inset-0   bg-black opacity-10"></div>
 
     
 
@@ -35,7 +38,7 @@ export default function AuthPage() {
 
    <div  className="h-[62rem] bg-fit sm:invisible invisible md:visible sm:w-[50%] fixed right-0 -mb-20 lg:w-[50%] md:w-[90%]  mt-10  ">
 
-    <img onClick={()=>{router.push('/')}}  className="h-20 w-20 shadow-xl md:ml-[24rem] lg:ml-40 ml-40 mt-20 cursor-pointer " src="https://firebasestorage.googleapis.com/v0/b/artfolio-one.appspot.com/o/Resources%2Flogo5.png?alt=media&token=7c137d40-0712-4a16-9bf8-f45ebe35d441" alt="" />
+    <img onClick={()=>{router.push('/')}}  className="h-20 w-20 shadow-xl md:ml-[24rem] lg:ml-40 ml-40 mt-20 cursor-pointer " src={img1} alt="" />
 
     
 

@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '../lib/supabase';
 import { motion } from 'framer-motion';
+import {img1} from '../assets/logo.png'
 
 
 import { setCookie } from 'cookies-next';
@@ -113,13 +114,13 @@ export default function Auth() {
              </div>
              {checked?<motion.button whileTap={{scale:1.01}} id='login' onClick={()=>{login()}} className='w-full p-4 font-normal  bg-white/40 rounded-lg mt-3     hover:bg-white/50 '>Log In </motion.button>:
              <motion.button whileTap={{scale:1.01}} onClick={()=>{signup()}}className='w-full p-4 font-normal bg-white/40 rounded-lg mt-3     hover:bg-white/50  '>Sign Up </motion.button>}
-             <p  className='text-gray-500 mt-4 text-xs  cursor-pointer'>By signing up you agree to our <Link href='/TermsAndConditions'  className='text-gray-500 mt-4  cursor-pointer underline'>Terms and Conditions</Link> and our <Link href='/PrivacyPolicy' className='text-gray-500 mt-4  cursor-pointer underline'>Privacy Policy</Link> </p>
+             <p  className='text-gray-100 mt-4 text-xs  cursor-pointer'>By signing up you agree to our <Link href='/TermsAndConditions'  className='text-gray-100 mt-4  cursor-pointer underline'>Terms and Conditions</Link> and our <Link href='/PrivacyPolicy' className='text-gray-100 mt-4  cursor-pointer underline'>Privacy Policy</Link> </p>
              
              
  
          </div>
 
-         <button className="p-2 text-sm text-zinc-400 mt-10  font-normal mx-[40%] rounded-xl" onClick={()=>{if (checked){setChecked(false)}else{setChecked(true)}}}>{checked? "or Sign Up" : "or Login" }</button>
+         <button className="p-2 text-sm text-zinc-100 mt-10  font-normal mx-[40%] rounded-xl" onClick={()=>{if (checked){setChecked(false)}else{setChecked(true)}}}>{checked? "or Sign Up" : "or Login" }</button>
  
          </>
             
