@@ -96,12 +96,12 @@ export async function POST (req, res){
                             console.log('Successfully uploaded to db!')
                             res.statusCode=201
 
-                            return NextResponse.json( {status:201, message:`Successfully added task to ${response.board}`})
+                            return NextResponse.json( {status:201, message:response.responseMessage})
                         }
                     }else if( response.action==='batchread'){
 
                        
-                        const {data, error} = await supabase.from('To-Dos').select('*').eq('board', response.board).eq('UID', body.userid)
+                        const {data, error} = await supabase.from('To-Dos').select('*').eq('UID', body.userid)
 
                       
                         if(error){

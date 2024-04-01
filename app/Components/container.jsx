@@ -52,9 +52,9 @@ function Container({todos}) {
   
   return (
     <div>
-        <div className="w-[120%] sm:w-full h-[300px]    md:w-[370px] lg:w-full mt-20 lg:mt-0">
+        <div className="w-[120%] sm:w-full h-[300px]    md:w-[370px] lg:w-full xl:w-full mt-20 lg:mt-0">
   <div
-    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[40px] bg-[#b6b1ad]  p-3  "
+    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-3  "
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
   { todos.map((i)=>{
@@ -64,7 +64,7 @@ function Container({todos}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-[#c5c0bc] ">
+    id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-white/10 ">
     <div className="flex">
       <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
         <p className="-mt-1 text-sm font-normal text-left text-gray-700">{i.board} </p>
@@ -78,7 +78,7 @@ function Container({todos}) {
     </p>
 
   
-    <motion.div onClick={()=>{completeToDo({id: i.tid})}} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md ${i.completed? 'bg-[#95918C]':''}  border-2 border-[#95918C]`}></motion.div>
+    <motion.div onClick={()=>{completeToDo({id: i.tid})}} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2  ${i.completed? 'bg-white/[0.50]':'bg-white/[0.14]'} `}></motion.div>
   </motion.div>
    )
   })}

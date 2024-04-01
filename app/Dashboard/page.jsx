@@ -207,7 +207,8 @@ import { motion } from "framer-motion"
         <header>
            <title>Dashboard</title>
          </header>
-         <main    className=' flex text-neutral-500 bg-cover self-center place-content-center bg-[#ECEAE7]     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1711619034500-8f562ce7bf4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}     
+         className=' flex text-neutral-700 bg-cover self-center place-content-center bg-[#ECEAE7] backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      <div className="fixed inset-0   bg-black opacity-10"></div>
@@ -218,7 +219,7 @@ import { motion } from "framer-motion"
         
     {mesSent ?
 
-     <div className="md:mt-[20%] md:ml-[40%] mt-[90%] ml-10 w-[350px] h-self  backdrop-blur-sm    rounded-[40px] bg-white/20 border p-3  border-white/[0.06]">
+     <div className="md:mt-[20%] md:ml-[40%] mt-[90%] ml-10 w-[350px] h-self  backdrop-blur-sm    rounded-[40px] bg-white/40 border p-3  border-white/[0.06]">
 
        {IsLoading ?
 
@@ -278,7 +279,7 @@ import { motion } from "framer-motion"
   <p className=' text-4xl text-left  font-normal'>{greeting} Yash, <br/> You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p>
 
 
-  <div className="lg:ml-[20%] -mt-10" id="to-dos container ">
+  <div className="lg:ml-[20%] md:w-[50%] -mt-10" id="to-dos container ">
 
   <Container boards={boards} todos={todos}/>
 
@@ -314,11 +315,8 @@ import { motion } from "framer-motion"
      <motion.div className=" fixed flex mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
-     <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[22%] lg:ml-[22%] 2xl:ml-[6%] xl:ml-[12%] ml-5 w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-[#c7c1bb] border border-neutral-300   backdrop-blur-sm   " />
-     <motion.button onClick={()=>{sendPrompt(); setMesSent(true); setIsLoading(true)}} whileHover={{scale:1.02}} className=" ml-2 text-white  w-10 focus:outline-none p-2 rounded-lg bg-stone-400 border hover:bg-stone-500  border-neutral-300  " ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
-</svg>
-</ motion.button>
+         <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[22%] lg:ml-[22%] 2xl:ml-[6%] xl:ml-[12%] ml-5 w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/40 border  backdrop-blur-sm   border-white/[0.06]" />
+     <motion.button onClick={()=>{sendPrompt(); setMesSent(true); setIsLoading(true)}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-lg bg-white/40 border hover:bg-white/50  text-white  border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" /></svg> </motion.button>
      </motion.div>
 
  

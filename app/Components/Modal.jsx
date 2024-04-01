@@ -23,7 +23,7 @@ export default function Modal({showModal,setShowModal, children, Header, thin, h
 
             <motion.dialog 
             open={showModal}
-             className={` rounded-[40px] bg-[#97938f] border-2 p-3  backdrop-blur-sm  border-white/[0.06] md:${thin?'md:w-[25%]':'w-[40%]'} md:${modheight} p-5  z-50  fixed inset-1 overflow-auto`}
+             className={` rounded-[40px] bg-neutral-400/80  border-2 p-3  backdrop-blur-sm  border-white/[0.06] md:${thin?'md:w-[25%]':'w-[40%]'} md:${modheight} p-5  z-50  fixed inset-1 overflow-auto`}
              animate={showModal ? "open" : "closed"}
             variants={variants}>
             <div className='grid grid-cols-2  p-2'>
