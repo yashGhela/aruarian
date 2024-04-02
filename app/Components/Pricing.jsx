@@ -57,11 +57,11 @@ export default function Pricing({landing}){
                <div className=" text-left text-neutral-800 p-10">
                <p className="mt-1">This is a fair question and I'll make this quick </p>
 
-<p  className=" mt-5">1. Aruarian is a fully bootstrapped startup (AKA, we have no investors and are fully community backed)</p>
+                <p  className=" mt-5">1. Aruarian is a fully bootstrapped startup (AKA, we have no investors and are fully community backed)</p>
 
-<p  className=" mt-5">2. Because we're bootstrapped we need money to pay for our AI fees (We pay fees to OpenAI to use their GPT systems)</p>
+                <p  className=" mt-5">2. Because we're bootstrapped we need money to pay for our AI fees (We pay fees to OpenAI to use their GPT systems)</p>
 
-<p  className="mt-5">3. We need money to pay our devs and continue further development (so pls support us 💓)</p>
+                <p  className="mt-5">3. We need money to pay our devs and continue further development (so pls support us 💓)</p>
                </div>
                 
             </Modal>

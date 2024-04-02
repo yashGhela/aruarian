@@ -45,6 +45,8 @@ export default function Payment(){
       
         
       try{
+
+        
         LemonSqueezy.Setup({
           eventHandler: async (event) => {
 
@@ -70,19 +72,7 @@ export default function Payment(){
 
 
 
-                  // await setDoc(doc(db,'Users',user,'SubscriptionDetails','sub'),{
-                  //   data: event
-                  // }).then(async(snap)=>{
-                  //   updateDoc(doc(db, 'Users', user), {
-                  //     paid: true,
-                     
-                  //   }).then((snap)=>{
                 
-                  //     LemonSqueezy.Url.Close()
-                  //     router.push('/Dashboard')
-                  //   })
-          
-                  // })
                  }
           }
         })
