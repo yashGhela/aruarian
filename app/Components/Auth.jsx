@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '../lib/supabase';
 import { motion } from 'framer-motion';
-import {img1} from '../assets/logo.png'
+
 
 
 import { setCookie } from 'cookies-next';
@@ -91,7 +91,7 @@ export default function Auth() {
  
     <>
  
- <div  className='mt-52 xl:mx-40 xl:w-[30%] md:w-[50%] text-white fixed left-0 w-full'>
+ <div  className='mt-52 xl:mx-40 xl:w-[30%] md:w-[50%] fixed left-0  w-full'>
 
  
           
@@ -112,9 +112,9 @@ export default function Auth() {
              <input onChange={(e)=>{setPassword(e.target.value)}} className='p-2 w-full rounded-lg bg-white/40 border  backdrop-blur-sm   border-white/[0.06]  font-normal focus:outline-none ' type="password" placeholder='******'/>
              
              </div>
-             {checked?<motion.button whileTap={{scale:1.01}} id='login' onClick={()=>{login()}} className='w-full p-4 font-normal  bg-white/40 rounded-lg mt-3     hover:bg-white/50 '>Log In </motion.button>:
-             <motion.button whileTap={{scale:1.01}} onClick={()=>{signup()}}className='w-full p-4 font-normal bg-white/40 rounded-lg mt-3     hover:bg-white/50  '>Sign Up </motion.button>}
-             <p  className='text-gray-100 mt-4 text-xs  cursor-pointer'>By signing up you agree to our <Link href='/TermsAndConditions'  className='text-gray-100 mt-4  cursor-pointer underline'>Terms and Conditions</Link> and our <Link href='/PrivacyPolicy' className='text-gray-100 mt-4  cursor-pointer underline'>Privacy Policy</Link> </p>
+             {checked?<motion.button whileTap={{scale:1.01}} id='login' onClick={()=>{login()}} className='w-full p-4 font-normal text-white  bg-white/40 rounded-lg mt-3     hover:bg-white/50 '>Log In </motion.button>:
+             <motion.button whileTap={{scale:1.01}} onClick={()=>{signup()}}className='w-full p-4 font-normal bg-white/40 rounded-lg mt-3 text-white    hover:bg-white/50  '>Sign Up </motion.button>}
+             <p  className='text-gray-100 mt-4 text-xs  cursor-pointer'>By signing up you agree to our <Link href='/TermsAndConditions'  className='text-gray-100 mt-4   cursor-pointer underline'>Terms and Conditions</Link> and our <Link href='/PrivacyPolicy' className='text-gray-100 mt-4  cursor-pointer underline'>Privacy Policy</Link> </p>
              
              
  

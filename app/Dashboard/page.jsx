@@ -11,7 +11,7 @@ import { supabase } from "../lib/supabase"
 import { useRouter } from "next/navigation"
 import { getCookie } from "cookies-next"
 import LogOut from "../Components/LogOut"
-import img from '../assets/image 3.png'
+
 import Container from "../Components/container"
 import Overlay from "../Components/Overlay"
 import { motion } from "framer-motion"
@@ -207,7 +207,7 @@ import { motion } from "framer-motion"
            <title>Dashboard</title>
          </header>
          <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1711619034500-8f562ce7bf4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}     
-         className=' flex text-neutral-700 bg-cover self-center place-content-center bg-[#ECEAE7] backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' flex text-neutral-700 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      <div className="fixed inset-0   bg-black opacity-10"></div>
