@@ -70,8 +70,20 @@ import { motion } from "framer-motion"
     let user;
 
     const getUser=async()=>{
-      user = (await supabase.auth.getUser()).data.user.id
+
+      let data;
+      data = (await supabase.auth.getUser())
+
+      if(data.data.user===null){
+        router.push('/auth')
+    }
+
+      user= data.data.user.id
       console.log(user)
+
+    
+
+      
 
       
     }
@@ -235,9 +247,9 @@ import { motion } from "framer-motion"
        :
       <div>
 
-    <p className="text-center text-md font-normal mt-2 p-5 text-white">{responseAI.message}</p>
+    <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{responseAI.message}</p>
 
-    <button onClick={()=>{setMesSent(false)}} className=' text-white p-4 mt-14 w-full rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
+    <button onClick={()=>{setMesSent(false)}} className=' text-white p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
         
       </div>
        
