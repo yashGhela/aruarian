@@ -52,15 +52,17 @@ export default function Pricing({landing}){
             <button onClick={()=>{setOpenModal(true)}} className="p-2 bg-white/40 hover:bg-white/50 border border-white/[0.13] rounded-lg text-white mt-4">Why do I need to pay for this?</button>
 
 
-            <Modal showModal={openModal} setShowModal={setOpenModal} Header={'Why do I need to pay for Aruarian?'} >
+            <Modal showModal={openModal} setShowModal={setOpenModal} height={'h-self'}  Header={'Why do I need to pay for Aruarian?'} >
 
-                <p className="text-neutral-800 mt-5">This is a fair question and I'll make this quick </p>
+               <div className=" text-left text-neutral-800 p-10">
+               <p className="mt-1">This is a fair question and I'll make this quick </p>
 
-                <p  className="text-neutral-800 mt-5">1. Aruarian is a fully bootstrapped startup (AKA, we have no investors and are fully community backed)</p>
+<p  className=" mt-5">1. Aruarian is a fully bootstrapped startup (AKA, we have no investors and are fully community backed)</p>
 
-                <p  className="text-neutral-800 mt-5">2. Because we're bootstrapped we need money to pay for our AI fees (We pay fees to OpenAI to use their GPT systems)</p>
+<p  className=" mt-5">2. Because we're bootstrapped we need money to pay for our AI fees (We pay fees to OpenAI to use their GPT systems)</p>
 
-                <p  className="text-neutral-800 mt-5">2. Because we're bootstrapped we need money to pay for our AI fees (We pay fees to OpenAI to use their GPT systems)</p>
+<p  className="mt-5">3. We need money to pay our devs and continue further development (so pls support us 💓)</p>
+               </div>
                 
             </Modal>
 
