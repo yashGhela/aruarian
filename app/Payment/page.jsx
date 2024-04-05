@@ -1,12 +1,13 @@
 'use client'
 import Link from "next/link"
 import Pricing from "../Components/Pricing"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { getCookie } from "cookies-next"
 import { doc, setDoc, updateDoc } from "firebase/firestore"
 import { supabase } from "../lib/supabase"
 import LemonSqueezy from "@lemonsqueezy/lemonsqueezy.js"
+import CancelSub from "../Components/CancelSub"
 //import { db } from "../firebaseConfig"
 
 
@@ -16,6 +17,12 @@ export default function Payment(){
   //const user= auth.currentUser
 
     const router =useRouter()
+
+    const [useremail, setuseremail]=useState('')
+    const [subscriptions, setSubscriptions]=useState([])
+
+    
+    
 
     
     let user;
@@ -32,54 +39,96 @@ export default function Payment(){
       user= data.data.user.id
       console.log(user)
 
-    
+    getUserEmail()
 
       
 
       
     }
+
+
+    const getUserEmail= async()=>{
+
+      const {data, error} = await supabase.from('Users').select('*').eq('UID',user)
+
+      if (error){
+        console.log(error)
+      }else{
+        console.log(data[0].email)
+        setuseremail(data[0].email)
+      }
+    }
+
+
+    const verifySubscription= async()=>{
+      const searchParams = new URLSearchParams(window.location.search);
+        const state = searchParams.get('paid');
+        
+        if (state === 'Yth3pf7cAs') {
+          try{
+            const response= await fetch('/api/verifysubscription/'+useremail)
+            const data= await response.json();
+            // setSubscriptions(data)
+            console.log(data)
+
+          }catch(error){
+            console.log(error)
+          }
+        }
+    }
     //Code here works 
     useEffect(()=>{
 
       getUser()
+      verifySubscription()
+
+     
+
+
+      
+
+
+        
+  
+   
       
         
-      try{
+      // try{
 
         
-        LemonSqueezy.Setup({
-          eventHandler: async (event) => {
+      //   LemonSqueezy.Setup({
+      //     eventHandler: async (event) => {
 
               
-                 if (event.event==='Checkout.Success'){
+      //            if (event.event==='Checkout.Success'){
 
-                  const {data, error}= await supabase.from('Subscriptions').insert({
-                    data: event,
-                    UID: user
+      //             const {data, error}= await supabase.from('Subscriptions').insert({
+      //               data: event,
+      //               UID: user
 
-                  })
+      //             })
 
-                  if (error){
-                    console.log(error)
-                  }else{
-                    await supabase.from('Users').update({
-                      paid:true
-                    }).then((snap)=>{
-                      LemonSqueezy.Url.Close()
-                      router.push('/onboarding')
-                    })
-                  }
+      //             if (error){
+      //               console.log(error)
+      //             }else{
+      //               await supabase.from('Users').update({
+      //                 paid:true
+      //               }).then((snap)=>{
+      //                 LemonSqueezy.Url.Close()
+      //                 router.push('/onboarding')
+      //               })
+      //             }
 
 
 
                 
-                 }
-          }
-        })
-      }catch(error){
-        console.log(error)
+      //            }
+      //     }
+      //   })
+      // }catch(error){
+      //   console.log(error)
       
-      }
+      // }
       }
         
   ,[])
@@ -103,6 +152,8 @@ export default function Payment(){
 
             <Pricing/>
 
+      
+ 
             
            <div className="mt-[5%] flex-col">
            <Link href='/PrivacyPolicy' className='text-neutral-300 mt-4  cursor-pointer underline'>Privacy Policy</Link><br/>

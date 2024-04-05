@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
 import { motion } from 'framer-motion'
 
-function Container({todos}) {
+function Container({todos, todayStart, todayEnd}) {
 
 
   function convertTimestampToDateTime(timestamp) {
@@ -28,6 +28,29 @@ function Container({todos}) {
 
     return `${year}-${month}-${day}`;
 }
+
+
+// const handleYesterdayTodos = () => {
+//   const yesterdayStart = new Date();
+//   yesterdayStart.setDate(yesterdayStart.getDate() - 1);
+//   yesterdayStart.setHours(0, 0, 0, 0);
+//   const yesterdayEnd = new Date();
+//   yesterdayEnd.setDate(yesterdayEnd.getDate() - 1);
+//   yesterdayEnd.setHours(23, 59, 59, 999);
+//    todayStart= yesterdayStart;
+//    todayEnd= yesterdayEnd
+// };
+
+// const handleTomorrowTodos = () => {
+//   const tomorrowStart = new Date();
+//   tomorrowStart.setDate(tomorrowStart.getDate() + 1);
+//   tomorrowStart.setHours(0, 0, 0, 0);
+//   const tomorrowEnd = new Date();
+//   tomorrowEnd.setDate(tomorrowEnd.getDate() + 1);
+//   tomorrowEnd.setHours(23, 59, 59, 999);
+//   todayStart= tomorrowStart;
+//   todayEnd= tomorrowEnd
+// };
 
   const completeToDo= async({id})=>{
 
@@ -57,6 +80,23 @@ function Container({todos}) {
     className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-3  "
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
+      {/* <div className="flex mb-1 -mt-1">
+        <motion.button whileTap={{scale:1.1}} className='text-white hover:text-teal-50 ml-4 '>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+      </svg>
+
+        </motion.button>
+
+        <motion.button whileTap={{scale:1.1}} className='text-white hover:text-teal-50 float-right ml-[70%] xl:ml-[80%] sm:ml-[80%] md:ml-[70%] '>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+</svg>
+
+
+        </motion.button>
+      </div> */}
+
   { todos.map((i)=>{
    return(
     <motion.div
@@ -82,21 +122,6 @@ function Container({todos}) {
   </motion.div>
    )
   })}
-
-{/* <div id='to-do container' className="w-full h-[114px] rounded-[30px]  bg-white/[0.13] border border-white/10">
-  <div className="flex">
-    <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-[#E0B9E7]/[0.38]">
-      <p className="-mt-1 text-sm font-light text-left text-[#d4a7cc]">Love 💗</p>
-    </div>
-    <div className="w-self ml-2 h-[20px] mt-2 p-1 rounded-lg bg-[#B3C9EA]/[0.38]">
-      <p className="-mt-1 text-sm font-light text-left text-[#526C94]">22:00 Today</p>
-    </div>
-  </div>
-  <p className="w-[70%] ml-5 mt-2 h-12 text-lg font-light text-left ">
-    Date night with Anna at the Bolstro
-  </p>
-  <div className="w-10 h-[33px] -mt-[10%] ml-[80%] rounded-md bg-white/[0.14] border border-white/10"></div>
-</div> */}
 
   
  

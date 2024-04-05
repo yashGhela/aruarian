@@ -73,6 +73,20 @@ export default function Auth() {
      }
 
 
+     useEffect(()=>{
+
+
+      const searchParams = new URLSearchParams(window.location.search);
+      const state = searchParams.get('state');
+      
+      if (state === 'Login') {
+        setChecked(true);
+      }
+
+    },[])
+  
+
+
 
 
  

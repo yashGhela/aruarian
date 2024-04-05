@@ -16,20 +16,11 @@ export default function Pricing({landing}){
     const [openModal, setOpenModal]=useState(false)
     
 
-    const handleFree=async()=>{
-        //Make user free
-    }
-
+   
 
    
 
-    const benefits=[
-        'Benefit 1',
-        'Benefit 2',
-        'Benefit 3',
-        'Benefit 4'
-    ]
-
+    
     const benefitspro=[
         'Benefit 1',
         'Benefit 2',
@@ -103,8 +94,9 @@ export default function Pricing({landing}){
                    
                     Start Now!
                     </button>:
-                    <button  className=" w-[90%] mt-10 font-bold  p-5 rounded-xl text-white bg-white/40 hover:bg-white/50 ">
-                 <a href="https://artfolio.lemonsqueezy.com/checkout/buy/c9ae10bc-5a85-4896-9730-4a4a195bd4fd?embed=1" class="lemonsqueezy-button"> Subscribe</a><script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+                    <button onClick={()=>{window.location.href='https://yashmakesstuff.lemonsqueezy.com/buy/2a15f43c-fe5e-414d-b437-c6c0a13ff5f4'}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl text-white bg-white/40 hover:bg-white/50 ">
+                        {/* Subscribe   <a href="https://artfolio.lemonsqueezy.com/checkout/buy/c9ae10bc-5a85-4896-9730-4a4a195bd4fd?embed=1" class="lemonsqueezy-button"> Subscribe</a><script src="https://assets.lemonsqueezy.com/lemon.js" defer></script> */}
+                        Subscribe
                     </button>
                     }
                 </div>

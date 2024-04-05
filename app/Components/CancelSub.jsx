@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation"
 export default function CancelSub(){
 
   
-  const user= getCookie('useraidt')
+  
   const router= useRouter()
 
     const ls= new LemonSqueezy(process.env.LEMON_KEY)
@@ -22,7 +22,7 @@ export default function CancelSub(){
 
      //const user= auth.currentUser
 
-    /*
+    
       const getSubID=async()=>{
     await getDoc(doc(db,'Users',user)).then((snap)=>{
       setuseremail(snap.data().email)
@@ -55,8 +55,8 @@ export default function CancelSub(){
       
   }
   
+
   
-  */
     
     useEffect(()=>
     {

@@ -43,6 +43,7 @@ import { motion } from "framer-motion"
 
     const [isQueried, setQueried]=useState(false)
 
+  
     const [boardquery, setBoardQuery]=useState('')
  
   
@@ -125,7 +126,6 @@ import { motion } from "framer-motion"
 
       
 
-      // setConversation([...conversation, { message: prompt, isUser: true }, { message: assistantResponse, isUser: false }]);
     }
     
 
@@ -133,16 +133,19 @@ import { motion } from "framer-motion"
 
 
 
-  
+    let todayStart= new Date()
+    let todayEnd= new Date()
     
 
     const getTodos=async()=>{
 
-      const todayStart = new Date();
-      todayStart.setHours(0, 0, 0, 0); // Set time to the start of the day
 
-      const todayEnd = new Date();
+      todayStart.setHours(0, 0, 0, 0);
+   
+
+
       todayEnd.setHours(23, 59, 59, 999); 
+    
       
       const {data, error} = await supabase.from('To-Dos')
       .select('*')
@@ -292,7 +295,7 @@ import { motion } from "framer-motion"
 
   <div className="lg:ml-[20%] md:w-[50%] -mt-10" id="to-dos container ">
 
-  <Container boards={boards} todos={todos}/>
+  <Container boards={boards} todos={todos} todayEnd={todayEnd} todayStart={todayStart} />
 
 
   
