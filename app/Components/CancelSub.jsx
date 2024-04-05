@@ -62,19 +62,19 @@ export default function CancelSub(){
       }else{
         console.log(data[0].email)
         setuseremail(data[0].email)
+        
 
-        verifySubscription({useremail:data[0].email})
+        
       }
 
       
     }
 
 
-    const verifySubscription= async({useremail})=>{
-      const searchParams = new URLSearchParams(window.location.search);
-        const state = searchParams.get('paid');
+    const cancelSub = async()=>{
+   
         
-        if (state === 'Yth3pf7cAs') {
+        
           try{
             const response= await fetch('/api/cancelsub', {
               method:'DELETE', 
@@ -87,21 +87,23 @@ export default function CancelSub(){
             })
             let data= await response.json();
             // setSubscriptions(data)
+
+            console.log(data)
             const isCancelled= data.isCancelled
 
-            console.log(ispaid)
+            console.log(isCancelled)
 
-            if (ispaid){
+            if (isCancelled){
               
               const {data, error}=await supabase.from('Users')
               .update({
-                paid: true 
+                paid: false 
               }).eq('UID', user)
 
               if(error){
                 console.log(error)
               }else{
-                router.push('/onboarding')
+                router.push('/auth')
               }
 
             }
@@ -110,7 +112,7 @@ export default function CancelSub(){
           }catch(error){
             console.log(error)
           }
-        }
+        
     }
     //Code here works 
     useEffect(()=>{
@@ -139,7 +141,7 @@ export default function CancelSub(){
             <div className="p-3">
                 <h1 className="font-normal text-white">Are you sure you want to Cancel your Subscription?</h1>
                 <div className="p-3 mt-10">
-                <motion.button whileHover={{scale:1.05}} className="w-full p-3 bg-red-400/40 mb-3  hover:bg-red-400 text-gray-100 rounded-2xl">Yes</motion.button>
+                <motion.button onClick={()=>{cancelSub()}} whileHover={{scale:1.05}} className="w-full p-3 bg-red-400/40 mb-3  hover:bg-red-400 text-gray-100 rounded-2xl">Yes</motion.button>
                 <motion.button whileHover={{scale:1.05}} onClick={()=>{setShowModal(false)}} className=' text-white p-4 mt-5 w-full rounded-2xl bg-white/20 border font-normal  float-left  border-white/[0.06] '>No, take me back!</motion.button>
                 </div>
             </div>

@@ -68,9 +68,9 @@ export async function GET (req, res){
           }
 
           if (isPaid) {
-            return NextResponse.json({ status: 200, isPaid: true});
+            return NextResponse.json({ status: 200, isPaid: true, data: data});
         } else {
-            return NextResponse.json({ status: 200, isPaid: false});
+            return NextResponse.json({ status: 200, isPaid: false , data: data});
         }
         
          
