@@ -72,3 +72,20 @@ export default async function DELETE (req,res){
       }
 
 }
+
+
+// export async function POST(req, res) {
+//     return NextResponse.methodNotAllowed();
+// }
+
+// export async function GET(req, res) {
+//     return NextResponse.methodNotAllowed();
+// }
+
+// export async function PUT(req, res) {
+//     return NextResponse.methodNotAllowed();
+// }
+
+// export async function PATCH(req, res) {
+//     return NextResponse.methodNotAllowed();
+// }
