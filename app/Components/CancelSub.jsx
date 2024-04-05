@@ -98,7 +98,7 @@ export default function CancelSub(){
               const {data, error}=await supabase.from('Users')
               .update({
                 paid: false 
-              }).eq('UID', user)
+              }).eq('email', useremail)
 
               if(error){
                 console.log(error)

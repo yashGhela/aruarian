@@ -36,7 +36,7 @@ export  async function DELETE (req,res){
        
         if (data.data[i].attributes.user_email === email ) {
          
-            id= data.data[i].attributes.first_subscription_item.id
+            id= data.data[i].attributes.first_subscription_item.subscription_id
             break;
         }
       }
@@ -55,8 +55,9 @@ export  async function DELETE (req,res){
 
        console.log(response.status)
       if (response.status === 200) {
-        console.log(data)
+        
         const data = await response.json();
+        console.log(data)
        
 
         return NextResponse.json({data:data, isCancelled:true});
