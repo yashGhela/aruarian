@@ -5,7 +5,7 @@ export async function GET (req, res){
 
     const url = req.url
 
-    console.log('URL:',url)
+ 
 
     // const supabaseURL= process.env.SUPABASE_URL
     // const supabaseKey = process.env.SERVICE_ROLE_KEY
@@ -17,7 +17,7 @@ export async function GET (req, res){
 
     const email = url.split("verifysubscription/")[1];
 
-    console.log('email:',email)
+
 
 
     try{
@@ -40,7 +40,7 @@ export async function GET (req, res){
         
         const data = await response.json();
     
-        console.log(data)
+    
 
 
         

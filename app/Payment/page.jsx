@@ -104,53 +104,6 @@ export default function Payment(){
       getUser()
      
 
-     
-
-
-      
-
-
-        
-  
-   
-      
-        
-      // try{
-
-        
-      //   LemonSqueezy.Setup({
-      //     eventHandler: async (event) => {
-
-              
-      //            if (event.event==='Checkout.Success'){
-
-      //             const {data, error}= await supabase.from('Subscriptions').insert({
-      //               data: event,
-      //               UID: user
-
-      //             })
-
-      //             if (error){
-      //               console.log(error)
-      //             }else{
-      //               await supabase.from('Users').update({
-      //                 paid:true
-      //               }).then((snap)=>{
-      //                 LemonSqueezy.Url.Close()
-      //                 router.push('/onboarding')
-      //               })
-      //             }
-
-
-
-                
-      //            }
-      //     }
-      //   })
-      // }catch(error){
-      //   console.log(error)
-      
-      // }
       }
         
   ,[])

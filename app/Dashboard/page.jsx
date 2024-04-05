@@ -15,6 +15,7 @@ import LogOut from "../Components/LogOut"
 import Container from "../Components/container"
 import Overlay from "../Components/Overlay"
 import { motion } from "framer-motion"
+import CancelSub from '../Components/CancelSub'
 
 
 
@@ -337,6 +338,7 @@ import { motion } from "framer-motion"
    <div className="invisible md:visible">
     
    <LogOut/>
+   <CancelSub/>
    </div>
      
         </div>
