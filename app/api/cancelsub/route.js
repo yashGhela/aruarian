@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export default async function DELETE (req,res){
+export  async function DELETE (req,res){
 
     const body = await req.json()
 
@@ -9,6 +9,7 @@ export default async function DELETE (req,res){
     const lemon= process.env.LEMON_KEY
 
     const email=body.email
+    console.log(email)
 
 
 
@@ -52,15 +53,16 @@ export default async function DELETE (req,res){
         },
       });
 
-
-      if (response.status === 201) {
+       console.log(response.status)
+      if (response.status === 200) {
+        console.log(data)
         const data = await response.json();
-        res.status(200).json({data:data, isCancelled:true});
+       
 
         return NextResponse.json({data:data, isCancelled:true});
       } else {
         const error = await response.json();
-        console.log(error.detail)
+        console.log('This is the error:',error.detail)
         return NextResponse.json(
             {
                 detail:error.detail
@@ -74,18 +76,3 @@ export default async function DELETE (req,res){
 }
 
 
-// export async function POST(req, res) {
-//     return NextResponse.methodNotAllowed();
-// }
-
-// export async function GET(req, res) {
-//     return NextResponse.methodNotAllowed();
-// }
-
-// export async function PUT(req, res) {
-//     return NextResponse.methodNotAllowed();
-// }
-
-// export async function PATCH(req, res) {
-//     return NextResponse.methodNotAllowed();
-// }
