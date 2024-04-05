@@ -5,6 +5,8 @@ export async function GET (req, res){
 
     const url = req.url
 
+    console.log('URL:',url)
+
     // const supabaseURL= process.env.SUPABASE_URL
     // const supabaseKey = process.env.SERVICE_ROLE_KEY
 
@@ -13,7 +15,9 @@ export async function GET (req, res){
     // const ls= new LemonSqueezy(process.env.LEMON_KEY)
 
 
-    const email = url.split("predictions/")[1];
+    const email = url.split("verifysubscription/")[1];
+
+    console.log('email:',email)
 
 
     try{
@@ -40,7 +44,7 @@ export async function GET (req, res){
 
         let isPaid = false;
         for (let i=0; i< data.length; i++){
-            if (data[i].attributes.user_email === email) {
+            if (data[i].attributes.user_email === email ) {
                 isPaid = true;
                 break;
             }
@@ -57,9 +61,9 @@ export async function GET (req, res){
           }
 
           if (isPaid) {
-            return NextResponse.json({ status: 200, message: 'User is paid' });
+            return NextResponse.json({ status: 200, message: 'User is paid', data:data });
         } else {
-            return NextResponse.json({ status: 200, message: 'User is not paid' });
+            return NextResponse.json({ status: 200, message: 'User is not paid', data:data });
         }
         
          

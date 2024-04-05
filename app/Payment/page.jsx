@@ -56,20 +56,22 @@ export default function Payment(){
       }else{
         console.log(data[0].email)
         setuseremail(data[0].email)
+
+        verifySubscription({useremail:data[0].email})
       }
 
-      verifySubscription()
+      
     }
 
 
-    const verifySubscription= async()=>{
+    const verifySubscription= async({useremail})=>{
       const searchParams = new URLSearchParams(window.location.search);
         const state = searchParams.get('paid');
         
         if (state === 'Yth3pf7cAs') {
           try{
             const response= await fetch('/api/verifysubscription/'+useremail)
-            const data= await response.json();
+            let data= await response.json();
             // setSubscriptions(data)
             console.log(data)
 
