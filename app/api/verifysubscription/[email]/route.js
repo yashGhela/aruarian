@@ -42,9 +42,16 @@ export async function GET (req, res){
     
         console.log(data)
 
+
+        
+
+        
+
         let isPaid = false;
-        for (let i=0; i< data.length; i++){
-            if (data[i].attributes.user_email === email ) {
+        for (let i=0; i< data.data.length; i++){
+          console.log(data.data[i].attributes.user_email)
+            if (data.data[i].attributes.user_email === email ) {
+             
                 isPaid = true;
                 break;
             }
