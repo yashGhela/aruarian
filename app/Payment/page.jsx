@@ -57,6 +57,8 @@ export default function Payment(){
         console.log(data[0].email)
         setuseremail(data[0].email)
       }
+
+      verifySubscription()
     }
 
 
@@ -80,7 +82,7 @@ export default function Payment(){
     useEffect(()=>{
 
       getUser()
-      verifySubscription()
+     
 
      
 

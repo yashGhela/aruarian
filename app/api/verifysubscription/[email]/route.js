@@ -13,7 +13,7 @@ export async function GET (req, res){
     // const ls= new LemonSqueezy(process.env.LEMON_KEY)
 
 
-    const email = url.split("verifysubscription/")[1];
+    const email = url.split("predictions/")[1];
 
 
     try{
@@ -70,5 +70,3 @@ export async function GET (req, res){
     
 
 }
-
-
