@@ -94,7 +94,7 @@ export default function Pricing({landing}){
                    
                     Start Now!
                     </button>:
-                    <button onClick={()=>{window.location.href='https://yashmakesstuff.lemonsqueezy.com/buy/2a15f43c-fe5e-414d-b437-c6c0a13ff5f4'}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl text-white bg-white/40 hover:bg-white/50 ">
+                    <button onClick={()=>{window.location.href='https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c'}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl text-white bg-white/40 hover:bg-white/50 ">
                         {/* Subscribe   <a href="https://artfolio.lemonsqueezy.com/checkout/buy/c9ae10bc-5a85-4896-9730-4a4a195bd4fd?embed=1" class="lemonsqueezy-button"> Subscribe</a><script src="https://assets.lemonsqueezy.com/lemon.js" defer></script> */}
                         Subscribe
                     </button>
