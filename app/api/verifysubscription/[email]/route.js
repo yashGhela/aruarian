@@ -49,7 +49,7 @@ export async function GET (req, res){
 
         let isPaid = false;
         for (let i=0; i< data.data.length; i++){
-          console.log(data.data[i].attributes.user_email)
+       
             if (data.data[i].attributes.user_email === email ) {
              
                 isPaid = true;
@@ -68,9 +68,9 @@ export async function GET (req, res){
           }
 
           if (isPaid) {
-            return NextResponse.json({ status: 200, message: 'User is paid', data:data });
+            return NextResponse.json({ status: 200, isPaid: true});
         } else {
-            return NextResponse.json({ status: 200, message: 'User is not paid', data:data });
+            return NextResponse.json({ status: 200, isPaid: false});
         }
         
          

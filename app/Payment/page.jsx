@@ -73,7 +73,25 @@ export default function Payment(){
             const response= await fetch('/api/verifysubscription/'+useremail)
             let data= await response.json();
             // setSubscriptions(data)
-            console.log(data)
+            const ispaid= data.isPaid
+
+            console.log(ispaid)
+
+            if (ispaid){
+              
+              const {data, error}=await supabase.from('Users')
+              .update({
+                paid: true 
+              }).eq('UID', user)
+
+              if(error){
+                console.log(error)
+              }else{
+                router.push('/onboarding')
+              }
+
+            }
+
 
           }catch(error){
             console.log(error)
