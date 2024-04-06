@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { supabase } from "../lib/supabase"
 
+
 //import { auth } from "../firebaseConfig"
 
 
@@ -70,6 +71,16 @@ export default function CancelSub(){
       
     }
 
+    const signOut= async()=>{
+      const {error} = await supabase.auth.signOut()
+
+      if(error){
+        console.log(error)
+      }else{
+        router.push('/')
+      }
+    }
+
 
     const cancelSub = async()=>{
    
@@ -104,6 +115,7 @@ export default function CancelSub(){
                 console.log(error)
               }else{
                 router.push('/auth')
+                signOut()
               }
 
             }

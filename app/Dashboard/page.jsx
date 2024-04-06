@@ -193,6 +193,12 @@ import CancelSub from '../Components/CancelSub'
 
       getUserBoards()
 
+      let cook= getCookie('nP')
+
+      if(cook){
+        router.push('/Payment')
+      }
+
       
 
 

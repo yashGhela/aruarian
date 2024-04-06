@@ -26,7 +26,7 @@ export default function Auth() {
 
   
     const login = async()=>{ 
-       const {data,error}=await supabase.auth.signInWithPassword({
+       const {data1,error}=await supabase.auth.signInWithPassword({
       email:email,
       password:password
       })
@@ -34,9 +34,30 @@ export default function Auth() {
       if(error){
         console.log(error)
       }else{
-        router.push('/Dashboard')
+        
+  
+
+
+      const {data, error} = await supabase.from('Users').select('*').eq('email',email)
+
+      if (error){
+        console.log(error)
+      }else{
+        if (data.paid){
+          router.push('/Dashboard')
        
-        console.log(data)
+          console.log(data)
+        }else{
+          setCookie('nP',true)
+          router.push('/Payment')
+        }
+        
+
+        
+      }
+
+      
+    
       }
       
      }
