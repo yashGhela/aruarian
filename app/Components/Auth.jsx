@@ -40,10 +40,12 @@ export default function Auth() {
 
       const {data, error} = await supabase.from('Users').select('*').eq('email',email)
 
+      console.log(data[0].paid)
+
       if (error){
         console.log(error)
       }else{
-        if (data.paid){
+        if (data[0].paid){
           router.push('/Dashboard')
        
           console.log(data)
