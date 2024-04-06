@@ -129,6 +129,7 @@ export async function POST (req, res){
 
                        
                        console.log(response.responseMessage)
+                       console.log(response.taskOrder)
 
 
                        console.log('Successfully read the db!')

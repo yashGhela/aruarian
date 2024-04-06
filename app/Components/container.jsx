@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
 import { motion } from 'framer-motion'
 
-function Container({todos, todayStart, todayEnd}) {
+function Container({todos, todayStart, todayEnd, isRes}) {
 
 
   function convertTimestampToDateTime(timestamp) {
@@ -75,7 +75,7 @@ function Container({todos, todayStart, todayEnd}) {
   
   return (
     <div>
-        <div className="w-[120%] sm:w-full h-[300px]    md:w-[370px] lg:w-full xl:w-full mt-20 lg:mt-0">
+        <div className={` ${isRes?'w-full':'w-[120%]'} sm:w-full h-[300px]    md:w-[370px] lg:w-full xl:w-full mt-20 lg:mt-0`}>
   <div
     className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-3  "
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>

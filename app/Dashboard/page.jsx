@@ -44,6 +44,8 @@ import CancelSub from '../Components/CancelSub'
 
     const [isQueried, setQueried]=useState(false)
 
+    const [AIData, setAIData]=useState([])
+
   
     const [boardquery, setBoardQuery]=useState('')
  
@@ -116,6 +118,10 @@ import CancelSub from '../Components/CancelSub'
 
         console.log(snap)
         setIsLoading(false)
+
+        if (snap.tasks){
+          setAIData(snap.tasks)
+        }
 
       //   setTimeout(() => {
       //     setMesSent(false);
@@ -240,7 +246,7 @@ import CancelSub from '../Components/CancelSub'
         
     {mesSent ?
 
-     <div className="md:mt-[20%] md:ml-[40%] mt-[90%] ml-10 w-[350px] h-self  backdrop-blur-sm    rounded-[40px] bg-white/40 border p-3  border-white/[0.06]">
+     <div className="md:mt-[10%] md:ml-[40%] mt-[30%] ml-5 w-[350px] h-self  backdrop-blur-sm    rounded-[40px] bg-white/40 border p-3  border-white/[0.06]">
 
        {IsLoading ?
 
@@ -258,6 +264,10 @@ import CancelSub from '../Components/CancelSub'
       <div>
 
     <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{responseAI.message}</p>
+
+    {/* <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{JSON.stringify(responseAI.tasks)}</p> */}
+
+   {AIData && <Container todos={AIData} isRes={true}/>}
 
     <button onClick={()=>{setMesSent(false)}} className=' text-white p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
         
@@ -302,7 +312,7 @@ import CancelSub from '../Components/CancelSub'
 
   <div className="lg:ml-[20%] md:w-[50%] -mt-10" id="to-dos container ">
 
-  <Container boards={boards} todos={todos} todayEnd={todayEnd} todayStart={todayStart} />
+  <Container isRes={false} boards={boards} todos={todos} todayEnd={todayEnd} todayStart={todayStart} />
 
 
   
