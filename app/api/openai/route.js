@@ -28,11 +28,18 @@ export async function POST (req, res){
 
     const assistantID = process.env.ASSISTANT_ID
 
+
+    const {data, error} = await supabase.from('To-Dos').select('*').eq('UID', body.userid)
+
+    if(error){
+        console.log(error)
+    }
+
     let run = await openai.beta.threads.createAndRun({
         assistant_id: assistantID,
         thread:{
             messages:[
-                {role:'user', content: body.prompt+` todays date is ${currentDate}`}
+                {role:'user', content: body.prompt+` todays date is ${currentDate}  `+'userdata: '+JSON.stringify(data)}
             ]
         }
     })
@@ -79,7 +86,7 @@ export async function POST (req, res){
                     response = jsonObject;
                     console.log(response);
                     console.log(response.action)
-
+                     //INSERT
                     if (response.function==='insert' || response.action==='insert'){
                         const {data, error} =  await supabase.from('To-Dos').insert({
                             content: response.content, 
@@ -98,79 +105,30 @@ export async function POST (req, res){
 
                             return NextResponse.json( {status:201, message:response.responseMessage})
                         }
-                    }else if( response.action==='batchread'){
+
+
+
+
+
+
+
+
+
+
+                    }else if( response.action==='read'){
 
                        
-                        const {data, error} = await supabase.from('To-Dos').select('*').eq('UID', body.userid)
+                       console.log(response.responseMessage)
+
+
+                       console.log('Successfully read the db!')
+                        res.statusCode=201
+
+                        return NextResponse.json( {status:201, message:response.responseMessage, tasks:response.taskOrder})
+
 
                       
-                        if(error){
-                            console.log('the error is '+ error)
-                            
-                            res.statusCode=500
-                            return NextResponse.json({error:error,status:500})
-                        }else{
-
-
-                           
-
-
-                            const messagesArray = messages.data.map(message => ({ role: 'user', content: message.content[0].text.value }));
-                            messagesArray.push({ role: 'user', content: 'The data from our batch read is ' + JSON.stringify(data) });
-
-
-                            console.log(messagesArray)
-
-                            
-
-                          try{
-                            let run2 = await openai.beta.threads.createAndRun({
-                                assistant_id: assistantID,
-                                thread: { messages: messagesArray }
-                            });
-
-                            
-                            while (['queued', 'in_progress', 'cancelling'].includes(run2.status)) {
-                                await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
-                                run2 = await openai.beta.threads.runs.retrieve(
-                                    run2.thread_id,
-                                    run2.id,
-                                
-                                );
-                            }
-
-
-
-
-                            if (run2.status === 'completed') {
-                                
-                                messages = await openai.beta.threads.messages.list(
-                                   run2.thread_id
-                               );
-                               for (const message of messages.data.reverse()) {
-                                   
-                       
-                       
-                                let text = messages.data[messages.data.length - 1].content[0].text.value;
-
-                                   console.log(text)
-
-                                   res.statusCode=201
-
-                                   return NextResponse.json( {status:201, message:text})
-                               }
-                            }else if (run2.status==='failed'){
-                                console.log('run failed')
-                                console.log(run2.last_error)
-                                res.statusCode=500
-                                return NextResponse.json({error:error,status:500})
-                            }
-                          }catch(error){
-                            console.error('Error: '+error)
-                            res.statusCode=500
-                            return NextResponse.json({error:error,status:500})
-                          }
-                        }
+                        
                     }
                 } catch (error) {
                     console.error("Error parsing JSON:", error);
