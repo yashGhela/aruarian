@@ -32,20 +32,29 @@ export async function POST (req, res){
     const {data, error} = await supabase.from('To-Dos').select('*').eq('UID', body.userid)
 
     if(error){
-        console.log(error)
+        console.log('Error is: ',error)
     }
+
+    console.log(data)
+
+
+    let objArray=[];
+    const obj = Object.fromEntries(data.entries());
+    objArray.push(obj);
+
+    console.log(objArray)
 
     let run = await openai.beta.threads.createAndRun({
         assistant_id: assistantID,
         thread:{
             messages:[
-                {role:'user', content: body.prompt+` todays date is ${currentDate}  `+'userdata: '+JSON.stringify(data)}
+                {role:'user', content: body.prompt+` todays date is ${currentDate}  `+'userdata: '+JSON.stringify(objArray)}
             ]
         }
     })
 
     if (run.status==='failed'){
-        console.log(run.last_error)
+        console.log('Run error: '+run.last_error)
         res.statusCode = 500;
 
         return NextResponse.json(
@@ -62,6 +71,7 @@ export async function POST (req, res){
           run.id,
           
         );
+        
       }
 
 
