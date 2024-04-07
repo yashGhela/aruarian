@@ -27,11 +27,6 @@ import { useRouter } from 'next/navigation'
 export default function Home() {
   const router = useRouter()
 
-  useEffect(()=>{
-
-    router.push('/auth')
-
-  })
   
 
 
@@ -43,16 +38,20 @@ export default function Home() {
     
   <div >
     
-      <main className=' flex self-center place-content-center text-white  bg-white text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      <main 
+      
+      className=' flex self-center place-content-center text-white bg-gradient-to-b from-slate-400 via-gray-300 to-red-300 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    
 
      <div className=' md:w-[70rem] lg:w-full justify-center w-[25rem] mr-0 flex-col '>
 
-      <p className='text-black text-xl font-light'>Welcome to Yash's next template!</p>
 
-      <Link href='/auth' className=' p-2 rounded-2xl bg-black font-normal text-center mt-20 hover:shadow-md'>Auth </Link>
+      <LandingBar isLand={true}/>
+
+      <LandingHero/>
+  
       
 
       

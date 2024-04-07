@@ -234,8 +234,8 @@ import CancelSub from '../Components/CancelSub'
         <header>
            <title>Dashboard</title>
          </header>
-         <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1508796079212-a4b83cbf734d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}     
-         className=' flex text-neutral-800 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         <main 
+         className=' flex text-neutral-800 bg-gradient-to-b from-slate-400 via-gray-300 to-red-300 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      <div className="fixed inset-0   bg-black opacity-10"></div>

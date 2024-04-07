@@ -7,21 +7,23 @@ import { motion } from "framer-motion";
 export default function LandingBar({isLand}){
   const router = useRouter()
     return(
-        <div className={`flex justify-center items-center ml-10 lg:mx-[10%] w-full md:w-[90%] lg:w-[80%] h-14 rounded-md mt-0 text-center`}>
-        <p className={` text-gray-500 font-bold   mt-4`}>Project Name </p>
+        <div className={`flex justify-center items-center ml-0 lg:mx-[10%] w-full md:w-[90%] lg:w-full h-14 rounded-md mt-0 text-center`}>
+       {/* <motion.img whileHover={{scale:1.04}} onClick={()=>{router.push('/')}}  className="h-14 w-14 float-right   mt-12 cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/aruarianlogo2.png' alt="" />
+
+     */}
       
      
         {isLand?
-      <div className='mt-5 md:ml-[20%] -ml-52  flex'>
-      <SmoothScrollLink to='features' >Features</SmoothScrollLink>
+      <div className='mt-5 float-right left-10 fixed  flex'>
+      <SmoothScrollLink to='features' >About</SmoothScrollLink>
         <SmoothScrollLink to='pricing' >Pricing</SmoothScrollLink>
        
         
        </div>:null}
 
-       <div className={`flex mt-8 ${isLand?'md:ml-[1%] lg:ml-[20%]': 'md:ml-[80%] lg:ml-[60%]'} ml-28 sm:ml-28 `}>
-       <Link href='/auth?state=Login'  className={`p-3  ml-2 md:ml-4 mt-0 pt-1 underline   font-normal text-gray-400  rounded-md`}>Login</Link>
-       <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className={`font-bold shadow-lg  md:w-full md:h-full  h-full text-sm    md:text-md rounded-xl bg-blue-400 hover:bg-blue-600 -mt-1 ml-2   p-2 mr-1`}>Start Now</motion.button>
+       <div className={`flex mt-8 fixed right-10`}>
+       <Link href='/auth?state=Login'  className={`  ml-2 md:ml-4  pt-1 underline   p-4 mt-10 font-normal text-neutral-300  rounded-md`}>Login</Link>
+       <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' text-white p-4 mt-5 w-full ml-2 rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] '>Start Now</motion.button>
         
 
        </div>

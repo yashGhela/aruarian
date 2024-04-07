@@ -16,7 +16,7 @@ export function SmoothScrollLink({ to, children }) {
     };
   
     return (
-      <Link to={to} onClick={handleClick}  className={`text-gray-400 sm:invisible invisible md:visible ml-8 cursor-pointer`}>
+      <Link to={to} onClick={handleClick}  className={` mt-12 p-4 sm:invisible invisible md:visible ml-8 cursor-pointer`}>
         {children}
       </Link>
     );
