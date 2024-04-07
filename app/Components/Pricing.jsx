@@ -39,8 +39,8 @@ export default function Pricing({landing}){
         
            
 
-            <p className="text-black text-2xl font-normal">Pricing</p>
-            <button onClick={()=>{setOpenModal(true)}} className="p-2 bg-white/40 hover:bg-white/50 border border-white/[0.13] rounded-lg text-white mt-4">Why do I need to pay for this?</button>
+            <p className=" text-2xl font-normal">Pricing</p>
+            <button onClick={()=>{setOpenModal(true)}} className="p-2 bg-white/40 hover:bg-white/50 border border-white/[0.13] rounded-lg  mt-4">Why do I need to pay for this?</button>
 
 
             <Modal showModal={openModal} setShowModal={setOpenModal} height={'h-self'}  Header={'Why do I need to pay for Aruarian?'} >
@@ -94,7 +94,7 @@ export default function Pricing({landing}){
                    
                     Start Now!
                     </button>:
-                    <button onClick={()=>{window.location.href='https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c'}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl text-white bg-white/40 hover:bg-white/50 ">
+                    <button onClick={()=>{window.location.href='https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c'}} className=" w-[90%] mt-10 font-bold  p-5 rounded-2xl  bg-white/40 hover:bg-white/50 ">
                         {/* Subscribe   <a href="https://artfolio.lemonsqueezy.com/checkout/buy/c9ae10bc-5a85-4896-9730-4a4a195bd4fd?embed=1" class="lemonsqueezy-button"> Subscribe</a><script src="https://assets.lemonsqueezy.com/lemon.js" defer></script> */}
                         Subscribe
                     </button>

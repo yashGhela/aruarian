@@ -121,7 +121,7 @@ export default function Payment(){
   
 
     return(
-        <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1508796079212-a4b83cbf734d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}  className=' flex self-center place-content-center  bg-white text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+        <main  className=' flex self-center place-content-center  text-neutral-700 bg-gradient-to-b from-slate-300 via-zinc-300 to-orange-200 text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
            <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
             <header>
                 <title>Payments</title>
@@ -137,8 +137,8 @@ export default function Payment(){
  
             
            <div className="mt-[5%] flex-col">
-           <Link href='/PrivacyPolicy' className='text-neutral-300 mt-4  cursor-pointer underline'>Privacy Policy</Link><br/>
-           <Link href='/TermsAndConditions'  className='text-neutral-300 mt-4  cursor-pointer underline'>Terms and Conditions</Link> 
+           <Link href='/PrivacyPolicy' className=' mt-4  cursor-pointer underline'>Privacy Policy</Link><br/>
+           <Link href='/TermsAndConditions'  className=' mt-4  cursor-pointer underline'>Terms and Conditions</Link> 
            </div>
             </div>
 
