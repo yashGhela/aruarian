@@ -15,7 +15,7 @@ export default function AuthPage() {
 
 
   return (
-    <div    className={`flex  self-center place-content-center  bg-gradient-to-b from-slate-400 via-gray-300 to-red-300 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
+    <div    className={`flex  self-center place-content-center  bg-gradient-to-b from-slate-300 via-zinc-200 to-stone-300 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
 
     <SEO title={'Auth'}/>
 
@@ -42,7 +42,7 @@ export default function AuthPage() {
 
     
 
-    <img className=' rounded-lg sm:invisible invisible sm:w-[50%] ml-40 md:ml-[24rem] lg:ml-40 mt-10  md:visible md:w-[50%] md:h-[40%] lg:h-[50%] m-2 lg:w-[50%] border shadow-xl ' src="https://firebasestorage.googleapis.com/v0/b/artfolio-one.appspot.com/o/Resources%2FUntitled%20design%20(1).gif?alt=media&token=38672d5b-719c-4758-9049-8f7f960cc24c" alt="" /> 
+    <img className=' rounded-lg sm:invisible invisible sm:w-[50%] ml-40 md:ml-[24rem] lg:ml-40 mt-10  md:visible md:w-[50%] md:h-[40%] lg:h-[50%] m-2 lg:w-[50%] border shadow-xl ' src="https://framerusercontent.com/images/XCMYqoWe7vIOkGT1tHRxKKu4Y.gif" alt="" /> 
              
         
     

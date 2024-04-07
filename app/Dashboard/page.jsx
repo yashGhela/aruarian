@@ -235,7 +235,7 @@ import CancelSub from '../Components/CancelSub'
            <title>Dashboard</title>
          </header>
          <main 
-         className=' flex text-neutral-800 bg-gradient-to-b from-slate-400 via-gray-300 to-red-300 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' flex text-neutral-700 bg-gradient-to-b from-slate-300 via-zinc-300 to-orange-200 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      <div className="fixed inset-0   bg-black opacity-10"></div>
@@ -267,9 +267,10 @@ import CancelSub from '../Components/CancelSub'
 
     {/* <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{JSON.stringify(responseAI.tasks)}</p> */}
 
-   {AIData && <Container todos={AIData} isRes={true}/>}
+   {AIData ?
+    <Container todos={AIData} isRes={true}/>:null}
 
-    <button onClick={()=>{setMesSent(false); setPrompt('')}} className=' text-white p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
+    <button onClick={()=>{setMesSent(false); setPrompt('')}} className='  p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
         
       </div>
        
@@ -307,7 +308,7 @@ import CancelSub from '../Components/CancelSub'
    
   <div className="mt-8 mx-20 xs:flex-col lg:flex  xl:flex">
    
-  <p className=' text-4xl text-left  font-normal'>{greeting} Yash, <br/> You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p>
+  <p className=' text-4xl text-left  font-normal'>{greeting}, <br/> You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p>
 
 
   <div className="lg:ml-[20%] md:w-[50%] -mt-10" id="to-dos container ">
@@ -347,9 +348,9 @@ import CancelSub from '../Components/CancelSub'
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
     <div className="flex md:visible invisible mb-2">
-    <motion.button onClick={()=>{setPrompt('What work do I have for today?'); }} whileHover={{scale:1.03}} className='  ml-[7.2rem] w-1/6 focus:outline-none p-2 rounded-lg bg-white/40 text-white  hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
-    <motion.button onClick={()=>{setPrompt('What tasks are overdue?'); }} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40 text-white  hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
-    <motion.button onClick={()=>{setPrompt('Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40 text-white  hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>
+    <motion.button onClick={()=>{setPrompt('What work do I have for today?'); }} whileHover={{scale:1.03}} className='  ml-[7.2rem] w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
+    <motion.button onClick={()=>{setPrompt('What tasks are overdue?'); }} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
+    <motion.button onClick={()=>{setPrompt('Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>
 
 
     </div>

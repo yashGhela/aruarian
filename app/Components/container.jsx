@@ -118,7 +118,7 @@ function Container({todos, todayStart, todayEnd, isRes}) {
     </p>
 
   
-    <motion.div onClick={()=>{completeToDo({id: i.tid})}} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2  ${i.completed? 'bg-white/[0.50]':'bg-white/[0.14]'} `}></motion.div>
+    <motion.div onClick={()=>{completeToDo({id: i.tid})}} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2 border-neutral-400  ${i.completed? 'bg-white/[0.50]':'bg-white/[0.14]'} `}></motion.div>
   </motion.div>
    )
   })}
