@@ -35,14 +35,14 @@ export async function POST (req, res){
         console.log('Error is: ',error)
     }
 
-    console.log(data)
+  
 
 
     let objArray=[];
     const obj = Object.fromEntries(data.entries());
     objArray.push(obj);
 
-    console.log(objArray)
+
 
     let run = await openai.beta.threads.createAndRun({
         assistant_id: assistantID,

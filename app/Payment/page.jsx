@@ -3,7 +3,7 @@ import Link from "next/link"
 import Pricing from "../Components/Pricing"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { getCookie } from "cookies-next"
+import { deleteCookie, getCookie } from "cookies-next"
 import { doc, setDoc, updateDoc } from "firebase/firestore"
 import { supabase } from "../lib/supabase"
 import LemonSqueezy from "@lemonsqueezy/lemonsqueezy.js"
@@ -88,6 +88,12 @@ export default function Payment(){
                 console.log(error)
               }else{
                 router.push('/onboarding')
+
+                let cook = getCookie('nP')
+
+                if (cook){
+                  deleteCookie('nP')
+                }
               }
 
             }
@@ -115,7 +121,7 @@ export default function Payment(){
   
 
     return(
-        <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1711619034500-8f562ce7bf4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}  className=' flex self-center place-content-center  bg-white text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+        <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1508796079212-a4b83cbf734d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}  className=' flex self-center place-content-center  bg-white text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
            <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
             <header>
                 <title>Payments</title>

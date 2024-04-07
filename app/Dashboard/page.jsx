@@ -234,7 +234,7 @@ import CancelSub from '../Components/CancelSub'
         <header>
            <title>Dashboard</title>
          </header>
-         <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1508615070457-7baeba4003ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}     
+         <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1508796079212-a4b83cbf734d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}}     
          className=' flex text-neutral-800 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
@@ -269,7 +269,7 @@ import CancelSub from '../Components/CancelSub'
 
    {AIData && <Container todos={AIData} isRes={true}/>}
 
-    <button onClick={()=>{setMesSent(false)}} className=' text-white p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
+    <button onClick={()=>{setMesSent(false); setPrompt('')}} className=' text-white p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
         
       </div>
        
@@ -343,11 +343,21 @@ import CancelSub from '../Components/CancelSub'
       )} */}
 
      
-     <motion.div className=" fixed flex mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
+     <motion.div className=" fixed flex-col mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
-         <input onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[22%] lg:ml-[22%] 2xl:ml-[6%] xl:ml-[12%] ml-5 w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/40 border  backdrop-blur-sm   border-white/[0.06]" />
+    <div className="flex md:visible invisible mb-2">
+    <motion.button onClick={()=>{setPrompt('What work do I have for today?'); }} whileHover={{scale:1.03}} className='  ml-[7.2rem] w-1/6 focus:outline-none p-2 rounded-lg bg-white/40 text-white  hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
+    <motion.button onClick={()=>{setPrompt('What tasks are overdue?'); }} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40 text-white  hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
+    <motion.button onClick={()=>{setPrompt('Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40 text-white  hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>
+
+
+    </div>
+    <div className="flex">
+   
+       <input value={prompt} onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[22%] lg:ml-[22%] 2xl:ml-[6%] xl:ml-[12%] ml-5 w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/40 border  backdrop-blur-sm   border-white/[0.06]" />
      <motion.button onClick={()=>{sendPrompt(); setMesSent(true); setIsLoading(true)}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-lg bg-white/40 border hover:bg-white/50  text-white  border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" /></svg> </motion.button>
+    </div>
      </motion.div>
 
  

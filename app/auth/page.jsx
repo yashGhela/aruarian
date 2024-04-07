@@ -15,7 +15,7 @@ export default function AuthPage() {
 
 
   return (
-    <div style={{backgroundImage:'url(https://images.unsplash.com/photo-1711619034500-8f562ce7bf4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundPosition: '50% 70%', backgroundRepeat:'no-repeat'}}   className={`flex  self-center place-content-center  bg-neutral-50 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
+    <div style={{backgroundImage:'url(https://images.unsplash.com/photo-1508796079212-a4b83cbf734d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundPosition: '50% 70%', backgroundRepeat:'no-repeat'}}   className={`flex  self-center place-content-center  bg-neutral-50 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
 
     <SEO title={'Auth'}/>
 
