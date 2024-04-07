@@ -25,12 +25,12 @@ export default function LandingHero(){
 
       <div className="flex-1">
 
-       <div className='mx-[20%]'>
+       <div className='md:mx-[20%] -mx-432'>
      
        <motion.p initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: false  }} 
-        className='w-full mt-2 h-full overflow-y-auto  backdrop-blur-sm  lg:w-1/2 text-left    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-10'>
+        className='w-full mt-2 h-full overflow-y-auto  backdrop-blur-sm  md:w-1/2 text-left    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-10'>
             Hey Ari, remind me to get some pizzas for John's part on Friday.
         </motion.p>
 
@@ -42,7 +42,7 @@ export default function LandingHero(){
         whileInView={{ opacity: 1 }}
         viewport={{ once: false  }}
         
-        className='w-full h-full overflow-y-auto  backdromotion.span-blur-sm  lg:w-1/2 text-left  float-right mt-10   rounded-[40px]  bg-white/40 border   border-white/[0.06] p-5'>
+        className='w-full h-full overflow-y-auto ml-20 backdrop-blur-sm  md:w-1/2 text-left  float-right mt-10 mb-10 md:mb-0   rounded-[40px]  bg-white/40 border shadow-sm shadow-emerald-100/[0.5]   border-white/[0.06] p-5'>
             
             <p className='p-5'>Sure, I'll remind you to get some pizzas for John's party on Friday</p>
 
@@ -51,7 +51,7 @@ export default function LandingHero(){
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: false  }}
                     
-                    id='to-do container' className="w-full mt-2 min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-white/10 ">
+                    id='to-do container' className="w-full mt-2  min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-white/10 ">
                     <div className="flex">
                     <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
                         <p className="-mt-1 text-sm font-normal text-left text-gray-700">General </p>
@@ -73,8 +73,8 @@ export default function LandingHero(){
 
       
 
-      <p className=' mt-[28%] text-left    text-xl font-normal'>Discover serenity with AruarianAI, your intuitive AI-powered task manager </p>
-      <p className=' mb-40   p-0 -mt-20  text-center text-[18rem] font-bold'>AruarianAI </p>
+      <p className=' mt-[28%] text-left     text-xl font-normal'>Discover serenity with AruarianAI, your intuitive AI-powered task manager, </p>
+      <p className='   mt-10  p-0 md:-mt-18 -ml-8 md:-ml-0 md:text-[10rem] xl:text-[14rem]  text-6xl text-center 2xl:text-[17rem] font-bold'>AruarianAI </p>
    
 
 
