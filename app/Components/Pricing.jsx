@@ -43,7 +43,7 @@ export default function Pricing({landing}){
             <button onClick={()=>{setOpenModal(true)}} className="p-2 bg-white/40 hover:bg-white/50 border border-white/[0.13] rounded-lg  mt-4">Why do I need to pay for this?</button>
 
 
-            <Modal showModal={openModal} setShowModal={setOpenModal} height={'h-self'}  Header={'Why do I need to pay for Aruarian?'} >
+            <Modal showModal={openModal} setShowModal={setOpenModal} height={'h-self'} thin={false}  Header={'Why do I need to pay for Aruarian?'} >
 
                <div className=" text-left text-neutral-800 p-10">
                <p className="mt-1">This is a fair question and I'll make this quick </p>
@@ -63,7 +63,7 @@ export default function Pricing({landing}){
 
                 
 
-                <div className="sm:w-[25rem] w-[23rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[80%] bg-white/40 rounded-xl h-[38rem] shadow-2xl  border-2 border-white/[0.13] ">
+                <div className="sm:w-[25rem] w-[20rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-0 xl:mx-[50%] bg-white/40 rounded-xl h-[20rem] shadow-2xl  border-2 border-white/[0.13] ">
 
                 
 
@@ -71,9 +71,9 @@ export default function Pricing({landing}){
 
                     <p className='font-normal text-2xl text-left text-neutral-700  p-6 '>Pro</p>
 
-                    <p className='font-bold text-6xl text-centertext-neutral-700 mt-4 p-6 '>$15<span className='font-normal  text-xl  md:text-[30px] text-neutral-600 mt-2'>/month</span></p>
-                    <div className="mt-10 ml-20">
-                        {benefitspro.map((i)=>{
+                    <p className='font-bold text-6xl text-centertext-neutral-700 mt-2 p-6 '>$11<span className='font-normal  text-xl  md:text-[30px] text-neutral-600 mt-2'>/month</span></p>
+                    <div className=" ml-20">
+                    {/* {benefitspro.map((i)=>{
                             return(
                                 <span className="flex mt-7 text-neutral-600" >
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mr-3">
@@ -83,7 +83,7 @@ export default function Pricing({landing}){
 
                                     </span>
                             )
-                        })}
+                        })} */}
 
                     
 

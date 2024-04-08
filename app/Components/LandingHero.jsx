@@ -11,7 +11,7 @@ export default function LandingHero(){
     const router=useRouter()
     return(
         <motion.div 
-        className='mt-10 mx-10   md:items-center items-center text-center p-5 flex-col '
+        className='-mt-2 mx-10   md:items-center items-center text-center p-5 flex-col '
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: false  }}
@@ -94,6 +94,7 @@ export default function LandingHero(){
 
       <p className=' mt-10 text-center     text-xl font-normal'>Discover serenity with your intuitive AI-powered task manager, </p>
       <p className='   mt-8  p-0 -ml-8 md:-ml-0   text-6xl lg:text-[5rem] font-bold'>AruarianAI </p>
+
 
 
       <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' p-4 mt-8 w-1/2 ml-[25%] rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '>Start Now</motion.button>
