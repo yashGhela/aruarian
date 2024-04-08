@@ -21,8 +21,7 @@ export default function LandingBar({isLand}){
        </div>:null}
 
 
-       <motion.img whileHover={{scale:1.04}} onClick={()=>{router.push('/')}}  className="h-14 w-14 invisible sm:visible fixed md:left-[50%] mt-14 shadow-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/aruarianlogo2.png' alt="" />
-
+     
 
        <div className={`flex mt-8 fixed right-10`}>
        <Link href='/auth?state=Login'  className={`  ml-2 md:ml-4  pt-1 underline   p-4 mt-10 font-normal  rounded-md`}>Login</Link>
