@@ -51,6 +51,8 @@ export default function Home() {
       <LandingBar isLand={true}/>
 
       <LandingHero/>
+
+      <LandingFeatures/>
   
       
 
