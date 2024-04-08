@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
 import { motion } from 'framer-motion'
 
-function Container({todos, todayStart, todayEnd, isRes}) {
+function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
 
 
   function convertTimestampToDateTime(timestamp) {
@@ -67,6 +67,7 @@ function Container({todos, todayStart, todayEnd, isRes}) {
 
     }else{
       console.log('Successfully updated!')
+      
     }
 
   }
@@ -104,7 +105,7 @@ function Container({todos, todayStart, todayEnd, isRes}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-white/10 ">
+    id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[240px] xl:min-h-[114px] xl:max-h-[145px] md:min-h-[175px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-white/10 ">
     <div className="flex">
       <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
         <p className="-mt-1 text-sm font-normal text-left text-gray-700">{i.board} </p>
@@ -118,7 +119,17 @@ function Container({todos, todayStart, todayEnd, isRes}) {
     </p>
 
   
-    <motion.div onClick={()=>{completeToDo({id: i.tid})}} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2 border-neutral-400  ${i.completed? 'bg-white/[0.50]':'bg-white/[0.14]'} `}></motion.div>
+    <motion.div onClick={()=>{
+      
+      completeToDo({id: i.tid})
+
+      const updatedTodos = todos.filter((item) => item.tid !== i.tid);
+
+      setTodos(updatedTodos)
+
+
+      
+      }} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2 border-neutral-400  ${i.completed? 'bg-white/[0.50]':'bg-white/[0.14]'} `}></motion.div>
   </motion.div>
    )
   })}

@@ -157,6 +157,7 @@ import CancelSub from '../Components/CancelSub'
       const {data, error} = await supabase.from('To-Dos')
       .select('*')
       .eq("UID", user)
+      .eq('completed', false)
       .gte('due_date', todayStart.toISOString())
       .lt('due_date', todayEnd.toISOString());
 
@@ -313,7 +314,7 @@ import CancelSub from '../Components/CancelSub'
 
   <div className="lg:ml-[20%] md:w-[50%] -mt-10" id="to-dos container ">
 
-  <Container isRes={false} boards={boards} todos={todos} todayEnd={todayEnd} todayStart={todayStart} />
+  <Container isRes={false} setTodos={setTodos} boards={boards} todos={todos} todayEnd={todayEnd} todayStart={todayStart} />
 
 
   
@@ -347,7 +348,7 @@ import CancelSub from '../Components/CancelSub'
      <motion.div className=" fixed flex-col mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
-    <div className="flex md:visible invisible mb-2">
+    <div className="flex md:visible invisible mb-2 md:ml-40 2xl:ml-0">
     <motion.button onClick={()=>{setPrompt('What work do I have for today?'); }} whileHover={{scale:1.03}} className='  ml-[7.2rem] w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
     <motion.button onClick={()=>{setPrompt('What tasks are overdue?'); }} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
     <motion.button onClick={()=>{setPrompt('Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>

@@ -11,7 +11,7 @@ export default function LandingHero(){
     const router=useRouter()
     return(
         <motion.div 
-        className='mt-20 mx-10   md:items-center items-center text-center p-5 flex-col '
+        className='mt-10 mx-10   md:items-center items-center text-center p-5 flex-col '
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: false  }}
@@ -91,10 +91,10 @@ export default function LandingHero(){
         <motion.img whileHover={{scale:1.04}} onClick={()=>{router.push('/')}}  className="h-14 w-14 ml-[40%] 2xl:mt-[34%] lg:mt-[65%] sm:mt-[50%]  md:ml-[50%] md:mt-[90%] mt-32 shadow-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/aruarianlogo2.png' alt="" />
 
       <p className=' mt-10 text-center     text-xl font-normal'>Discover serenity with your intuitive AI-powered task manager, </p>
-      <p className='   mt-10  p-0 md:-mt-18 -ml-8 md:-ml-0   text-6xl lg:text-[8rem] font-bold'>AruarianAI </p>
+      <p className='   mt-5  p-0 -ml-8 md:-ml-0   text-6xl lg:text-[8rem] font-bold'>AruarianAI </p>
 
 
-      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' p-4 mt-10 w-1/2 ml-[25%] rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '>Start Now</motion.button>
+      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' p-4 mt-5 w-1/2 ml-[25%] rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '>Start Now</motion.button>
        
    
 
