@@ -53,6 +53,8 @@ export default function Home() {
 
       <LandingHero/>
 
+      <LandingDemo/>
+
       <Pricing landing={true}/>
 
       <LandingAbout/>
