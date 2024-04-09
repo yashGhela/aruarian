@@ -19,6 +19,7 @@ import LandingExamples from './Components/LandingExamples'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import LandingAbout from './Components/LandingAbout'
 
 
 
@@ -40,17 +41,25 @@ export default function Home() {
     
       <main 
       
-      className=' flex self-center place-content-center text-neutral-700 bg-gradient-to-b from-slate-300 via-zinc-300 to-orange-200 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      className=' flex self-center place-content-center text-neutral-700 bg-gradient-to-b from-slate-300 via-zinc-300 to-slate-100 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    
 
-     <div className=' md:w-[70rem] lg:w-full justify-center w-[25rem] mr-0 flex-col '>
+     <div className=' md:w-[70rem] lg:w-[75rem] justify-center w-[25rem] mr-0 flex-col '>
 
 
-      <LandingBar isLand={true}/>
+      <LandingBar />
 
       <LandingHero/>
+
+      <Pricing landing={true}/>
+
+      <LandingAbout/>
+
+
+      <LandingFaq/>
+
 
    
   

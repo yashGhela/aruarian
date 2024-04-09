@@ -7,21 +7,19 @@ export default function LandingFaq(){
     const [activeIndex, setActiveIndex] = useState(null);
 
   const questions = [
-    'Question 1',
-    'Question 2',
-    'Question 3',
-    'Question 4',
-    'Question 5',
-    'Question 6',
+    'What can it do? ',
+    'Why should I care? ',
+    'Why is it paid?',
+    'Besides save me time, what can it do for me? ',
+    
   ];
 
   const answers = [
-    'Answer 1',
-    'Answer 2',
-    'Answer 3',
-    'Answer 4',
-    'Answer 5',
-    'Answer 6',
+    'Aruarian can schedule tasks for you and remind you when things are coming up without you having to do anything, you can just speak to it normally ',
+    'Aruarian can save you  time and help you live a more prioritized, zen lifestyle , and if you join us now you can help me grow it and make it better!',
+    'OpenAI API costs a lot ',
+    'Aruarian can help you figure out which tasks to prioritize first and how to schedule them out in a mindful way, in the future I hope to add more in depth conversations with Aruarian ',
+
   ];
 
   const toggleAccordion = (index) => {
@@ -33,23 +31,23 @@ export default function LandingFaq(){
   };
 
     return(
-        <div className="mt-[10%] flex-col md:grid md:grid-cols-2 text-gray-500 md:mx-20">
+        <div className="mt-[10%] flex-col w-1/2  md:mx-[25%]">
             <div>
-            <p className="font-lighter text-gray-400 py-3 ">FAQ</p>
-            <p className="font-bold text-3xl text-left mt-10 text-blue-300 py-3 ">Frequently Asked Questions</p>
+            
+            <p className="font-bold text-3xl text-left mt-10  py-3 ">Frequently Asked Questions</p>
 
             </div>
             <div className="w-full mt-[20%] mx-auto">
       {questions.map((question, index) => (
         <div
           key={index}
-          className="mb-4 bg-gray-100 rounded-lg "
+          className="mb-4  rounded-2xl bg-white/40 "
         >
           <div
             className="flex justify-between p-4 cursor-pointer"
             onClick={() => toggleAccordion(index)}
           >
-            <h3 className="text-lg font-semibold ">{question}</h3>
+            <h3 className="text-lg text-left font-semibold ">{question}</h3>
             <svg
               className={`${
                 activeIndex === index
@@ -68,7 +66,7 @@ export default function LandingFaq(){
             </svg>
           </div>
           {activeIndex === index && (
-            <div className="p-4">
+            <div className="p-4 text-left">
               <p>{answers[index]}</p>
             </div>
           )}

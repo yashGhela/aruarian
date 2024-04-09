@@ -12,13 +12,13 @@ export default function LandingHero(){
     return(
         <motion.div 
         className='-mt-2 mx-10   md:items-center items-center text-center p-5 flex-col '
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false  }}
+        
         
       
        
        > 
+
+
 
 
   
@@ -26,8 +26,25 @@ export default function LandingHero(){
 
       <div className="flex-1">
 
+      <motion.img whileHover={{scale:1.04}} onClick={()=>{router.push('/')}}  className="h-14 w-14 ml-[40%] mt-10  md:ml-[50%] shadow-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/aruarianlogo2.png' alt="" />
+
+      
+
+      <p className='   mt-8  p-0 -ml-8 md:-ml-0   text-6xl lg:text-[5rem] font-bold'>AruarianAI </p>
+
+<p className=' mt-10 text-center     text-xl font-normal'>Talk to your to-dos </p>
+
+{/* //Discover serenity with your intuitive AI-powered task manager, */}
+   
+
+
+
+      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '>Start Now</motion.button>
        
-       <div className='md:mx-[20%] -mx-432'>
+   
+
+       
+       <div className='md:mx-[20%] mt-40 -mx-432'>
 
          <p className='font-light text-left'>Me</p>
        <motion.p initial={{ opacity: 0 }}
@@ -90,16 +107,112 @@ export default function LandingHero(){
                 </motion.div>
         </motion.span>
 
-        <motion.img whileHover={{scale:1.04}} onClick={()=>{router.push('/')}}  className="h-14 w-14 ml-[40%] 2xl:mt-[34%] lg:mt-[65%] sm:mt-[50%]  md:ml-[50%] md:mt-[90%] mt-32 shadow-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/aruarianlogo2.png' alt="" />
 
-      <p className=' mt-10 text-center     text-xl font-normal'>Discover serenity with your intuitive AI-powered task manager, </p>
-      <p className='   mt-8  p-0 -ml-8 md:-ml-0   text-6xl lg:text-[5rem] font-bold'>AruarianAI </p>
+      
+       <motion.p initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false  }} 
+       
+        className='w-full mt-10 h-full overflow-y-auto   shadow-2xl backdrop-blur-sm  md:w-1/2 text-left    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-10'>
+            Show me the full list for everything I need to get please
+        </motion.p>
 
 
 
-      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' p-4 mt-8 w-1/2 ml-[25%] rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '>Start Now</motion.button>
+        <motion.span
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false  }}
+       
+        className='md:w-[80%]  lg:w-1/2  h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-2xl   text-left  float-right mt-5 mb-20 md:mb-0   rounded-[40px]  bg-white/40 border    border-white/[0.06] p-5'>
+            
+            <p className='p-5'>Sure, here's your list for everything you need to get:</p>
+            <div>
+        <div className={` w-full  h-[300px]     mt-20 lg:mt-0`}>
+  <div
+    className="w-full h-full overflow-y-auto  backdrop-blur-sm     rounded-[40px]  bg-white/40 border   border-white/[0.06] p-3  "
+    style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
+                            <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: false  }}
+                    
+                    id='to-do container' className="w-full mt-2  min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-neutral-400/20 ">
+                    <div className="flex">
+                    <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
+                        <p className="-mt-1 text-sm font-normal text-left text-gray-700">General </p>
+                    </div>
+                    <div className="w-self ml-2 h-[20px] mt-2 p-1 rounded-lg bg-blue-200/[0.38]">
+                        <p className="-mt-1 text-sm font-light text-left text-slate-600">Friday 16:00</p>
+                    </div>
+                    </div>
+                    <p className="w-[70%]  p-2 ml-5 mt-1 h-12 text-[17px] font-normal text-left ">
+                    Get Pizzas for John's party
+                    </p>
+
+                
+                    <motion.div  whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2 border-neutral-400  bg-white/[0.50]`}></motion.div>
+                </motion.div>
+                
+
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: false  }}
+                    
+                    id='to-do container' className="w-full mt-2  min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-neutral-400/20 ">
+                    <div className="flex">
+                    <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
+                        <p className="-mt-1 text-sm font-normal text-left text-gray-700">General </p>
+                    </div>
+                    <div className="w-self ml-2 h-[20px] mt-2 p-1 rounded-lg bg-blue-200/[0.38]">
+                        <p className="-mt-1 text-sm font-light text-left text-slate-600">Friday 16:00</p>
+                    </div>
+                    </div>
+                    <p className="w-[70%]  p-2 ml-5 mt-1 h-12 text-[17px] font-normal text-left ">
+                    Get every type of chips 🍟
+                    </p>
+
+                
+                    <motion.div  whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2 border-neutral-400  bg-white/[0.50]`}></motion.div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: false  }}
+                    
+                    id='to-do container' className="w-full mt-2  min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-neutral-400/20 ">
+                    <div className="flex">
+                    <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
+                        <p className="-mt-1 text-sm font-normal text-left text-gray-700">General </p>
+                    </div>
+                    <div className="w-self ml-2 h-[20px] mt-2 p-1 rounded-lg bg-blue-200/[0.38]">
+                        <p className="-mt-1 text-sm font-light text-left text-slate-600">Wednesday 13:00</p>
+                    </div>
+                    </div>
+                    <p className="w-[70%]  p-2 ml-5 mt-1 h-12 text-[17px] font-normal text-left ">
+                    Send out invites 
+                    </p>
+
+                
+                    <motion.div  whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2 border-neutral-400  bg-white/[0.50]`}></motion.div>
+                </motion.div>
+
+
+
+                </div>
+                </div>
+                </div>
+        </motion.span>
+
+        <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '>Start Now</motion.button>
        
    
+
+
+       
 
        </div>
 

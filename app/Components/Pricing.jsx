@@ -34,14 +34,16 @@ export default function Pricing({landing}){
 
     return(
 
-        <div className="mt-[3%] flex-col" >
+        <div className={`${landing?"mt-[200%] md:mt-[90%] lg:mt-[60%] sm:mt-[90%]":"mt-10"} flex-col`} >
+
+<p className=" text-md text-center font-bold">Pricing</p>
+            <button onClick={()=>{setOpenModal(true)}} className="p-2 bg-white/40 hover:bg-white/50 border border-white/[0.13] rounded-lg  mt-4">Why do I need to pay for this?</button>
+
 
         
            
 
-            <p className=" text-2xl font-normal">Pricing</p>
-            <button onClick={()=>{setOpenModal(true)}} className="p-2 bg-white/40 hover:bg-white/50 border border-white/[0.13] rounded-lg  mt-4">Why do I need to pay for this?</button>
-
+            
 
             <Modal showModal={openModal} setShowModal={setOpenModal} height={'h-self'} thin={false}  Header={'Why do I need to pay for Aruarian?'} >
 
@@ -63,16 +65,17 @@ export default function Pricing({landing}){
 
                 
 
-                <div className="sm:w-[25rem] w-[20rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-0 xl:mx-[50%] bg-white/40 rounded-xl h-[20rem] shadow-2xl  border-2 border-white/[0.13] ">
+            <div className="sm:w-[25rem] w-[23rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[70%] bg-white/40 rounded-xl h-[23rem] shadow-2xl  border-2 border-white/[0.13] ">
 
                 
 
-                
+                    <p className='font-bold text-2xl text-left text-neutral-700  p-6 '>Early bird price</p>
 
-                    <p className='font-normal text-2xl text-left text-neutral-700  p-6 '>Pro</p>
-
-                    <p className='font-bold text-6xl text-centertext-neutral-700 mt-2 p-6 '>$11<span className='font-normal  text-xl  md:text-[30px] text-neutral-600 mt-2'>/month</span></p>
+                    <p className='font-bold text-6xl text-centertext-neutral-700 mt-2 p-6 '>$5<span className='font-normal  text-xl  md:text-[30px] text-neutral-600 mt-2'>/month</span></p>
+                    <p>Early access to Aruarian for a lower price, <br/>
+                    you'll get full access to Aruarian</p>
                     <div className=" ml-20">
+                        
                     {/* {benefitspro.map((i)=>{
                             return(
                                 <span className="flex mt-7 text-neutral-600" >
