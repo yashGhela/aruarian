@@ -16,10 +16,12 @@ export default function LandingBar({isLand}){
         <div className={`flex justify-center items-center ml-0 lg:mx-[10%] w-full md:w-[90%] lg:w-full h-14 rounded-md mt-0 text-center`}>
        {/*
      */}
+
+     <p className="fixed left-10 text-lg font-bold mt-12">Aruarian</p>
       
      
         {isLand?
-      <div className='mt-5 float-right left-10 fixed  flex'>
+      <div className=' mt-3 float-right right-[20%] fixed  flex'>
       <motion.button whileTap={{scale:1.1}} onClick={()=>{setAboutOpen(true)}} className={` mt-12 p-4 sm:invisible invisible md:visible ml-8 cursor-pointer`} >About</motion.button>
         <motion.button whileTap={{scale:1.1}} onClick={()=>{setPricingOpen(true)}} className={` mt-12 p-4 sm:invisible invisible md:visible ml-8 cursor-pointer`} >Pricing</motion.button>
        
@@ -27,9 +29,6 @@ export default function LandingBar({isLand}){
        </div>:null}
 
 
-       
-
-     
 
        <div className={`flex mt-8 fixed right-10`}>
        <Link href='/auth?state=Login'  className={`  ml-2 md:ml-4  pt-1 underline   p-4 mt-10 font-normal  rounded-md`}>Login</Link>

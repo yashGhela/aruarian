@@ -41,7 +41,7 @@ export default function Home() {
     
       <main 
       
-      className=' flex self-center place-content-center text-neutral-700 bg-gradient-to-b from-slate-300 via-zinc-300 to-slate-100 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      className=' flex self-center place-content-center text-neutral-900 bg-gradient-to-b from-slate-200 via-zinc-300 to-slate-100 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    
@@ -49,7 +49,7 @@ export default function Home() {
      <div className=' md:w-[70rem] lg:w-[75rem] justify-center w-[25rem] mr-0 flex-col '>
 
 
-      <LandingBar />
+      <LandingBar  />
 
       <LandingHero/>
 

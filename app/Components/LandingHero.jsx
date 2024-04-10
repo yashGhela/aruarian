@@ -26,11 +26,14 @@ export default function LandingHero(){
 
       <div className="flex-1">
 
-      <motion.img whileHover={{scale:1.04}} onClick={()=>{router.push('/')}}  className="h-14 w-14 ml-[40%] mt-10  md:ml-[50%] shadow-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/aruarianlogo2.png' alt="" />
+      <motion.img whileHover={{scale:1.04}} onClick={()=>{router.push('/')}}  className="h-14 w-14 ml-[40%] mt-10  md:mx-[48%] shadow-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/aruarianlogo2.png' alt="" />
 
       
 
-      <p className='   mt-8  p-0 -ml-8 md:-ml-0   text-6xl lg:text-[5rem] font-bold'>AruarianAI </p>
+     
+      <p className='  mt-8    px-72  md:-ml-0   text-6xl  font-bold'>Stop managing your to-dos. Forever</p>
+
+      
 
 <p className=' mt-10 text-center     text-xl font-normal'>Talk to your to-dos </p>
 
