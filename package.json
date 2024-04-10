@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@cloudflare/next-on-pages": "^1.11.0",
     "@fontsource/montserrat": "^5.0.16",
     "@fontsource/poppins": "^5.0.8",
     "@heroicons/react": "^2.0.18",

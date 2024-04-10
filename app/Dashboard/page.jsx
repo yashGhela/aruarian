@@ -99,6 +99,79 @@ import CancelSub from '../Components/CancelSub'
 
         console.log(user)
 
+
+        if (prompt.includes("/add")) {
+          console.log('adding')
+
+
+          const response = await fetch('api/openai/add',{
+            method:'POST',
+            headers:{
+              'Content-Type': 'application/json',
+            },
+            body:
+             JSON.stringify(
+              {prompt:prompt,
+              userid: user}
+             )
+            
+          })
+    
+          await response.json().then((snap)=>{
+
+            setResponseAI(snap)
+    
+            console.log(snap)
+            setIsLoading(false)
+    
+            if (snap.tasks){
+              setAIData(snap.tasks)
+            }
+    
+          //   setTimeout(() => {
+          //     setMesSent(false);
+          // }, 5000);
+          })
+          
+        } else if (prompt.includes("/read")) {
+          console.log('reading')
+          const response = await fetch('api/openai/read',{
+            method:'POST',
+            headers:{
+              'Content-Type': 'application/json',
+            },
+            body:
+             JSON.stringify(
+              {prompt:prompt,
+              userid: user}
+             )
+            
+          })
+    
+          await response.json().then((snap)=>{
+            setResponseAI(snap)
+    
+            console.log(snap)
+            setIsLoading(false)
+    
+            if (snap.tasks){
+              setAIData(snap.tasks)
+            }
+    
+          //   setTimeout(() => {
+          //     setMesSent(false);
+          // }, 5000);
+          })
+        } else {
+          setResponseAI({
+            message: 'Cannot complete this response'
+          })
+    
+            console.log(snap)
+            setIsLoading(false)
+        }
+      
+
       
       const response = await fetch('api/openai',{
         method:'POST',
