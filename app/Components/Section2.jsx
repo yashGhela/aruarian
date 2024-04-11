@@ -136,10 +136,6 @@ style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 </div>
 
 
-<motion.button whileHover={{scale:1.05}} onClick={()=>{window.open('https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c')}} className=' float-left p-4 mt-8 w-[80%] mx-10 md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold   border-white/[0.06] '>Get Early access</motion.button>
-
-
-
 
 
 </div>

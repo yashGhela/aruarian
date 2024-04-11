@@ -34,7 +34,7 @@ export default function Pricing({landing}){
 
     return(
 
-        <div className={`${landing?"mt-[200%] md:mt-[90%] lg:mt-[60%] sm:mt-[90%]":"mt-10"} flex-col`} >
+        <div className={`${landing?"mt-[140%] md:mt-[90%] lg:mt-[60%] sm:mt-[90%]":"mt-10"} flex-col`} >
 
 <p className=" text-md text-center font-bold">Pricing</p>
             <button onClick={()=>{setOpenModal(true)}} className="p-2 bg-white/40 hover:bg-white/50 border border-white/[0.13] rounded-lg  mt-4">Why do I need to pay for this?</button>
@@ -59,21 +59,25 @@ export default function Pricing({landing}){
                 
             </Modal>
 
-            <div className="lg:grid lg:grid-cols-2 md:mx-[30%] lg:mx-0    flex-col mt-10">
+            <div className="lg:grid lg:grid-cols-2 md:mx-[30%] lg:mx-0 ml-2    flex-col mt-10">
 
                
 
                 
 
-            <div className="sm:w-[25rem] w-[23rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[70%] bg-white/40 rounded-xl h-[23rem] shadow-2xl  border-2 border-white/[0.13] ">
+            <div className="sm:w-[25rem] w-[23rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[70%] bg-white/40 rounded-xl h-[25rem] shadow-2xl  border-2 border-white/[0.13] ">
 
                 
 
                     <p className='font-bold text-2xl text-left text-neutral-700  p-6 '>Early bird price</p>
 
-                    <p className='font-bold text-6xl text-centertext-neutral-700 mt-2 p-6 '>$5<span className='font-normal  text-xl  md:text-[30px] text-neutral-600 mt-2'>/month</span></p>
-                    <p>Early access to Aruarian for a lower price, <br/>
-                    you'll get full access to Aruarian</p>
+                    <p className='font-bold text-2xl text-left ml-10  line-through text-neutral-600 mt-2  '>$11</p>
+
+                    
+
+                    <p className='font-bold text-6xl text-centertext-neutral-700 mt-2 '>$5<span className='font-normal  text-xl  md:text-[30px] text-neutral-600 mt-2'>/month</span></p>
+                    <p className="mt-5 px-10">Early access to Aruarian for a lower price forever, 
+                    you'll get full access to Aruarian on launch</p>
                     <div className=" ml-20">
                         
                     {/* {benefitspro.map((i)=>{
@@ -93,9 +97,9 @@ export default function Pricing({landing}){
 
                     </div>
                    {landing?
-                    <button onClick={()=>{router.push('/auth')}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl bg-white/40 hover:bg-white/50 ">
+                    <button onClick={()=>{window.location.href='https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c'}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl bg-white/40 hover:bg-white/50 ">
                    
-                    Start Now!
+                    Preorder Now
                     </button>:
                     <button onClick={()=>{window.location.href='https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c'}} className=" w-[90%] mt-10 font-bold  p-5 rounded-2xl  bg-white/40 hover:bg-white/50 ">
                         {/* Subscribe   <a href="https://artfolio.lemonsqueezy.com/checkout/buy/c9ae10bc-5a85-4896-9730-4a4a195bd4fd?embed=1" class="lemonsqueezy-button"> Subscribe</a><script src="https://assets.lemonsqueezy.com/lemon.js" defer></script> */}
