@@ -44,7 +44,7 @@ export default function Home() {
     
       <main 
       
-      className=' flex self-center place-content-center text-neutral-900 bg-gradient-to-b from-slate-200 via-zinc-300 to-slate-100 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      className=' flex self-center place-content-center text-neutral-900 bg-gradient-to-b from-slate-200 via-zinc-100 to-slate-200 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    
@@ -69,6 +69,9 @@ export default function Home() {
 
 
       <LandingFaq/>
+
+
+      <LandingAction/>
 
 
    

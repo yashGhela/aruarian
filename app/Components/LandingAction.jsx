@@ -1,16 +1,19 @@
 'use client'
 
 import { useRouter } from "next/navigation"
+import { motion } from "framer-motion"
 
 export default function LandingAction(){
     const router = useRouter()
     return(
         <div className="my-[20%]">
-             <p className='md:text-6xl text-3xl font-black text-gray-400'>Start Building Today</p>
-             <p className='font-bold text-gray-400 text-lg mt-4 p-2 md:text-center'>No more wasting time</p>
+             <p className=' text-4xl font-bold '>Join the future of productivity today</p>
+             <p className='font-normal  text-neutral-600 text-lg mt-4 p-2 md:text-center'>No more wasting time</p>
          
 
-             <button onClick={()=>{router.push('/auth')}} className={`font-bold w-[40%] md:w-[25%]  text-xl rounded-xl bg-blue-300 hover:bg-blue-400 mt-20  md:h-14 p-2 mr-1`}>Start Now</button>
+             <motion.button whileHover={{scale:1.05}} onClick={()=>{window.open('https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c')}} className=' float-left p-4 mt-20 w-[80%] mx-10 md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold   border-white/[0.06] '>Preorder Now</motion.button>
+
+
         </div>
     )
 }
