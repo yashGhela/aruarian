@@ -4,12 +4,18 @@ import Auth from "../Components/Auth"
 import SEO from "../Components/SEO"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
+import { useEffect } from "react"
 
 
 export default function AuthPage() {
     
   //const user= auth.currentUser
   const router= useRouter()
+
+  //remove in dev mode
+  useEffect(()=>{
+    router.push('/')
+  })
 
     
 

@@ -268,6 +268,11 @@ import CancelSub from '../Components/CancelSub'
 
     useEffect( ()=>{
 
+        //remove in dev mode
+  
+      router.push('/')
+ 
+
       getUser().then(()=>{getTodos()})
       getGreeting()
 
