@@ -17,11 +17,11 @@ export default function LandingBar({isLand}){
        {/*
      */}
 
-     <p className="fixed left-10 text-lg font-bold mt-12">Aruarian</p>
+     <p className="absolute left-10 text-lg font-bold mt-12">Aruarian</p>
       
      
         {isLand?
-      <div className=' mt-3 float-right right-[20%] fixed  flex'>
+      <div className=' mt-3 float-right right-[20%] absolute  flex'>
       <motion.button whileTap={{scale:1.1}} onClick={()=>{setAboutOpen(true)}} className={` mt-12 p-4 sm:invisible invisible md:visible ml-8 cursor-pointer`} >About</motion.button>
         <motion.button whileTap={{scale:1.1}} onClick={()=>{setPricingOpen(true)}} className={` mt-12 p-4 sm:invisible invisible md:visible ml-8 cursor-pointer`} >Pricing</motion.button>
        
@@ -30,9 +30,9 @@ export default function LandingBar({isLand}){
 
 
 
-       <div className={`flex mt-8 fixed right-10`}>
-       <Link href='/auth?state=Login'  className={`  ml-2 md:ml-4  pt-1 underline   p-4 mt-10 font-normal  rounded-md`}>Login</Link>
-       <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' p-4 mt-5 w-full ml-2 rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] '>Start Now</motion.button>
+       <div className={`flex mt-8 absolute right-10`}>
+       {/* <Link href='/auth?state=Login'  className={`  ml-2 md:ml-4  pt-1 underline   p-4 mt-10 font-normal  rounded-md`}>Login</Link> */}
+       <motion.button whileHover={{scale:1.05}} onClick={()=>{window.open('https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c')}} className=' p-4 mt-5 w-full ml-2 rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] '>Start Now</motion.button>
         
 
        </div>

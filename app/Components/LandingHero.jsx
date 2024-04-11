@@ -11,7 +11,7 @@ export default function LandingHero(){
     const router=useRouter()
     return(
         <motion.div 
-        className='-mt-2 mx-10 float-left text-left  md:items-center items-center  p-5 flex-col '
+        className=' mt-20 mx-10 float-left text-center  md:items-center items-center  p-5 flex-col '
         
         
       
@@ -31,18 +31,18 @@ export default function LandingHero(){
       
 
      
-      <p className='  mt-8    px-64  md:-ml-0   text-5xl  font-bold'>Stop managing your to-dos. Forever</p>
+      <p className='  mt-8    md:px-64  md:-ml-0 text-4xl   sm:text-5xl  font-bold'>AI powered Task management</p>
 
       
 
-<p className=' mt-10   px-64    text-xl font-normal'>Aruarian makes task management easy,<br/> just tell Ari whats up and get on with life </p>
+<p className=' mt-10   lg:px-64    text-xl font-normal'>Aruarian makes task management easy,<br/> just tell Ari whats up and get on with life </p>
 
 {/* //Discover serenity with your intuitive AI-powered task manager, */}
    
 
 
 
-      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' float-left p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold   border-white/[0.06] '>Get Early access</motion.button>
+      <motion.button whileHover={{scale:1.05}} onClick={()=>{window.open('https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c')}} className=' float-left p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold   border-white/[0.06] '>Get Early access</motion.button>
        
    
 
