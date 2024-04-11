@@ -19,7 +19,7 @@ function Section2() {
 <motion.p initial={{ opacity: 0 }}
  whileInView={{ opacity: 1 }}
  viewport={{ once: false  }} 
- transition={{delay:0.5}}
+ transition={{delay:0.3}}
 
  className='w-full mt-10 h-full overflow-y-auto   shadow-2xl backdrop-blur-sm  md:w-1/2 text-left    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-10'>
      Show me the full list for everything I need to get please
@@ -49,7 +49,7 @@ fill="currentcolor"
  initial={{ opacity: 0 }}
  whileInView={{ opacity: 1 }}
  viewport={{ once: false  }}
- transition={{delay:1}}
+ transition={{delay:0.7}}
 
  className='md:w-[80%] w-full  lg:w-1/2  h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-2xl   text-left  float-right mt-5 mb-20 md:mb-0   rounded-[40px]  bg-white/40 border    border-white/[0.06] p-5'>
      

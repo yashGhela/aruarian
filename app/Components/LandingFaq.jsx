@@ -31,7 +31,7 @@ export default function LandingFaq(){
   };
 
     return(
-        <div className="mt-[10%] flex-col w-1/2  md:mx-[25%]">
+        <div className="mt-[10%] flex-col md:w-1/2 px-10  md:mx-[25%]">
             <div>
             
             <p className="font-bold text-3xl text-left mt-10  py-3 ">Frequently Asked Questions</p>

@@ -34,7 +34,7 @@ export default function Pricing({landing}){
 
     return(
 
-        <div className={`${landing?"mt-[140%] md:mt-[90%] lg:mt-[60%] sm:mt-[90%]":"mt-10"} flex-col`} >
+        <div className={`${landing?"mt-[140%] md:mt-[60%] lg:mt-[40%] sm:mt-[150%]":"mt-10"} flex-col`} >
 
 <p className=" text-md text-center font-bold">Pricing</p>
             <button onClick={()=>{setOpenModal(true)}} className="p-2 bg-white/40 hover:bg-white/50 border border-white/[0.13] rounded-lg  mt-4">Why do I need to pay for this?</button>
@@ -65,7 +65,7 @@ export default function Pricing({landing}){
 
                 
 
-            <div className="sm:w-[25rem] w-[23rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[70%] bg-white/40 rounded-xl h-[25rem] shadow-2xl  border-2 border-white/[0.13] ">
+            <div className="sm:w-[25rem] w-[23rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[70%] bg-white/40 rounded-xl h-[27rem] shadow-2xl  border-2 border-white/[0.13] ">
 
                 
 
@@ -76,8 +76,8 @@ export default function Pricing({landing}){
                     
 
                     <p className='font-bold text-6xl text-centertext-neutral-700 mt-2 '>$5<span className='font-normal  text-xl  md:text-[30px] text-neutral-600 mt-2'>/month</span></p>
-                    <p className="mt-5 px-10">Early access to Aruarian for a lower price forever, 
-                    you'll get full access to Aruarian on launch</p>
+                    <p className="mt-5 px-10">Early preorder for Aruarian for a lower price, 
+                    you'll get full access to Aruarian on launch as well as early access</p>
                     <div className=" ml-20">
                         
                     {/* {benefitspro.map((i)=>{

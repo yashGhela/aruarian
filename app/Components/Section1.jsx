@@ -17,7 +17,7 @@ function Section1() {
       <motion.p initial={{ opacity: 0 }}
        whileInView={{ opacity: 1 }}
        viewport={{ once: false  }} 
-       transition={{delay:0.5}}
+       transition={{delay:0.3}}
        className='w-full mt-2 h-full overflow-y-auto   shadow-2xl backdrop-blur-sm  md:w-1/2 text-left    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-10'>
            Hey Ari, remind me to get some pizzas for John's part on Friday.
        </motion.p>
@@ -45,7 +45,7 @@ function Section1() {
        initial={{ opacity: 0 }}
        whileInView={{ opacity: 1 }}
        viewport={{ once: false  }}
-       transition={{delay:1}}
+       transition={{delay:0.7}}
        
        className='w-full h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-2xl  md:w-1/2 text-left  float-right mt-5 mb-20 md:mb-0   rounded-[40px]  bg-white/40 border    border-white/[0.06] p-5'>
            
