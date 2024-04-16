@@ -313,7 +313,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
             {prediction.output && (
               <div className=' p-2'>
              
-              <p className="mt-10 text-black text-left"> {prediction.output}</p>
+              <p className=" text-black text-left"> {prediction.output}</p>
               </div>
             )}
        
