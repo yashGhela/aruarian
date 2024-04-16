@@ -104,21 +104,18 @@ export default function Payment(){
           }
         }
     }
-    //Code here works 
-  //   useEffect(()=>{
+  
+    useEffect(()=>{
 
-  //     getUser()
+      getUser()
      
 
-  //     }
+      }
         
-  // ,[])
+  ,[])
 
     //remove in dev mode
-    useEffect(()=>{
-      router.push('/')
-    })
-
+  
 
 
    

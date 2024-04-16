@@ -27,17 +27,13 @@ export default function Build(){
       
     }
 
-    // useEffect(()=>{
+    useEffect(()=>{
 
-    //     getUser()
+        getUser()
 
-    // },[])
+    },[])
 
-      //remove in dev mode
-  useEffect(()=>{
-    router.push('/')
-  })
-
+ 
 
     
 

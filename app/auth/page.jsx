@@ -12,10 +12,8 @@ export default function AuthPage() {
   //const user= auth.currentUser
   const router= useRouter()
 
-  //remove in dev mode
-  useEffect(()=>{
-    router.push('/')
-  })
+ 
+
 
     
 
