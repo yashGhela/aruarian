@@ -4,14 +4,16 @@ import { createClient as createAdminClient } from "@supabase/supabase-js";
 export async function GET(req, res) {
 
   const url = req.url;
-  const id = url.split("replicate/")[1];
+  const id = url.split("read/")[1];
 
-  const queryString = url.split('?')[1]; // Get the query string part
-  const params = new URLSearchParams(queryString); // Parse the query string
-  const userid = params.get('userid'); // Get the value of the userid parameter
+  console.log('Getting request now')
+
+//   const queryString = url.split('?')[1]; // Get the query string part
+//   const params = new URLSearchParams(queryString); // Parse the query string
+//   const userid = params.get('userid'); // Get the value of the userid parameter
 
 
-  console.log(userid)
+//   console.log(userid)
 
   const supabaseURL = process.env.SUPABASE_URL;
   const supabaseKey = process.env.SERVICE_ROLE_KEY;
@@ -71,23 +73,19 @@ export async function GET(req, res) {
         
         console.log(jsonObject);
 
-      if (jsonObject.action === 'insert') {
-        const { data, error } = await supabase.from('To-Dos').insert({
-          content: jsonObject.content,
-          UID: userid,
-          due_date: jsonObject.due_date,
-          board: jsonObject.board
-        });
-  
-        if (error) {
-          console.log(error);
-          res.statusCode = 500;
-          return NextResponse.json({ error: error });
-        } else {
-          console.log('Successfully uploaded to db!');
-          res.statusCode = 201;
-          return NextResponse.json(prediction,{ status: 201, message: jsonObject.responseMessage });
-        }
+
+
+      if (jsonObject.action === 'read') {
+        console.log(response.responseMessage)
+        console.log(response.taskOrder)
+
+
+        console.log('Successfully read the db!')
+        res.statusCode=201
+
+        return NextResponse.json( {status:201, message:response.responseMessage, tasks:response.taskOrder})
+
+
     }
 
   }

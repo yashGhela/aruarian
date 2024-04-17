@@ -109,7 +109,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       
 
       
-      const response = await fetch('api/replicate',{
+      const response = await fetch('api/read',{
         method:'POST',
         headers:{
           'Content-Type': 'application/json',
@@ -142,7 +142,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       await sleep(1000);
 
         console.log(prediction.id)
-      const response = await  fetch("api/replicate/" + prediction.id+"?userid="+user);
+      const response = await  fetch("api/read/" + prediction.id);
       prediction = await response.json();
 
    
