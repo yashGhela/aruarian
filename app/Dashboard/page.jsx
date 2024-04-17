@@ -310,12 +310,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
         {prediction && (
         <div>
-            {prediction.status && (
-              <div className=' p-2'>
+            <div className=' p-2'>
              
-              <p className=" text-black text-left"> {prediction.status}</p>
-              </div>
-            )}
+             <p className=" text-black text-left"> {prediction.status!==201?prediction.status:prediction.message}</p>
+             </div>
        
         </div>
       )}
