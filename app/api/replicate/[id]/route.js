@@ -6,6 +6,13 @@ export async function GET(req, res) {
   const url = req.url;
   const id = url.split("replicate/")[1];
 
+  const queryString = url.split('?')[1]; // Get the query string part
+  const params = new URLSearchParams(queryString); // Parse the query string
+  const userid = params.get('userid'); // Get the value of the userid parameter
+
+
+  console.log(userid)
+
   const supabaseURL = process.env.SUPABASE_URL;
   const supabaseKey = process.env.SERVICE_ROLE_KEY;
   const apiKey = process.env.REPLICATE_KEY;
@@ -32,31 +39,60 @@ export async function GET(req, res) {
   const prediction = await response.json();
   console.log(prediction);
 
-  try {
-    const jsonObject = JSON.parse(prediction.output);
-    console.log(jsonObject);
+    while (
+      prediction.status!=='succeeded' && 
+      prediction.status!=='failed'
+    ){
+     
+  
+        
 
-    if (jsonObject.action === 'insert') {
-      const { data, error } = await supabase.from('To-Dos').insert({
-        content: jsonObject.content,
-        UID: body.userid,
-        due_date: jsonObject.due_date,
-        board: jsonObject.board
-      });
-
-      if (error) {
-        console.log(error);
-        res.statusCode = 500;
-        return NextResponse.json({ error: error });
-      } else {
-        console.log('Successfully uploaded to db!');
-        res.statusCode = 201;
-        return NextResponse.json({ status: 201, message: jsonObject.responseMessage, prediction: prediction });
+   
+      if (response.status !== 200) {
+        setError(prediction.detail);
+        return;
       }
+      return NextResponse.json(prediction, {status:200})
     }
-  } catch (error) {
-    console.log('An error occurred:', error);
-    res.statusCode = 500;
-        return NextResponse.json({ error: error });
+
+    if (prediction.status==='succeeded'){
+      console.log('Task succeeded')
+      const text= prediction.output;
+        console.log(text)
+
+        const jsonString = text.join('').trim();
+        let jsonObject;
+        try {
+          jsonObject = JSON.parse(jsonString);
+        } catch (error) {
+          console.error("Error parsing JSON:", error);
+          // Handle the error accordingly
+        }
+        
+        console.log(jsonObject);
+
+      if (jsonObject.action === 'insert') {
+        const { data, error } = await supabase.from('To-Dos').insert({
+          content: jsonObject.content,
+          UID: userid,
+          due_date: jsonObject.due_date,
+          board: jsonObject.board
+        });
+  
+        if (error) {
+          console.log(error);
+          res.statusCode = 500;
+          return NextResponse.json({ error: error });
+        } else {
+          console.log('Successfully uploaded to db!');
+          res.statusCode = 201;
+          return NextResponse.json({ status: 201, message: jsonObject.responseMessage, prediction: prediction });
+        }
+    }
+
   }
+
+
+
+    
 }

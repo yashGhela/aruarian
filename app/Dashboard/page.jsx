@@ -142,7 +142,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       await sleep(1000);
 
         console.log(prediction.id)
-      const response = await  fetch("api/replicate/" + prediction.id);
+      const response = await  fetch("api/replicate/" + prediction.id+"?userid="+user);
       prediction = await response.json();
 
    
@@ -310,10 +310,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
         {prediction && (
         <div>
-            {prediction.output && (
+            {prediction.status && (
               <div className=' p-2'>
              
-              <p className=" text-black text-left"> {prediction.output}</p>
+              <p className=" text-black text-left"> {prediction.status}</p>
               </div>
             )}
        
