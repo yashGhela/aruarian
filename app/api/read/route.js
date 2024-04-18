@@ -44,7 +44,8 @@ export async function POST(req, res) {
         input: { 
             prompt: body.prompt+`  The current date is ${currentDate}`+' ,data chunk: '+JSON.stringify(objArray),
             system_prompt:  `You are given a prompt and a datachunk, you must answer the users question and return either a list or a single item, JSON response format:{action:read, responseMessage: Your response to the prompt, taskOrder: An array of tasks (extracted from the data given to you)}, you only return JSON `,
-            temperature: 0.1
+            temperature: 0.1,
+            max_tokens: 2000
      
         
         },

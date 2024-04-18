@@ -317,6 +317,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
             <div className=' p-2'>
              
              <p className=" text-black text-left"> {prediction.status!==201?prediction.status:prediction.message}</p>
+
+             {prediction.tasks&&<Container todos={prediction.tasks} isRes={true}/>}
              </div>
        
         </div>
