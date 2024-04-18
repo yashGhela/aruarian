@@ -76,16 +76,19 @@ export async function GET(req, res) {
 
 
       if (jsonObject.action === 'read') {
-        console.log(response.responseMessage)
-        console.log(response.taskOrder)
+        console.log(jsonObject.responseMessage)
+        console.log(jsonObject.taskOrder)
 
 
         console.log('Successfully read the db!')
         res.statusCode=201
 
-        return NextResponse.json( {status:201, message:response.responseMessage, tasks:response.taskOrder})
+        return NextResponse.json( {status:201, message:jsonObject.responseMessage, tasks:jsonObject.taskOrder})
 
 
+    }else{
+      res.statusCode=201
+      return NextResponse.json( {status:201, message:text})
     }
 
   }

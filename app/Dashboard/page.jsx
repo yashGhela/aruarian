@@ -150,6 +150,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         setError(prediction.detail);
         return;
       }
+
+      if(response.status===201){
+        setIsLoading(false)
+      }
       console.log(prediction)
       setPrediction(prediction)
     }
@@ -329,7 +333,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
        :
       <div>
 
-    <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{responseAI.message}</p>
+    <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{prediction.message}</p>
 
     {/* <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{JSON.stringify(responseAI.tasks)}</p> */}
 
