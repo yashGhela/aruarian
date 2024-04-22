@@ -105,59 +105,118 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         console.log(user)
 
 
-       
+        const containsRead = /\/read/.test(prompt);
+        const containsAdd = /\/add/.test(prompt);
       
 
       
-      const response = await fetch('api/read',{
-        method:'POST',
-        headers:{
-          'Content-Type': 'application/json',
-        },
-        body:
-         JSON.stringify(
-          {prompt:prompt,
-          userid: user}
-         )
-        
-      })
-
-
-      let prediction = await response.json()
-
-    if (response.status !== 201) {
-      setError(prediction.detail);
-      return;
-    }
-
-    setPrediction(prediction);
-    console.log(prediction.id)
-    console.log(prediction.urls.get)
-
-
-    while (
-      prediction.status!=='succeeded' && 
-      prediction.status!=='failed'
-    ){
-      await sleep(1000);
-
-        console.log(prediction.id)
-      const response = await  fetch("api/read/" + prediction.id);
-      prediction = await response.json();
-
-   
-      if (response.status !== 200) {
+       if (containsRead){
+        const response = await fetch('api/read',{
+          method:'POST',
+          headers:{
+            'Content-Type': 'application/json',
+          },
+          body:
+           JSON.stringify(
+            {prompt:prompt,
+            userid: user}
+           )
+          
+        })
+  
+  
+        let prediction = await response.json()
+  
+      if (response.status !== 201) {
         setError(prediction.detail);
         return;
       }
-
-      if(response.status===201){
-        setIsLoading(false)
+  
+      setPrediction(prediction);
+      console.log(prediction.id)
+      console.log(prediction.urls.get)
+  
+  
+      while (
+        prediction.status!=='succeeded' && 
+        prediction.status!=='failed'
+      ){
+        await sleep(1000);
+  
+          console.log(prediction.id)
+        const response = await  fetch("api/read/" + prediction.id);
+        prediction = await response.json();
+  
+     
+        if (response.status !== 200) {
+          setError(prediction.detail);
+          return;
+        }
+  
+        if(response.status===201){
+          setIsLoading(false)
+        }
+        console.log(prediction)
+        setPrediction(prediction)
       }
-      console.log(prediction)
-      setPrediction(prediction)
-    }
+  
+       }else if (containsAdd){
 
+        const response = await fetch('api/add',{
+          method:'POST',
+          headers:{
+            'Content-Type': 'application/json',
+          },
+          body:
+           JSON.stringify(
+            {prompt:prompt,
+            userid: user}
+           )
+          
+        })
+  
+  
+        let prediction = await response.json()
+  
+      if (response.status !== 201) {
+        setError(prediction.detail);
+        return;
+      }
+  
+      setPrediction(prediction);
+      console.log(prediction.id)
+      console.log(prediction.urls.get)
+  
+  
+      while (
+        prediction.status!=='succeeded' && 
+        prediction.status!=='failed'
+      ){
+        await sleep(1000);
+  
+          console.log(prediction.id)
+        const response = await  fetch("api/add/" + prediction.id+"?userid="+user);
+        prediction = await response.json();
+  
+     
+        if (response.status !== 200) {
+          setError(prediction.detail);
+          return;
+        }
+  
+        if(response.status===201){
+          setIsLoading(false)
+        }
+        console.log(prediction)
+        setPrediction(prediction)
+      }
+  
+       }else{
+        console.log("I'm sorry, I can't complete that request")
+        setPrediction({
+          message:"I'm sorry, I can't complete that request"
+        })
+       }
 
       // await response.json().then((snap)=>{
       //   setResponseAI(snap)
@@ -420,9 +479,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
     <div className="flex md:visible invisible mb-2 md:ml-40 2xl:ml-0">
-    <motion.button onClick={()=>{setPrompt('What work do I have for today?'); }} whileHover={{scale:1.03}} className='  ml-[7.2rem] w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
-    <motion.button onClick={()=>{setPrompt('What tasks are overdue?'); }} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
-    <motion.button onClick={()=>{setPrompt('Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>
+    <motion.button onClick={()=>{setPrompt('/read What work do I have for today?'); }} whileHover={{scale:1.03}} className='  ml-[7.2rem] w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
+    <motion.button onClick={()=>{setPrompt('/read What tasks are overdue?'); }} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
+    <motion.button onClick={()=>{setPrompt('/read Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='  ml-2 w-1/6 focus:outline-none p-2 rounded-lg bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>
 
 
     </div>
