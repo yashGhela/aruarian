@@ -14,7 +14,7 @@ export async function POST(req, res) {
   const supabase = createAdminClient(supabaseURL, supabaseKey);
   var currentDate = new Date();
 
-  const {data, error} = await supabase.from('To-Dos').select('*').eq('UID', body.userid).limit(5)
+  const {data, error} = await supabase.from('To-Dos').select('*').eq('UID', body.userid).limit(15)
 
 
   if(error){
