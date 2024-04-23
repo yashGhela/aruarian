@@ -1,8 +1,8 @@
 import './globals.css'
-import { Inter, Montserrat } from 'next/font/google'
+import { Inter, Montserrat, Fredoka } from 'next/font/google'
 
 
-const inter = Montserrat({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Aruarian | AI powered task management',

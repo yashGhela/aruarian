@@ -345,7 +345,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
            <title>Dashboard</title>
          </header>
          <main 
-         className=' flex text-neutral-700 bg-gradient-to-b from-slate-300 via-zinc-300 to-orange-200 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' flex text-neutral-700 bg-gradient-to-b from-orange-300 via-slate-300 to-pink-200 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      <div className="fixed inset-0   bg-black opacity-10"></div>
@@ -379,6 +379,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
              {prediction.tasks&&<Container todos={prediction.tasks} isRes={true}/>}
              </div>
+
+
+             { <button onClick={()=>{setMesSent(false); setPrompt('')}} className='  p-4 mt-5 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
+      }
        
         </div>
       )}
@@ -401,8 +405,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
    {AIData ?
     <Container todos={AIData} setTodos={setTodos} isRes={true}/>:null}
 
-    <button onClick={()=>{setMesSent(false); setPrompt('')}} className='  p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
-        
+     
       </div>
        
 
