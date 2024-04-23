@@ -399,7 +399,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     {/* <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{JSON.stringify(responseAI.tasks)}</p> */}
 
    {AIData ?
-    <Container todos={AIData} isRes={true}/>:null}
+    <Container todos={AIData} setTodos={setTodos} isRes={true}/>:null}
 
     <button onClick={()=>{setMesSent(false); setPrompt('')}} className='  p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
         

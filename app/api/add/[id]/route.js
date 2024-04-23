@@ -86,7 +86,7 @@ export async function GET(req, res) {
         } else {
           console.log('Successfully uploaded to db!');
           res.statusCode = 201;
-          return NextResponse.json(prediction,{ status: 201, message: jsonObject.responseMessage });
+          return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
         }
     }
 

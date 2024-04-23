@@ -67,6 +67,8 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
 
     }else{
       console.log('Successfully updated!')
+    
+
       
     }
 
