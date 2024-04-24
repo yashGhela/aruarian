@@ -17,7 +17,7 @@ export default function LandingFaq(){
   const answers = [
     'Aruarian can schedule tasks for you and remind you when things are coming up without you having to do anything, you can just speak to it normally ',
     'Aruarian can save you  time and help you live a more prioritized, zen lifestyle , and if you join us now you can help me grow it and make it better!',
-    'OpenAI API costs a lot ',
+    'Llama 3 costs a lot  ',
     'Aruarian can help you figure out which tasks to prioritize first and how to schedule them out in a mindful way, in the future I hope to add more in depth conversations with Aruarian ',
 
   ];

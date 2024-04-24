@@ -20,7 +20,7 @@ function LandingAbout() {
 
      They were all too manual and felt like I could've just used a pen and paper and gotten the same effect. <br/>
 
-     When I got more into AI I realized that I could use AI to automate my task management, and just like that AruarianAI was born. <br/>
+     When I got more into AI I realized that I could use it to automate my task management, and just like that AruarianAI was born. <br/>
 
      Aruarian can add new todos for you, create lists for you and find you specific information on the fly<br/> <br/>
 
@@ -28,7 +28,7 @@ function LandingAbout() {
 
      If you want to speak to me about the project you can message me  <span className="underline cursor-pointer" onClick={()=>{window.open('https://twitter.com/yashmakesstuff')}}>here</span>. <br/><br/>
 
-     Aruarian is currently open for pre-orders <br/> <br/>
+     Aruarian is currently open for beta <br/> <br/>
 
       ✌️
 
