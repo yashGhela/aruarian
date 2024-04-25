@@ -345,7 +345,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
            <title>Dashboard</title>
          </header>
          <main 
-         className=' flex text-neutral-700 bg-gradient-to-b from-orange-300 via-slate-300 to-pink-200 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' flex text-neutral-700 bg-gradient-to-b from-slate-300 via-zinc-300 to-orange-200 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      <div className="fixed inset-0   bg-black opacity-10"></div>
@@ -362,7 +362,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     <div className='w-[70%] mx-[10%]'>
 
-<div className="md:mt-[10%]  mt-[30%]  w-[350px] h-self  backdrop-blur-sm  float-left  rounded-[20px] bg-white/40 border p-3  border-white/[0.06]">
+<div className="md:mt-[10%]  mt-[30%]  w-[350px] h-self  backdrop-blur-sm text-left   text-xl rounded-[20px] ">
 
    {prompt}
 
@@ -375,7 +375,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         <div>
             <div className=' p-2'>
              
-             <p className=" text-black text-left"> {prediction.status!==201?prediction.status:prediction.message}</p>
+             <p className=" text-black text-xl text-left mb-4"> {prediction.status!==201?prediction.status:prediction.message}</p>
 
              {prediction.tasks&&<Container todos={prediction.tasks} isRes={true}/>}
              </div>
@@ -492,7 +492,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
    
        <input value={prompt} onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" md:ml-[22%] lg:ml-[22%] 2xl:ml-[6%] xl:ml-[12%] ml-5 w-[75%] md:w-1/2 focus:outline-none p-2 rounded-lg bg-white/40 border  backdrop-blur-sm   border-white/[0.06]" />
      <motion.button onClick={()=>{sendPrompt(); setMesSent(true); setIsLoading(true)}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-lg bg-white/40 border hover:bg-white/50  text-white  border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" /></svg> </motion.button>
+     
     </div>
+    {/* <p className='italic  text-neutral-700'>Aruarian is in early development and bugs may occur </p> */}
      </motion.div>
 
  

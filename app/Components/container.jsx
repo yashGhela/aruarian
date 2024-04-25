@@ -80,7 +80,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     <div>
         <div className={` ${isRes?'w-full':'w-[120%]'} sm:w-full h-[300px]    md:w-[370px] lg:w-full xl:w-full mt-20 lg:mt-0`}>
   <div
-    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-3  "
+    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-[70%] lg:w-full    rounded-[20px]  bg-white/20 border   border-white/[0.06] p-3  "
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
       {/* <div className="flex mb-1 -mt-1">
@@ -107,7 +107,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[240px] xl:min-h-[114px] xl:max-h-[145px] md:min-h-[175px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-white/10 ">
+    id='to-do container' className="w-full min-h-[180px] max-h-[200px] sm:min-h-[240px] xl:min-h-[114px] xl:max-h-[145px] md:min-h-[175px] p-2 rounded-[20px] mb-3 bg-white/[0.33] border border-neutral-400/20">
     <div className="flex">
       <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
         <p className="-mt-1 text-sm font-normal text-left text-gray-700">{i.board} </p>

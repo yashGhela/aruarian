@@ -14,7 +14,7 @@ export async function POST(req, res) {
   const supabase = createAdminClient(supabaseURL, supabaseKey);
   var currentDate = new Date();
 
-  const {data, error} = await supabase.from('To-Dos').select('*').eq('UID', body.userid).limit(15)
+  const {data, error} = await supabase.from('To-Dos').select('*').eq('UID', body.userid)
 
 
   if(error){
@@ -45,7 +45,7 @@ export async function POST(req, res) {
             prompt:"Instructions:"+`You are given a prompt and a datachunk, you must answer the users question and return either a list or a single item, JSON response format:{action:read, responseMessage: Your response to the prompt, taskOrder: An array of tasks (extracted from the data given to you[with all fields, id, tid, uid, content, due_date, board,completed,module_link_id, BID, created_at])}, you only return JSON `+"////Prompt:"+ body.prompt+`  The current date is ${currentDate}`+"////datachunk:"+JSON.stringify(objArray),
           
             temperature: 0.8,
-            max_tokens: 2000
+            max_tokens: 4500
      
         
         },
