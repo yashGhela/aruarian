@@ -5,6 +5,8 @@ export async function GET (req, res){
 
     const url = req.url
 
+    console.log(req.url)
+
  
 
     // const supabaseURL= process.env.SUPABASE_URL

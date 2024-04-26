@@ -90,6 +90,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       user= data.data.user.id
       console.log(user)
 
+
+      checkPaid()
+
     
 
       
@@ -275,6 +278,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         
       }
 
+
+    }
+
+
+    const checkPaid=async()=>{
+      const {data, error}=await supabase.from('Users').eq('UID', user)
+
+      if (data.paid){
+        return null
+      }else{
+        router.push('/Payment')
+      }
 
     }
 
