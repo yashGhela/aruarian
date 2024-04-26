@@ -88,7 +88,7 @@ export default function Auth() {
         if (error){
           console.log(error)
         }else{
-          router.push('/onboarding')
+          router.push('/Payment')
         
         }
       }

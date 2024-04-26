@@ -53,6 +53,7 @@ export default function Build(){
                     Ari can schedule your tasks for you, <br/> tell you what's coming up for the week  and give you specific details on your upcoming tasks on the fly. <br/>
                      Ari is still in the early stages of development and as such there may be bugs and/or errors. <br/>
                      Ari currently cannot update tasks or batch create tasks but these features are being built <br/>
+                     Ari has 2 basic commands /add and /read <br/>
 
 
                     To get started click the button below. <br/>
