@@ -4,16 +4,17 @@ import { motion } from 'framer-motion'
 function Section2() {
   return (
     <div>
-        <div className='md:mx-[20%] mt-40 -mx-432'>
+        <div className='md:mx-[20%] mt-20 -mx-432'>
 
         <p className='text-xl mt-[220%] sm:mt-[70%] font-bold'>No more manually creating lists</p>
     <p className='text-md text-neutral-600 mt-2 font-semibold'>Aruarian does it on the fly</p>
-
+    <img className=' rounded-lg   mt-20  visible h-full m-2 w-full  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design%20(1).gif" alt="" />  
+      
 
         
 
      
-<div className='px-10 sm:px-0s'>
+{/* <div className='px-10 sm:px-0s'>
 
 <p className='font-light text-left mt-10'>Me</p>
 <motion.p initial={{ opacity: 0 }}
@@ -133,7 +134,7 @@ style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
          </div>
          </div>
  </motion.span>
-</div>
+</div> */}
 
 
 

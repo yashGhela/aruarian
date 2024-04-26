@@ -46,7 +46,7 @@ export default function AuthPage() {
 
     
 
-    {/* <img className=' rounded-lg sm:invisible invisible sm:w-[50%] ml-40 md:ml-[24rem] lg:ml-40 mt-10  md:visible md:w-[50%] md:h-[40%] lg:h-[50%] m-2 lg:w-[50%] border shadow-xl ' src="https://framerusercontent.com/images/XCMYqoWe7vIOkGT1tHRxKKu4Y.gif" alt="" />  */}
+    <img className=' rounded-lg sm:invisible invisible sm:w-[50%] ml-40 md:ml-[24rem] lg:ml-40 mt-10  md:visible md:w-[50%] md:h-[40%] lg:h-[50%] m-2 lg:w-[50%]  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design%20(2).gif" alt="" /> 
              
         
     

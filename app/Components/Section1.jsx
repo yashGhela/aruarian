@@ -5,13 +5,16 @@ function Section1() {
   return (
     <div>
 
-<div className='md:mx-[20%] mt-40 -mx-432'>
+<div className='md:mx-[20%] mt-20 -mx-432'>
 
 
     <p className='text-xl mt-[220%] sm:mt-[110%] font-bold'>No more fiddling with menus</p>
     <p className='text-md text-neutral-600 mt-2 font-semibold'>Aruarian just gets you</p>
 
+<img className=' rounded-lg   mt-20  visible h-full m-2 w-full  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design.gif" alt="" />  
+        
 
+{/* 
 <div className='px-10 sm:px-0'>
 <p className='font-light text-left mt-10'>Me</p>
       <motion.p initial={{ opacity: 0 }}
@@ -73,7 +76,7 @@ function Section1() {
                    <motion.div  whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2 border-neutral-400  bg-white/[0.50]`}></motion.div>
                </motion.div>
        </motion.span>
-</div>
+</div> */}
 
 
 

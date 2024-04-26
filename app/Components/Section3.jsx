@@ -5,18 +5,19 @@ function Section3() {
   return (
     <div>
 
-<div className='md:mx-[20%] mt-40 -mx-432'>
+<div className='md:mx-[20%] mt-20 -mx-432'>
 
 <p className='text-xl mt-[220%] sm:mt-[110%] font-bold'>No more searching for specifics</p>
 <p className='text-md text-neutral-600 mt-2 font-semibold'>Aruarian gets down to the details</p>
 
 
-
+<img className=' rounded-lg   mt-20  visible h-full m-2 w-full  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design%20(2).gif" alt="" />  
+      
 
 
 <div className='px-10 sm:px-0s'>
 
-<p className='font-light text-left mt-10'>Me</p>
+{/* <p className='font-light text-left mt-10'>Me</p>
 <motion.p initial={{ opacity: 0 }}
 whileInView={{ opacity: 1 }}
 viewport={{ once: false  }} 
@@ -55,7 +56,7 @@ className='w-full h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-2xl  md:
     <p className='p-5'>You need to be at John's house at around 16:00, remember to finish getting everything for the party! </p>
 
                   
-</motion.span>
+</motion.span> */}
 
 
 
