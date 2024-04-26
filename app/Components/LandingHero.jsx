@@ -31,7 +31,7 @@ export default function LandingHero(){
       
 
      
-      <p className='  mt-8    md:px-64  md:-ml-0 text-4xl   sm:text-5xl  font-bold'>AI powered Task management</p>
+      <p className='  mt-8    md:px-64  md:-ml-0 text-4xl   sm:text-5xl  font-bold'>The first ever AI to-do management tool</p>
 
       
 
