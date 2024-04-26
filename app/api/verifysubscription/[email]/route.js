@@ -19,6 +19,8 @@ export async function GET (req, res){
 
     const email = url.split("verifysubscription/")[1];
 
+    console.log(email)
+
 
 
 
@@ -42,7 +44,7 @@ export async function GET (req, res){
         
         const data = await response.json();
     
-    
+      console.log(data)
 
 
         
@@ -56,6 +58,8 @@ export async function GET (req, res){
              
                 isPaid = true;
                 break;
+            }else{
+              console.log('email not found')
             }
           }
 
