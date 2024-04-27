@@ -58,7 +58,7 @@ export default function Home() {
 
       <LandingVideo/>
 
-      <p className='text-xl text-center mt-[80%] md:mt-[40%]  font-bold'>What Aruarian does for you</p>
+      <p className='text-xl text-center mt-[80%] md:mt-[40%]  font-bold'>No more what?</p>
 
 
       <Section1/>
