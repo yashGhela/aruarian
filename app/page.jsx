@@ -56,6 +56,8 @@ export default function Home() {
 
       <LandingHero/>
 
+      <LandingVideo/>
+
 
       <Section1/>
 

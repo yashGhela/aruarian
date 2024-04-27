@@ -283,7 +283,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 
     const checkPaid=async()=>{
-      const {data, error}=await supabase.from('Users').eq('UID', user)
+      const {data, error}=await supabase.from('Users')
+      .eq('UID', user)
 
       if (data.paid){
         return null
@@ -384,7 +385,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   </div>
 
 
-        <div className="md:mt-[20%] md:ml-[40%] mt-[30%] ml-5 w-[350px] h-self  backdrop-blur-sm  float-right   rounded-[20px] bg-white/40 border p-3  border-white/[0.06]">
+        <div className="md:mt-[20%] md:ml-[40%] mt-[30%] ml-5 w-[450px] h-self  backdrop-blur-sm  float-right   rounded-[20px] bg-white/40 border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>

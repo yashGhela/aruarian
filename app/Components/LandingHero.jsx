@@ -11,7 +11,7 @@ export default function LandingHero(){
     const router=useRouter()
     return(
         <motion.div 
-        className=' mt-20 mx-10 float-left text-center  md:items-center items-center  p-5 flex-col '
+        className=' mt-20 mb-[10%] mx-10 float-left text-center  md:items-center items-center  p-5 flex-col '
         
         
       
