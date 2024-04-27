@@ -31,18 +31,18 @@ export default function LandingHero(){
       
 
      
-      <p className='  mt-8    md:px-64  md:-ml-0 text-4xl   sm:text-5xl  font-bold'>The first ever AI to-do management tool</p>
+      <p className='  mt-8 border pb-10 -ml-10   text-transparent bg-clip-text bg-gradient-to-b from-slate-400 via-red-200 to-zinc-300  md:px-32  md:-ml-0 text-6xl   sm:text-7xl  font-bold'>The first ever AI to-do management tool</p>
 
       
 
-<p className=' mt-10   lg:px-64    text-xl font-normal'>Aruarian makes task management easy,<br/> just tell Ari whats up and get on with life </p>
+<p className=' mt-10  lg:px-64 -ml-10    text-xl font-normal'>Aruarian makes task management easy, just tell Ari whats up and get on with life </p>
 
 {/* //Discover serenity with your intuitive AI-powered task manager, */}
    
 
 
 
-      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' float-left p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold   border-white/[0.06] '>Join Now</motion.button>
+      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' float-left p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4 -ml-5 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold   border-white/[0.06] '>Join Now</motion.button>
        
    
 

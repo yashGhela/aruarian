@@ -38,7 +38,7 @@ export default function Build(){
     
 
     return(
-        <main style={{backgroundImage:'url(https://images.unsplash.com/photo-1711619034500-8f562ce7bf4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',backgroundRepeat:'no-repeat'}} className={`flex self-center place-content-center  bg-white text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full  overflow-hidden`}>
+        <main className={`flex self-center place-content-center  bg-gradient-to-b from-slate-300 via-red-100 to-zinc-200 text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full  overflow-hidden`}>
            
 
                 

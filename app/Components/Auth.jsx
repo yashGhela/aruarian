@@ -151,13 +151,13 @@ export default function Auth() {
              </div>
              {checked?<motion.button whileTap={{scale:1.01}} id='login' onClick={()=>{login()}} className='w-full p-4  font-bold  bg-white/40 rounded-2xl mt-3     hover:bg-white/50 '>Log In </motion.button>:
              <motion.button whileTap={{scale:1.01}} onClick={()=>{signup()}}className='w-full p-4 font-bold bg-white/40 rounded-2xl mt-3    hover:bg-white/50  '>Sign Up </motion.button>}
-             <p  className='text-gray-100 mt-4 text-xs  cursor-pointer'>By signing up you agree to our <Link href='/TermsAndConditions'  className='text-gray-100 mt-4   cursor-pointer underline'>Terms and Conditions</Link> and our <Link href='/PrivacyPolicy' className='text-gray-100 mt-4  cursor-pointer underline'>Privacy Policy</Link> </p>
+             <p  className='text-neutral-700 mt-4 text-xs  cursor-pointer'>By signing up you agree to our <Link href='/TermsAndConditions'  className='text-neutral-700 mt-4   cursor-pointer underline'>Terms and Conditions</Link> and our <Link href='/PrivacyPolicy' className='text-neutral-700 mt-4  cursor-pointer underline'>Privacy Policy</Link> </p>
              
              
  
          </div>
 
-         <button className="p-2 text-sm text-zinc-100 mt-10  font-normal mx-[40%] rounded-xl" onClick={()=>{if (checked){setChecked(false)}else{setChecked(true)}}}>{checked? "or Sign Up" : "or Login" }</button>
+         <button className="p-2 text-sm text-neutral-700 mt-10  font-normal mx-[40%] rounded-xl" onClick={()=>{if (checked){setChecked(false)}else{setChecked(true)}}}>{checked? "or Sign Up" : "or Login" }</button>
  
          </>
             
