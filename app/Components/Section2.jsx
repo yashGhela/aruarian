@@ -4,12 +4,17 @@ import { motion } from 'framer-motion'
 function Section2() {
   return (
     <div>
-        <div className='md:mx-[20%] mt-20 -mx-432'>
+        <div className='md:mx-[10%] md:flex mt-20 w-full mx-10'>
 
-        <p className='text-xl mt-[220%] sm:mt-[70%] font-bold'>No more manually creating lists</p>
+       <div className='text-left w-1/2'>
+       <p className='text-xl mt-[220%] sm:mt-[70%] font-bold'>No more manually creating lists</p>
     <p className='text-md text-neutral-600 mt-2 font-semibold'>Aruarian does it on the fly</p>
-    <img className=' rounded-lg   mt-20  visible h-full m-2 w-full  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design%20(1).gif" alt="" />  
+       </div>
+   
+   <div>
+   <img className=' rounded-lg   mt-20  visible h-[80%] m-2 w-[80%]  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design%20(1).gif" alt="" />  
       
+   </div>
 
         
 

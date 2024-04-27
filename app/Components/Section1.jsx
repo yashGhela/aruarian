@@ -5,14 +5,19 @@ function Section1() {
   return (
     <div>
 
-<div className='md:mx-[20%] mt-20 -mx-432'>
+<div className='md:mx-[10%] md:flex mt-20 w-full mx-10'>
+  
 
 
-    <p className='text-xl mt-[220%] sm:mt-[110%] font-bold'>No more fiddling with menus</p>
+
+  <div className='text-left w-1/2'>
+  <p className='text-xl mt-[10%] sm:mt-[60%] font-bold'>No more fiddling with menus</p>
     <p className='text-md text-neutral-600 mt-2 font-semibold'>Aruarian just gets you</p>
+  </div>
 
-<img className=' rounded-lg   mt-20  visible h-full m-2 w-full  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design.gif" alt="" />  
-        
+<div>
+<img className=' rounded-lg   mt-20  visible h-[80%] m-2 w-[80%]  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design.gif" alt="" />  
+    </div>    
 
 {/* 
 <div className='px-10 sm:px-0'>

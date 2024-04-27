@@ -52,11 +52,13 @@ export default function Home() {
      <div className=' md:w-[70rem] lg:w-[75rem] justify-center w-[25rem] mr-0 flex-col '>
 
 
-      <LandingBar  />
+      <LandingBar isLand={true}  />
 
       <LandingHero/>
 
       <LandingVideo/>
+
+      <p className='text-xl text-center mt-[80%] md:mt-[40%]  font-bold'>What Aruarian does for you</p>
 
 
       <Section1/>
@@ -65,9 +67,13 @@ export default function Home() {
 
       <Section3/>
 
+      <Element id='pricing'>
       <Pricing landing={true}/>
+      </Element>
 
-      <LandingAbout/>
+     <Element id='about'>
+     <LandingAbout/>
+     </Element>
 
 
       <LandingFaq/>

@@ -21,10 +21,9 @@ export default function LandingBar({isLand}){
       
      
         {isLand?
-      <div className=' mt-3 float-right right-[20%] absolute  flex'>
-      <motion.button whileTap={{scale:1.1}} onClick={()=>{setAboutOpen(true)}} className={` mt-12 p-4 sm:invisible invisible md:visible ml-8 cursor-pointer`} >About</motion.button>
-        <motion.button whileTap={{scale:1.1}} onClick={()=>{setPricingOpen(true)}} className={` mt-12 p-4 sm:invisible invisible md:visible ml-8 cursor-pointer`} >Pricing</motion.button>
-       
+      <div className=' mt-2 float-right left-[20%] absolute  flex'>
+      <SmoothScrollLink to='about'>About</SmoothScrollLink>
+       <SmoothScrollLink to='pricing'>Pricing</SmoothScrollLink>
         
        </div>:null}
 

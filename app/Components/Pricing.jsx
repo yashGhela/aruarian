@@ -65,7 +65,7 @@ export default function Pricing({landing}){
 
                 
 
-            <div className="sm:w-[25rem] w-[23rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[70%] bg-white/40 rounded-xl h-[27rem] shadow-2xl  border-2 border-white/[0.13] ">
+            <div className="sm:w-[25rem] w-[23rem] mx-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[70%] bg-white/40 rounded-xl h-[23rem] shadow-2xl  border-2 border-white/[0.13] ">
 
                 
 
@@ -76,8 +76,8 @@ export default function Pricing({landing}){
                     
 
                     <p className='font-bold text-6xl text-centertext-neutral-700 mt-2 '>$5<span className='font-normal  text-xl  md:text-[30px] text-neutral-600 mt-2'>/month</span></p>
-                    <p className="mt-5 px-10">Early preorder for Aruarian for a lower price, 
-                    you'll get full access to Aruarian on launch as well as early access</p>
+                    <p className="mt-5 px-10">Early access for Aruarian for a lower price </p>
+                    
                     <div className=" ml-20">
                         
                     {/* {benefitspro.map((i)=>{
