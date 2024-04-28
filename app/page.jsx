@@ -31,7 +31,9 @@ import Section3 from './Components/Section3'
 export default function Home() {
   const router = useRouter()
 
-  
+  useEffect(()=>{
+    document.body.style.zoom = 1.1
+  })
 
 
 
