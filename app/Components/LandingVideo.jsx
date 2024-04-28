@@ -30,6 +30,7 @@ export default function LandingVideo(){
     
        width={'100%'}
        height={'100%'}
+       controls={true}
        
        style={{borderRadius:'10px'}}
        url='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/FocuSee%20Project%202024-04-27%2015-22-00.mp4?t=2024-04-27T13%3A47%3A43.277Z'
