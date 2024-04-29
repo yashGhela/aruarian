@@ -46,7 +46,7 @@ export default function Build(){
 
             <div className="mt-[10%] text-neutral-700 md:mx-[35%] xl:mx-[33%]  mx-5 w-[350px] xl:w-[450px]  h-self  backdrop-blur-sm    rounded-[40px] bg-white/40 border p-3  border-white/[0.06]">
                 <p className="text-2xl mt-2 ">Welcome to Aruarian! </p>
-                <p className="mt-2 text-lg p-10">
+                <p className="mt-2 text-left text-lg p-10">
 
                     We're so excited to have you join us! <br/>
                     Aruarian is an early stage AI productivity tool. <br/>
@@ -64,7 +64,7 @@ export default function Build(){
 
                 </p>
 
-                <button onClick={()=>{router.push('/Dashboard')}} className=' text-white p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
+                <button onClick={()=>{router.push('/Dashboard')}} className='  p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
         
    
             </div>

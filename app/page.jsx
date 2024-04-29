@@ -31,9 +31,9 @@ import Section3 from './Components/Section3'
 export default function Home() {
   const router = useRouter()
 
-  useEffect(()=>{
-    document.body.style.zoom = 1.1
-  })
+  // useEffect(()=>{
+  //   document.body.style.zoom = 1.1
+  // })
 
 
 
@@ -46,7 +46,7 @@ export default function Home() {
     
       <main 
       
-      className=' flex self-center place-content-center text-neutral-900 bg-gradient-to-b from-slate-200 via-zinc-100 to-slate-200 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      className=' flex  self-center place-content-center text-neutral-900 bg-gradient-to-b from-slate-200 via-zinc-100 to-slate-200 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    

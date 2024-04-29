@@ -17,6 +17,10 @@ import Overlay from "../Components/Overlay"
 import { motion } from "framer-motion"
 import CancelSub from '../Components/CancelSub'
 
+import { grid } from 'ldrs'
+
+grid.register()
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 
@@ -91,7 +95,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       console.log(user)
 
 
-      checkPaid()
+     
 
     
 
@@ -282,17 +286,6 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     }
 
 
-    const checkPaid=async()=>{
-      const {data, error}=await supabase.from('Users')
-      .eq('UID', user)
-
-      if (data.paid){
-        return null
-      }else{
-        router.push('/Payment')
-      }
-
-    }
 
           
         const getUserBoards=async()=>{
@@ -368,7 +361,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
    
 
-     <div className=' md:w-[70rem] lg:w-[80rem] w-[50rem] mr-0 flex-col'>
+     <div className=' md:w-[70rem] inset-1 lg:w-[80rem] w-[50rem] mr-0 flex-col'>
         
     {mesSent ?
 
@@ -391,7 +384,15 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         <div>
             <div className=' p-2'>
              
-             <p className=" text-black text-xl text-left mb-4"> {prediction.status!==201?prediction.status:prediction.message}</p>
+             <p className=" text-black text-xl text-left mb-4"> {prediction.status!==201?<div className='flex'>
+              <p>{prediction.status}</p>
+              <l-grid
+              size="30"
+              speed="1.5"
+              className='ml-5' 
+              color="black" 
+            ></l-grid>
+             </div>:prediction.message}</p>
 
              {prediction.tasks&&<Container todos={prediction.tasks} isRes={true}/>}
              </div>
