@@ -20,7 +20,7 @@ import CancelSub from '../Components/CancelSub'
 import { grid } from 'ldrs'
 import Feedback from '../Components/Feedback'
 
-grid.register()
+// grid.register()
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -387,12 +387,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
              
              <p className=" text-black text-xl text-left mb-4"> {prediction.status!==201?<div className='flex'>
               <p>{prediction.status}</p>
-              <l-grid
+              {/* <l-grid
               size="30"
               speed="1.5"
               className='ml-5' 
               color="black" 
-            ></l-grid>
+            ></l-grid> */}
              </div>:prediction.message}</p>
 
              {prediction.tasks&&<Container todos={prediction.tasks} isRes={true}/>}
