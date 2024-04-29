@@ -18,6 +18,7 @@ import { motion } from "framer-motion"
 import CancelSub from '../Components/CancelSub'
 
 import { grid } from 'ldrs'
+import Feedback from '../Components/Feedback'
 
 grid.register()
 
@@ -519,6 +520,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     
    <LogOut/>
    <CancelSub/>
+   <Feedback/>
    </div>
      
         </div>
