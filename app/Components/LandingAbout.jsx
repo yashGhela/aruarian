@@ -9,7 +9,7 @@ function LandingAbout() {
 
 
 
-<p className=" text-left   lg:p-10"> 
+<p className=" text-left text-lg  lg:p-10"> 
      
 
      Hey, Yash here. <br/>
