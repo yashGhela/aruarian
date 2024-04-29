@@ -31,7 +31,7 @@ export default function LandingHero(){
       
 
      
-      <p className='  mt-8 border pb-10 -ml-10   text-transparent bg-clip-text bg-gradient-to-b from-slate-400 via-red-200 to-zinc-300  md:px-32  md:-ml-0 text-6xl   sm:text-7xl  font-bold'>The first ever AI to-do management tool</p>
+      <p className='  mt-8  pb-10 -ml-10   text-transparent bg-clip-text bg-gradient-to-b from-slate-400 via-red-200 to-zinc-300  md:px-32  md:-ml-0 text-6xl   sm:text-7xl  font-bold'>The first ever AI to-do management tool</p>
 
       
 
