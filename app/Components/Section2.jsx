@@ -7,8 +7,8 @@ function Section2() {
         <div className='md:mx-[10%] md:flex mt-20 w-full mx-10'>
 
        <div className='text-left w-1/2'>
-       <p className='text-xl mt-[220%] sm:mt-[70%] font-bold'>No more manually creating lists</p>
-    <p className='text-md text-neutral-600 mt-2 font-semibold'>Aruarian does it on the fly</p>
+       <p className='text-3xl mt-[220%] sm:mt-[70%] font-bold'>No more manually creating lists</p>
+    <p className='text-2xl text-neutral-600 mt-2 font-normal'>Aruarian does it on the fly</p>
        </div>
    
    <div>

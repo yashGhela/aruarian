@@ -5,14 +5,14 @@ function Section1() {
   return (
     <div>
 
-<div className='md:mx-[10%] md:flex mt-20 w-full mx-10'>
+<div className='md:mx-[10%] md:flex mt-32 w-full mx-10'>
   
 
 
 
   <div className='text-left w-1/2'>
-  <p className='text-xl mt-[10%] sm:mt-[60%] font-bold'>No more fiddling with menus</p>
-    <p className='text-md text-neutral-600 mt-2 font-semibold'>Aruarian just gets you</p>
+  <p className='text-3xl mt-[10%] sm:mt-[60%] font-bold'>No more fiddling with menus</p>
+    <p className='text-2xl text-neutral-600 mt-2 font-normal'>Aruarian just gets you</p>
   </div>
 
 <div>

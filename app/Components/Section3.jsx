@@ -10,8 +10,8 @@ function Section3() {
 
 <div className='text-left w-1/2'>
   
-<p className='text-xl mt-[220%] sm:mt-[70%] font-bold'>No more searching for specifics</p>
-<p className='text-md text-neutral-600 mt-2 font-semibold'>Aruarian gets down to the details</p>
+<p className='text-3xl mt-[220%] sm:mt-[70%] font-bold'>No more searching for specifics</p>
+<p className='text-2xl text-neutral-600 mt-2 font-normal'>Aruarian gets down to the details</p>
 </div>
 
 <div>

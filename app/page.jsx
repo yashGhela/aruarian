@@ -60,7 +60,7 @@ export default function Home() {
 
       <LandingVideo/>
 
-      <p className='text-xl text-center mt-[80%] md:mt-[40%]  font-bold'>No more what?</p>
+      <p className='text-8xl text-center mt-[30%] md:mt-[40%]  font-bold'>No more what?</p>
 
 
       <Section1/>

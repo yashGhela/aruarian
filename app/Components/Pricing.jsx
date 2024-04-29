@@ -36,7 +36,7 @@ export default function Pricing({landing}){
 
         <div className={`${landing?"mt-[140%] md:mt-[60%] lg:mt-[40%] sm:mt-[150%]":"mt-10"} flex-col`} >
 
-<p className=" text-md text-center font-bold">Pricing</p>
+<p className=" text-8xl text-center font-bold">Pricing</p>
             {/* <button onClick={()=>{setOpenModal(true)}} className="p-2 bg-white/40 hover:bg-white/50 border border-white/[0.13] rounded-lg  mt-4">Why do I need to pay for this?</button> */}
 
 

@@ -4,8 +4,8 @@ function LandingAbout() {
   return (
     <div className='w-1/2 mt-40 ml-[25%]'>
       
-      <p className='text-xl  font-bold'>Why we built it</p>
-    <p className='text-md text-neutral-600 mt-2 font-semibold'>The reason for Aruarian</p>
+      <p className='text-8xl  font-bold'>Why we built it</p>
+    <p className='text-2xl text-neutral-600 mt-2 font-semibold'>The reason for Aruarian</p>
 
 
 
