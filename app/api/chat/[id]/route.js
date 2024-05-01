@@ -4,7 +4,7 @@ import { createClient as createAdminClient } from "@supabase/supabase-js";
 export async function GET(req, res) {
 
   const url = req.url;
-  const id = url.split("add/")[1];
+  const id = url.split("chat/")[1];
 
   const queryString = url.split('?')[1]; // Get the query string part
   const params = new URLSearchParams(queryString); // Parse the query string
