@@ -88,6 +88,16 @@ export async function GET(req, res) {
           res.statusCode = 201;
           return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
         }
+    }else{
+      console.log(jsonObject.responseMessage)
+        console.log(jsonObject.taskOrder)
+
+
+        console.log('Successfully read the db!')
+        res.statusCode=201
+
+        return NextResponse.json( {status:201, message:jsonObject.responseMessage, tasks:jsonObject.taskOrder})
+
     }
 
   }
