@@ -80,7 +80,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     <div>
         <div className={` ${isRes?'w-full':'w-[120%]'} sm:w-full h-[300px]    md:w-[370px] lg:w-full xl:w-full mt-20 lg:mt-0`}>
   <div
-    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-full lg:w-full    rounded-[20px]  bg-white/50 border   border-white/[0.06] p-3  "
+    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-full lg:w-full    rounded-[20px]  bg-white/20 border   border-white/[0.06] p-3  "
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
       {/* <div className="flex mb-1 -mt-1">
@@ -107,13 +107,13 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full min-h-[180px] shadow-md max-h-[200px] sm:min-h-[120px] xl:min-h-[114px] xl:max-h-[145px] md:min-h-[125px] p-2 rounded-[20px] mb-3 bg-white/10 border border-neutral-400/20">
+    id='to-do container' className="w-full min-h-[180px] shadow-md max-h-[200px] sm:min-h-[120px] xl:min-h-[114px] xl:max-h-[145px] md:min-h-[125px] p-2 rounded-[20px] mb-3 bg-white/10 border border-neutral-600/10">
     <div className="flex">
       {/* <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
         <p className="-mt-1 text-sm font-normal text-left text-gray-700">{i.board} </p>
       </div> */}
       <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg ">
-        <p className="-mt-1 text-sm font-light text-left text-neutral-400">{convertTimestampToDateTime(i.due_date)}</p>
+        <p className="-mt-1 text-sm font-light text-left text-neutral-600">{convertTimestampToDateTime(i.due_date)}</p>
       </div>
     </div>
     <p className="w-[70%]  p-2 ml-5  h-12 text-[17px] font-normal text-left ">
@@ -131,7 +131,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
 
 
       
-      }} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[8%] ml-[80%] cursor-pointer rounded-md border shadow-sm border-neutral-400  ${i.completed? 'bg-white/0':'bg-neutral-600/[0.3]'} `}></motion.div>
+      }} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[8%] ml-[80%] cursor-pointer rounded-md border shadow-sm border-neutral-600/50  ${i.completed? 'bg-neutral-600/[0.3]':'bg-white/0]'} `}></motion.div>
   </motion.div>
    )
   })}
