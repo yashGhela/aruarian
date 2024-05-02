@@ -322,7 +322,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   </div>
 
 
-        <div className="md:mt-[20%] md:ml-[40%] mt-[30%] ml-5 w-[450px] h-self  backdrop-blur-sm  float-right   rounded-[20px] bg-white/40 border p-3  border-white/[0.06]">
+        <div className="md:mt-[20%] sm:ml-[40%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-right   rounded-[20px] bg-white/40 border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>
@@ -363,8 +363,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     {/* <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{JSON.stringify(responseAI.tasks)}</p> */}
 
-   {AIData ?
-    <Container todos={AIData} setTodos={setTodos} isRes={true}/>:null}
+
 
      
       </div>

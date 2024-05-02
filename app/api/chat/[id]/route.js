@@ -88,7 +88,7 @@ export async function GET(req, res) {
           res.statusCode = 201;
           return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
         }
-    }else{
+    }else if (jsonObject.action ==='read'){
       console.log(jsonObject.responseMessage)
         console.log(jsonObject.taskOrder)
 
@@ -97,6 +97,30 @@ export async function GET(req, res) {
         res.statusCode=201
 
         return NextResponse.json( {status:201, message:jsonObject.responseMessage, tasks:jsonObject.taskOrder})
+
+    }else if (jsonObject.action ==='update'){
+
+      console.log(jsonObject)
+
+      const updatefield= jsonObject.update_field;
+      const data = jsonObject.updatedata
+
+      const { tdata, error } = await supabase.from('To-Dos').update(
+        {
+          [updatefield] : data
+        }
+      ).eq('tid',jsonObject.TID)
+
+
+      if (error) {
+        console.log(error);
+        res.statusCode = 500;
+        return NextResponse.json({ error: error });
+      } else {
+        console.log('Successfully updated the db!');
+        res.statusCode = 201;
+        return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
+      }
 
     }
 
