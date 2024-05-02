@@ -298,7 +298,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
            <title>Dashboard</title>
          </header>
          <main 
-         className=' flex text-neutral-700 bg-gradient-to-b from-slate-300 via-pink-100 to-zinc-200 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' flex text-neutral-900 bg-gradient-to-b from-blue-300 via-cyan-100 to-orange-300 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      <div className="fixed inset-0   bg-black opacity-10"></div>
@@ -322,7 +322,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   </div>
 
 
-        <div className="md:mt-[20%] sm:ml-[40%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-right   rounded-[20px] bg-white/40 border p-3  border-white/[0.06]">
+        <div className="md:mt-[20%] sm:ml-[40%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-right  shadow-inner  rounded-[20px] bg-white/30 border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>

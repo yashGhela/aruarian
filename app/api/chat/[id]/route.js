@@ -100,7 +100,7 @@ export async function GET(req, res) {
 
     }else if (jsonObject.action ==='update'){
 
-      console.log(jsonObject)
+      
 
       const updatefield= jsonObject.update_field;
       const data = jsonObject.updatedata
