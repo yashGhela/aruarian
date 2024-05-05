@@ -122,6 +122,21 @@ export async function GET(req, res) {
         return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
       }
 
+    }else if (jsonObject.action==='batchinsert'){
+      const tasks = jsonObject.tasks
+      console.log(tasks)
+
+      const {data, error}=await supabase.from('To-Dos').insert(tasks)
+
+      if (error){
+        console.log(error)
+        res.statusCode = 500;
+        return NextResponse.json({ error: error });
+      }else{
+        console.log('Successfully batch added data!');
+        res.statusCode = 201;
+        return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
+      }
     }
 
   }
