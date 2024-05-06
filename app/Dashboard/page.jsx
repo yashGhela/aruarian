@@ -298,10 +298,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
            <title>Dashboard</title>
          </header>
          <main 
-         className=' flex text-neutral-900 bg-gradient-to-b from-purple-100 via bg-amber-100 to-orange-200 bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         style={{background: 'linear-gradient(0deg, rgba(219,200,175,1) 0%, rgba(226,169,169,1) 29%, rgba(255,164,93,1) 44%, rgba(255,233,233,1) 74%);'}}
+         className=' flex text-neutral-900  bg-cover self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
-     <div className="fixed inset-0   bg-black opacity-5"></div>
+     {/* <div className="fixed inset-0   bg-black opacity-10"></div> */}
 
    
 
@@ -437,7 +438,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         </div>
       )} */}
 
-     
+      {/* All dis code is for the bottom section */}
      <motion.div className=" md:ml-32 lg:ml-64  xl:ml-72 2xl:ml-32 fixed flex-col mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
