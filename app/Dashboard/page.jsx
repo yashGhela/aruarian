@@ -443,16 +443,16 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
     <div className="flex md:visible invisible mb-2 md:ml-0  xl:ml-0">
-    <motion.button onClick={()=>{setPrompt(' What work do I have for today?'); }} whileHover={{scale:1.03}} className='  w-1/6 focus:outline-none p-2 rounded-lg shadow-sm bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
-    <motion.button onClick={()=>{setPrompt(' What tasks are overdue?'); }} whileHover={{scale:1.03}} className=' ml-2  w-1/6 focus:outline-none p-2 rounded-lg bg-white/40 shadow-sm   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
-    <motion.button onClick={()=>{setPrompt(' Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='ml-2  w-1/6 focus:outline-none p-2 rounded-lg bg-white/40  shadow-sm  hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>
+    <motion.button onClick={()=>{setPrompt(' What work do I have for today?'); }} whileHover={{scale:1.03}} className='  w-1/6 focus:outline-none p-2 rounded-lg shadow-inner bg-white/40   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
+    <motion.button onClick={()=>{setPrompt(' What tasks are overdue?'); }} whileHover={{scale:1.03}} className=' ml-2  w-1/6 focus:outline-none p-2 rounded-lg bg-white/40 shadow-inner   hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
+    <motion.button onClick={()=>{setPrompt(' Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='ml-2  w-1/6 focus:outline-none p-2 rounded-lg bg-white/40  shadow-inner  hover:bg-white/50 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>
 
 
     </div>
     <div className="flex">
    
-       <input value={prompt}   onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className="  md:w-1/2 w-[80%] focus:outline-none p-2 rounded-lg bg-white/40 border  backdrop-blur-sm   border-white/[0.06]" />
-     <motion.button onClick={()=>{sendPrompt(); setMesSent(true); setIsLoading(true)}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-lg bg-white/40 border hover:bg-white/50  text-black/30  border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" /></svg> </motion.button>
+       <input value={prompt}   onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className="  md:w-1/2 w-[80%] focus:outline-none p-2 rounded-lg bg-white/40 border  backdrop-blur-sm  shadow-inner  border-white/[0.06]" />
+     <motion.button onClick={()=>{sendPrompt(); setMesSent(true); setIsLoading(true)}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-lg bg-white/40 border shadow-inner hover:bg-white/50  text-black/30  border-white/[0.06]" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" /></svg> </motion.button>
      
     </div>
     {/* <p className='italic  text-neutral-700'>Aruarian is in early development and bugs may occur </p> */}
