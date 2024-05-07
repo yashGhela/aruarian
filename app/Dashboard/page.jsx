@@ -323,7 +323,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   </div>
 
 
-        <div className="md:mt-[20%] sm:ml-[40%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-right  shadow-inner  rounded-[20px] bg-white/30 border p-3  border-white/[0.06]">
+        <div className="md:mt-[10%] sm:ml-[40%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-right  shadow-inner  rounded-[20px] bg-white/30 border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>

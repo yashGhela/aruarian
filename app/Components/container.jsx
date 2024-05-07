@@ -80,7 +80,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     <div>
         <div className={`  sm:w-[80%] h-[300px]     md:w-full lg:w-full xl:w-full 2xl:w-[100%] mt-20 lg:mt-0`}>
   <div
-    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-full lg:w-ful shadow-inner    rounded-[20px]  bg-white/40 border   border-white/[0.06] p-3  "
+    className="w-full h-full overflow-y-auto  backdrop-blur-sm sm:w-full lg:w-ful shadow-inner    rounded-[20px]  bg-white/40  border   border-white/[0.06] p-3  "
     style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
       {/* <div className="flex mb-1 -mt-1">
