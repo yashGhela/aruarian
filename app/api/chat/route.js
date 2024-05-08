@@ -68,7 +68,7 @@ export async function POST(req, res) {
             +'///userid:'+userid,
           
             temperature: 0.8,
-            max_tokens: 5500
+            max_tokens: 6000
      
         
         },
