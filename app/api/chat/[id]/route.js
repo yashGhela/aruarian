@@ -122,7 +122,7 @@ export async function GET(req, res) {
         return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
       }
 
-    }else if (jsonObject.action==='batchinsert'){
+    }else if (jsonObject.action==='batchinsert' || jsonObject.action==='batch_insert'){
       const tasks = jsonObject.tasks
       console.log(tasks)
 
@@ -135,7 +135,7 @@ export async function GET(req, res) {
       }else{
         console.log('Successfully batch added data!');
         res.statusCode = 201;
-        return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
+        return NextResponse.json({ status: 201, message: jsonObject.responseMessage, tasks:jsonObject.tasks});
       }
     }else if (jsonObject.action==='text'){
       const message = jsonObject.responseMessage

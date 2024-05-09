@@ -299,7 +299,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
          </header>
          <main 
          style={{backgroundImage: 'url(https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-         className=' flex text-neutral-900  bg-fill self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' flex text-neutral-900  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      {/* <div className="fixed inset-0   bg-black opacity-10"></div> */}
