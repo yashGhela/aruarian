@@ -56,11 +56,11 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
 
     console.log(id)
 
-    const {data, error}= await supabase.from('To-Dos').update(
+    const {data, error}= await supabase.from('To-Dos').delete(
       {
-        completed: true
+        tid: id
       }
-    ).eq('tid', id)
+    )
 
     if(error){
       console.log(error)

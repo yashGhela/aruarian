@@ -137,6 +137,10 @@ export async function GET(req, res) {
         res.statusCode = 201;
         return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
       }
+    }else if (jsonObject.action==='text'){
+      const message = jsonObject.responseMessage
+      res.statusCode = 201;
+      return NextResponse.json({ status: 201, message: jsonObject.responseMessage });
     }
 
   }
