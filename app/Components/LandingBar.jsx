@@ -13,7 +13,7 @@ export default function LandingBar({isLand}){
   const [aboutOpen, setAboutOpen] = useState(false)
   const router = useRouter()
     return(
-        <div className={`flex fixed inset-2 justify-center items-center ml-0  w-full md:w-[90%] lg:w-full h-14 rounded-md mt-0 text-center`}>
+        <div className={`flex fixed inset-2 justify-center items-center -ml-2 backdrop-blur-sm p-0 w-full md:w-[90%] lg:w-full h-20 border-b-0 rounded-md -mt-2 text-center`}>
        {/*
      */}
 

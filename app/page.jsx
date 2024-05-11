@@ -48,9 +48,10 @@ export default function Home() {
     
   <div >
     
-      <main 
+      <main
+       
       
-      className=' flex px-0  self-center place-content-center text-neutral-900 bg-gradient-to-b from-slate-200 via-red-100 to-amber-50 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      className=' flex px-0  self-center place-content-center text-neutral-900 bg-gray-100 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    
@@ -64,7 +65,8 @@ export default function Home() {
 
       {/* <LandingVideo/> */}
 
-      <p className='text-8xl text-center mt-[30%] md:mt-[40%]  font-bold'>No more what?</p>
+      <Interest/>
+
 
 
       <Section1/>

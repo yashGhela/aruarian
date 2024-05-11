@@ -5,22 +5,24 @@ function Section1() {
   return (
     <div>
 
-<div className='md:mx-[10%] md:flex mt-32 w-full mx-10'>
+<div 
+style={{backgroundImage:'url(https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=1919&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
+className=' md:mx-[10%] md:flex mt-32 w-full mx-10 backdrop-blur-lg'>
   
 
 
 
-  <div className='text-left w-1/2'>
-  <p className='text-3xl mt-[10%] sm:mt-[60%] font-bold'>No more fiddling with menus</p>
-    <p className='text-2xl text-neutral-600 mt-2 font-normal'>Aruarian just gets you</p>
+  <div className='text-center w-1/2 ml-[15%]'>
+  {/* <p className='text-3xl mt-[10%] sm:mt-[60%] font-bold'>No more fiddling with menus</p>
+      <p className='text-2xl text-neutral-600 mt-2 font-normal'>Aruarian just gets you</p>
   </div>
 
 <div>
 <img className=' rounded-lg   mt-20  visible h-[80%] m-2 w-[80%]  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design.gif" alt="" />  
-    </div>    
+    </div>   */}
 
-{/* 
-<div className='px-10 sm:px-0'>
+ 
+<div className='px-10  sm:px-0'>
 <p className='font-light text-left mt-10'>Me</p>
       <motion.p initial={{ opacity: 0 }}
        whileInView={{ opacity: 1 }}
@@ -55,7 +57,7 @@ function Section1() {
        viewport={{ once: false  }}
        transition={{delay:0.7}}
        
-       className='w-full h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-2xl  md:w-1/2 text-left  float-right mt-5 mb-20 md:mb-0   rounded-[40px]  bg-white/40 border    border-white/[0.06] p-5'>
+       className='w-full h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-inner  rounded-[20px] bg-white/40 border p-3  border-white/[0.06]  md:w-1/2 text-left  float-right mt-5 mb-20 md:mb-0   '>
            
            <p className='p-5'>Sure, I'll remind you to get some pizzas for John's party on Friday</p>
 
@@ -81,7 +83,8 @@ function Section1() {
                    <motion.div  whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[10%] ml-[80%] cursor-pointer rounded-md border-2 border-neutral-400  bg-white/[0.50]`}></motion.div>
                </motion.div>
        </motion.span>
-</div> */}
+</div> 
+</div>
 
 
 
