@@ -50,19 +50,19 @@ export default function Home() {
     
       <main 
       
-      className=' flex  self-center place-content-center text-neutral-900 bg-gradient-to-b from-slate-200 via-red-100 to-amber-50 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      className=' flex px-0  self-center place-content-center text-neutral-900 bg-gradient-to-b from-slate-200 via-red-100 to-amber-50 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    
 
-     <div className=' md:w-[70rem] lg:w-[75rem] justify-center w-[25rem] mr-0 flex-col '>
+     <div className=' md:w-[70rem] lg:w-full justify-center w-[25rem] mr-0 flex-col '>
 
 
       <LandingBar isLand={true}  />
 
       <LandingHero/>
 
-      <LandingVideo/>
+      {/* <LandingVideo/> */}
 
       <p className='text-8xl text-center mt-[30%] md:mt-[40%]  font-bold'>No more what?</p>
 

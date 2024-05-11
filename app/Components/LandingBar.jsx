@@ -13,15 +13,15 @@ export default function LandingBar({isLand}){
   const [aboutOpen, setAboutOpen] = useState(false)
   const router = useRouter()
     return(
-        <div className={`flex justify-center items-center ml-0 lg:mx-[10%] w-full md:w-[90%] lg:w-full h-14 rounded-md mt-0 text-center`}>
+        <div className={`flex fixed inset-2 justify-center items-center ml-0  w-full md:w-[90%] lg:w-full h-14 rounded-md mt-0 text-center`}>
        {/*
      */}
 
-     <p className="absolute left-10 text-lg font-bold mt-12">Aruarian</p>
+     <p className="absolute left-5 text-white/40 text-lg font-bold mt-12">AruarianAI</p>
       
      
         {isLand?
-      <div className=' mt-2 float-right left-[20%] absolute  flex'>
+      <div className=' mt-0 float-right left-[10%] absolute  flex'>
       <SmoothScrollLink to='about'>About</SmoothScrollLink>
        <SmoothScrollLink to='pricing'>Pricing</SmoothScrollLink>
         
@@ -31,7 +31,7 @@ export default function LandingBar({isLand}){
 
        <div className={`flex mt-8 absolute right-10`}>
        {/* <Link href='/auth?state=Login'  className={`  ml-2 md:ml-4  pt-1 underline   p-4 mt-10 font-normal  rounded-md`}>Login</Link> */}
-       <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' p-4 mt-5 w-full ml-2 rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] '>Join Now</motion.button>
+       <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className='  p-4 mt-5 w-full ml-2 rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] '>Join Now</motion.button>
         
 
        </div>
