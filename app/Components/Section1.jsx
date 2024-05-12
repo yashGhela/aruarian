@@ -7,12 +7,14 @@ function Section1() {
 
 <div 
 style={{backgroundImage:'url(https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=1919&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-className=' md:mx-[10%] md:flex mt-32 w-full mx-10 backdrop-blur-lg'>
+className=' md:mx-[25%] bg-cover h-screen md:flex mt-32 w-1/2 rounded-[40px] mx-10 backdrop-blur-lg'>
   
 
 
 
-  <div className='text-center w-1/2 ml-[15%]'>
+  <div className='text-center w-full  ml-10 mt-[15%]'>
+
+    <p className='text-7xl text-white/80 font-bold'>Natural Interactions</p>
   {/* <p className='text-3xl mt-[10%] sm:mt-[60%] font-bold'>No more fiddling with menus</p>
       <p className='text-2xl text-neutral-600 mt-2 font-normal'>Aruarian just gets you</p>
   </div>
@@ -28,7 +30,7 @@ className=' md:mx-[10%] md:flex mt-32 w-full mx-10 backdrop-blur-lg'>
        whileInView={{ opacity: 1 }}
        viewport={{ once: false  }} 
        transition={{delay:0.3}}
-       className='w-full mt-2 h-full overflow-y-auto   shadow-2xl backdrop-blur-sm  md:w-1/2 text-left    rounded-[40px]  bg-white/40 border   border-white/[0.06] p-10'>
+       className='w-full mt-2 h-full overflow-y-auto   shadow-2xl backdrop-blur-sm  md:w-1/2 text-left    rounded-[20px]  bg-white/40 border   border-white/[0.06] p-10'>
            Hey Ari, remind me to get some pizzas for John's part on Friday.
        </motion.p>
 
@@ -66,7 +68,7 @@ className=' md:mx-[10%] md:flex mt-32 w-full mx-10 backdrop-blur-lg'>
                    whileInView={{ opacity: 1 }}
                    viewport={{ once: false  }}
                    
-                   id='to-do container' className="w-full mt-2  min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[30px] mb-3 bg-white/[0.33] border border-white/10 ">
+                   id='to-do container' className="w-full mt-2  min-h-[180px] max-h-[200px] sm:min-h-[160px] xl:min-h-[114px] xl:max-h-[145px] md:max-h-[150px] p-2 rounded-[20px] mb-3 bg-white/[0.33] border border-white/10 ">
                    <div className="flex">
                    <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
                        <p className="-mt-1 text-sm font-normal text-left text-gray-700">General </p>

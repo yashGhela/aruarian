@@ -12,7 +12,7 @@ export default function LandingHero(){
     return(
         <motion.div 
         style={{backgroundImage: 'url(https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-        className=' -mt-20 mb-[10%]  pb-80 -ml-16 w-full h-[15%]  md:mx-0  float-left text-center  md:items-center items-center  p-5 flex-col '
+        className=' -mt-20 mb-[10%]  pb-[60%] -ml-16 w-full h-screen  md:mx-0  float-left text-center  md:items-center items-center  p-5 flex-col '
         
         
       
