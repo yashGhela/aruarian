@@ -128,7 +128,10 @@ export default function Auth() {
  
     <>
  
- <div  className='mt-52 xl:mx-40 xl:w-[30%] md:w-[50%] fixed left-0  w-full'>
+ <div
+ 
+ 
+ className='mt-52 xl:mx-[35%] xl:w-[30%] md:w-[50%] fixed left-0  w-full'>
 
  
           

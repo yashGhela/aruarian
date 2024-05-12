@@ -316,7 +316,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     <div className='w-[70%] mx-[10%]'>
 
-<div className="md:mt-[10%]  mt-[30%]  w-[350px] h-self  backdrop-blur-sm text-left   text-xl rounded-[20px] ">
+<div className="md:mt-[10%]  mt-[30%] bg-white/40 border shadow-inner   border-white/[0.06] p-10  w-[350px] h-self  backdrop-blur-sm text-left   text-xl rounded-[20px] ">
 
    {prompt}
 

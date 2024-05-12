@@ -19,7 +19,7 @@ export default function AuthPage() {
 
 
   return (
-    <div    className={`flex  self-center place-content-center bg-gradient-to-b from-slate-300 via-red-100 to-zinc-200 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
+    <div    className={`flex  self-center place-content-center bg-gray-100 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
 
     <SEO title={'Auth'}/>
 
@@ -38,9 +38,11 @@ export default function AuthPage() {
         
     
     </div>     */}
+  
    <Auth/>
+  
 
-   <div  className="h-[62rem] bg-fit sm:invisible invisible md:visible sm:w-[50%] fixed right-0 -mb-20 lg:w-[50%] md:w-[90%]  mt-10  ">
+   {/* <div  className="h-[62rem] bg-fit sm:invisible invisible md:visible sm:w-[50%] fixed right-0 -mb-20 lg:w-[50%] md:w-[90%]  mt-10  ">
 
     <motion.img whileHover={{scale:1.04}} onClick={()=>{router.push('/')}}  className="h-20 w-20  md:ml-[24rem] lg:ml-40 ml-40 mt-20 cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/aruarianlogo2.png' alt="" />
 
@@ -50,7 +52,7 @@ export default function AuthPage() {
              
         
     
-    </div>  
+    </div>   */}
    </div>
   )
 }
