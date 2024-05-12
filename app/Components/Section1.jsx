@@ -10,7 +10,7 @@ function Section1() {
 
 <div 
 style={{backgroundImage:'url(https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=1919&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-className=' md:mx-[25%] bg-cover h-screen md:flex mt-32 w-1/2 rounded-[40px] mx-10 backdrop-blur-lg'>
+className=' md:mx-[25%] p-5 bg-cover h-screen md:flex mt-32 w-1/2 rounded-[40px] mx-10 backdrop-blur-lg'>
   
 
 

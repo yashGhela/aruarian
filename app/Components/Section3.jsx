@@ -1,7 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 function Section3() {
+  
+  let router = useRouter()
   return (
     <motion.div
     initial={{ scale:0.8 }}
@@ -9,7 +12,7 @@ function Section3() {
     viewport={{ once: false  }}>
         <div 
         style={{backgroundImage:'url(https://images.unsplash.com/photo-1698942942933-cc71dbf64de2?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-        className=' md:mx-[25%] h-screen md:flex mt-32 w-1/2 bg-cover rounded-[40px] mx-10 backdrop-blur-lg'>
+        className=' md:mx-[25%] p-5 h-screen md:flex mt-32 w-1/2 bg-cover rounded-[40px] mx-10 backdrop-blur-lg'>
 
        <div className='text-center w-full  ml-10 mt-[15%]'>
 

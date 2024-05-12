@@ -17,7 +17,7 @@ export default function LandingBar({isLand}){
        {/*
      */}
 
-     <p className="absolute left-5 text-gray-400/40 text-lg font-bold mt-12">AruarianAI</p>
+     <p className="absolute left-5 text-neutral-700/50 text-lg font-bold mt-12">AruarianAI</p>
       
      
         {isLand?
