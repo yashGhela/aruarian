@@ -3,24 +3,23 @@ import { motion } from 'framer-motion'
 
 function Section3() {
   return (
-    <div>
+    <motion.div
+    initial={{ scale:0.8 }}
+    whileInView={{ scale: 1 }}
+    viewport={{ once: false  }}>
+        <div 
+        style={{backgroundImage:'url(https://images.unsplash.com/photo-1698942942933-cc71dbf64de2?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
+        className=' md:mx-[25%] h-screen md:flex mt-32 w-1/2 bg-cover rounded-[40px] mx-10 backdrop-blur-lg'>
 
-<div className='md:mx-[10%] md:flex mt-10 w-full mx-10'>
+       <div className='text-center w-full  ml-10 mt-[15%]'>
 
-
-<div className='text-left w-1/2'>
-  
-<p className='text-3xl mt-[220%] sm:mt-[70%] font-bold'>No more searching for specifics</p>
-<p className='text-2xl text-neutral-600 mt-2 font-normal'>Aruarian gets down to the details</p>
-</div>
-
-<div>
-  
-<img className=' rounded-lg   mt-20  visible h-[80%] m-2 w-[80%]  shadow-xl ' src="https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Copy%20of%20Untitled%20Design%20(2).gif" alt="" />  
-    </div>  
+              
+    <p className='text-7xl text-white/80 font-bold'>Instant information</p>
 
 
-{/* <div className='px-10 sm:px-0s'>
+
+
+ <div className='px-10 sm:px-0s'>
 
  <p className='font-light text-left mt-10'>Me</p>
 <motion.p initial={{ opacity: 0 }}
@@ -56,7 +55,7 @@ whileInView={{ opacity: 1 }}
 viewport={{ once: false  }}
 transition={{delay:0.7}}
 
-className='w-full h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-2xl  md:w-1/2 text-left  float-right mt-5 mb-20 md:mb-0   rounded-[40px]  bg-white/40 border    border-white/[0.06] p-5'>
+className='w-full h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-inner  md:w-1/2 text-left  float-right mt-5 mb-20 md:mb-0   rounded-[40px]  bg-white/40 border    border-white/[0.06] p-5'>
     
     <p className='p-5'>You need to be at John's house at around 16:00, remember to finish getting everything for the party! </p>
 
@@ -68,12 +67,13 @@ className='w-full h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-2xl  md:
 
 
 
-</div> */}
+</div> 
+</div>
+
 </div>
 <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' float-left p-4 mt-20 w-[80%] mx-10 md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold   border-white/[0.06] '>Join Now</motion.button>
 
-
-    </div>
+    </motion.div>
   )
 }
 

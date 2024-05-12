@@ -3,7 +3,10 @@ import { motion } from 'framer-motion'
 
 function Section2() {
   return (
-    <div>
+    <motion.div
+    initial={{ scale:0.8 }}
+    whileInView={{ scale: 1 }}
+    viewport={{ once: false  }}>
         <div 
         style={{backgroundImage:'url(https://images.unsplash.com/photo-1578926375605-eaf7559b1458?q=80&w=1963&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
         className=' md:mx-[25%] h-screen md:flex mt-32 w-1/2 bg-cover rounded-[40px] mx-10 backdrop-blur-lg'>
@@ -55,13 +58,13 @@ fill="currentcolor"
  viewport={{ once: false  }}
  transition={{delay:0.7}}
 
- className='md:w-[80%] w-full  lg:w-1/2  h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-inner   text-left  float-right mt-5 mb-20 md:mb-0   rounded-[20px]  bg-white/20 border    border-white/[0.06] p-5'>
-     
+ className='w-full h-full overflow-y-auto ml-20 backdrop-blur-sm  shadow-inner  rounded-[20px] bg-white/40 border p-3  border-white/[0.06]  md:w-1/2 text-left  float-right mt-5 mb-20 md:mb-0   '>
+            
      <p className='p-5'>Sure, here's your list for everything you need to get:</p>
      <div>
  <div className={` w-full  h-[300px]     mt-20 lg:mt-0`}>
 <div
-className="w-full h-full overflow-y-auto  backdrop-blur-sm     rounded-[40px]  bg-white/40 border   border-white/[0.06] p-3  "
+className="w-full h-full overflow-y-auto  backdrop-blur-sm     rounded-[20px]  bg-white/40 border   border-white/[0.06] p-3  "
 style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
                      <motion.div
              initial={{ opacity: 0 }}
@@ -145,7 +148,7 @@ style={{ boxShadow: "6px 4px 4px 0 rgba(12,28,48,0.12)" }}>
 
 
 </div>
-    </div>
+    </motion.div>
   )
 }
 

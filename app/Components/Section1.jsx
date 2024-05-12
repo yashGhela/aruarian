@@ -3,7 +3,10 @@ import { motion } from 'framer-motion'
 
 function Section1() {
   return (
-    <div>
+    <motion.div
+    initial={{ scale:0.8 }}
+    whileInView={{ scale: 1 }}
+    viewport={{ once: false  }}>
 
 <div 
 style={{backgroundImage:'url(https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=1919&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
@@ -91,7 +94,7 @@ className=' md:mx-[25%] bg-cover h-screen md:flex mt-32 w-1/2 rounded-[40px] mx-
 
 
 </div>
-    </div>
+    </motion.div>
   )
 }
 

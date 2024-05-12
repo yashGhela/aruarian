@@ -1,6 +1,12 @@
+import { motion } from "framer-motion"
+
 export default function Interest(){
     return(
-        <div className="my-[20%] mx-40  flex-col text-8xl italic">
+        <motion.div
+        initial={{ opacity: 0 }}
+whileInView={{ opacity: 1 }}
+viewport={{ once: false  }} 
+        className="my-[20%] mx-40  flex-col text-8xl italic">
 
             What if you never had to schedule again? <br/><br/>
             Aruarian is the first companion built for task management and productivity <br/>
@@ -11,6 +17,6 @@ export default function Interest(){
    
          
 
-        </div>
+        </motion.div>
     )
 }
