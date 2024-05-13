@@ -12,7 +12,7 @@ export default function LandingHero(){
     return(
         <motion.div 
         style={{backgroundImage: 'url(https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-        className=' -mt-20 mb-[10%]  pb-[60%] -ml-16 w-full h-screen  md:mx-0  float-left text-center  md:items-center items-center  p-5 flex-col '
+        className=' -mt-20 mb-[10%] xs:-ml-20   pb-[60%] sm:-ml-[35%] lg:-ml-0 xl:ml-0 w-[110vw] md:w-full h-screen  md:mx-0  float-left text-center  md:items-center items-center  p-5 flex-col '
         
         
       
@@ -32,18 +32,18 @@ export default function LandingHero(){
       
 
      
-      <p className='  mt-8  pb-10   text-transparent bg-clip-text bg-white/50    md:-ml-0 md:text-[14rem] text-[4rem]     font-bold'>AruarianAI</p>
+      <p className='  mt-8  pb-10   text-transparent bg-clip-text bg-white/50  md:text-[10rem]    md:-ml-0 xl:text-[14rem] text-[4rem]     font-bold'>AruarianAI</p>
 
       
 
-      <p className='  -mt-20  lg:px-64 -ml-10  text-white/50   text-xl font-normal'>Aruarian AI is an AI powered task management companion</p>
+      <p className='  md:-mt-20  lg:px-64 -ml-10  text-white/50   text-xl font-normal'>Aruarian AI is an AI powered task management companion</p>
 
 {/* //Discover serenity with your intuitive AI-powered task manager, */}
    
 
 
 
-      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' float-left p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4  ml-5 xl:mx-[38%] rounded-2xl bg-white/40 border font-bold   border-white/[0.06] '>Join Now</motion.button>
+      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' float-left p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-white/40 border font-bold   border-white/[0.06] '>Join Now</motion.button>
        
    
 

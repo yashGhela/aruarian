@@ -9,12 +9,12 @@ function Section2() {
     viewport={{ once: false  }}>
         <div 
         style={{backgroundImage:'url(https://images.unsplash.com/photo-1578926375605-eaf7559b1458?q=80&w=1963&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-        className=' md:mx-[25%] p-5 h-screen md:flex mt-32 w-1/2 bg-cover rounded-[40px] mx-10 backdrop-blur-lg'>
+        className=' md:mx-[25%] p-5 h-screen md:flex mt-32 w-full md:w-1/2 bg-cover rounded-[40px]  backdrop-blur-lg'>
 
-       <div className='text-center w-full  ml-10 mt-[15%]'>
+       <div className='text-center w-full  md:ml-10 mt-[15%]'>
 
         
-    <p className='text-7xl text-white/80 font-bold'>Effortless organization</p>
+    <p className='md:text-7xl text-5xl text-white/80 font-bold'>Effortless organization</p>
     
    
         

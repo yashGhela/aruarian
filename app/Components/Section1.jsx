@@ -10,14 +10,14 @@ function Section1() {
 
 <div 
 style={{backgroundImage:'url(https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=1919&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-className=' md:mx-[25%] p-5 bg-cover h-screen md:flex mt-32 w-1/2 rounded-[40px] mx-10 backdrop-blur-lg'>
+className=' md:mx-[25%] p-5 bg-cover h-screen md:flex mt-32 w-full md:w-1/2 rounded-[40px]  backdrop-blur-lg'>
   
 
 
 
-  <div className='text-center w-full  ml-10 mt-[15%]'>
+  <div className='text-center w-full  md:ml-10 mt-[15%]'>
 
-    <p className='text-7xl text-white/80 font-bold'>Natural Interactions</p>
+    <p className='md:text-7xl text-5xl text-white/80 font-bold'>Natural Interactions</p>
   {/* <p className='text-3xl mt-[10%] sm:mt-[60%] font-bold'>No more fiddling with menus</p>
       <p className='text-2xl text-neutral-600 mt-2 font-normal'>Aruarian just gets you</p>
   </div>
