@@ -75,6 +75,8 @@ export default function Home() {
 
       <Section3/>
 
+      <LandingFeatures/>
+
       <Element id='pricing'>
       <Pricing landing={true}/>
       </Element>
