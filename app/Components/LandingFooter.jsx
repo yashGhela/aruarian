@@ -9,7 +9,7 @@ export default function LandingFooter(){
 
     return(
 
-        <div className="mt-[10%]">
+        <div className="mt-[10%] bg-neutral-900 -mb-5 text-neutral-100">
             <hr />
             
             <div
@@ -17,13 +17,13 @@ export default function LandingFooter(){
               >
         
             <div>
-            <p className="font-bold text-gray-400 py-3 ">Legal</p>
-            <Link scroll={true} href='/PrivacyPolicy'    className='text-gray-400 hover:underline  py-3 cursor-pointer'>Privacy Policy</Link><br/>
-            <Link href='/TermsAndConditions'  className='text-gray-400 hover:underline  py-3 cursor-pointer'>Terms and Conditions</Link>
+            <p className="font-bold  py-3 ">Legal</p>
+            <Link scroll={true} href='/PrivacyPolicy'    className=' hover:underline  py-3 cursor-pointer'>Privacy Policy</Link><br/>
+            <Link href='/TermsAndConditions'  className=' hover:underline  py-3 cursor-pointer'>Terms and Conditions</Link>
             </div>
 
             <div>
-            <p className="font-bold text-gray-400 py-3 flex-col ">Links</p>
+            <p className="font-bold  py-3 flex-col ">Links</p>
             <SmoothScrollLink to='features' >Features</SmoothScrollLink><br/>
              <SmoothScrollLink to='pricing' >Pricing</SmoothScrollLink><br/>
             <SmoothScrollLink to='How-it-works'  >How it works</SmoothScrollLink><br/>
@@ -36,7 +36,7 @@ export default function LandingFooter(){
 
                 </div>
 
-                <p className="font-bold text-gray-400 py-3 ">Made by Yash Codes</p>
+                <p className="font-normal  py-3 ">Made in South Africa 🇿🇦</p>
 
 
         </div>

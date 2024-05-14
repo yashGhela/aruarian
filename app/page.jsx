@@ -68,7 +68,12 @@ export default function Home() {
       <Interest/>
 
 
+      <p className=" text-7xl mt-20 font-bold">How it works </p>
 
+     <Element id='How-it-works'>
+        <Section1/>
+    
+     </Element>
       <Section1/>
 
       <Section2/>
@@ -81,15 +86,17 @@ export default function Home() {
       <Pricing landing={true}/>
       </Element>
 
-     <Element id='about'>
+     {/* <Element id='about'>
      <LandingAbout/>
-     </Element>
+     </Element> */}
 
 
       <LandingFaq/>
 
 
       <LandingAction/>
+
+      <LandingFooter/>
 
 
    

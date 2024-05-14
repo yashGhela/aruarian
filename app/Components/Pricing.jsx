@@ -65,7 +65,7 @@ export default function Pricing({landing}){
 
                 
 
-            <div className="sm:w-[25rem] w-[23rem] ml-20 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[79%] bg-white/40 rounded-xl h-[23rem] shadow-2xl  border-2 border-white/[0.13] ">
+            <div className="sm:w-[25rem] w-[23rem] ml-20 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[79%] bg-white/40 rounded-xl h-[26rem] shadow-2xl  border-2 border-white/[0.13] ">
 
                 
 
@@ -76,7 +76,7 @@ export default function Pricing({landing}){
                     
 
                     <p className='font-bold text-6xl text-centertext-neutral-700 mt-2 '>$5<span className='font-normal  text-xl  md:text-[30px] text-neutral-600 mt-2'>/month</span></p>
-                    <p className="mt-10 px-10">Early access for Aruarian for a lower price </p>
+                    <p className="mt-10 px-10">Early access for Aruarian for a lower price, this plan helps to support development as well </p>
                     
                     <div className=" ml-20">
                         
@@ -97,7 +97,7 @@ export default function Pricing({landing}){
 
                     </div>
                    {landing?
-                    <button onClick={()=>{router.push('/auth')}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl bg-white/40 hover:bg-white/50 ">
+                    <button onClick={()=>{router.push('/auth')}} className=" w-[90%] mt-10 font-bold  p-5 rounded-xl bg-neutral-300/40  ">
                    
                     Join Now
                     </button>:
