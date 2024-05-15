@@ -298,32 +298,32 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
            <title>Dashboard</title>
          </header>
          <main 
-         style={{backgroundImage: 'url(https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-         className=' flex text-neutral-900  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+        
+         className=' bg-gray-100 flex text-neutral-900  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
-     {/* <div className="fixed inset-0   bg-black opacity-10"></div> */}
+     <div className="fixed inset-0   bg-black opacity-10"></div>
 
    
 
-     <div className=' md:w-[70rem] inset-1 lg:w-[80rem] w-[50rem] mr-0 flex-col'>
+     <div className=' md:w-[70rem] inset-1 lg:w-full w-[50rem] mr-0 flex-col'>
         
     {mesSent ?
 
      <div>
 
-       {IsLoading ?
+     
 
     <div className='w-[70%] mx-[10%]'>
 
-<div className="md:mt-[10%]  mt-[30%] bg-white/40 border shadow-inner   border-white/[0.06] p-10  w-[350px] h-self  backdrop-blur-sm text-left   text-xl rounded-[20px] ">
+<div className="md:mt-[10%]  2xl:ml-48  mt-[30%] bg-white/40 border shadow-inner   border-white/[0.06] p-10  w-[350px] h-self  backdrop-blur-sm text-left   text-xl rounded-[20px] ">
 
    {prompt}
 
   </div>
 
 
-        <div className="md:mt-[10%] sm:ml-[40%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-right  shadow-inner  rounded-[20px] bg-white/30 border p-3  border-white/[0.06]">
+        <div className="md:mt-[3%] sm:ml-[40%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-right  shadow-inner  rounded-[20px] bg-white/30 border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>
@@ -357,21 +357,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         
         
 
-       :
-      <div>
-
-    <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{prediction.message}</p>
-
-    {/* <p className="text-center text-md font-normal mt-2 p-5 text-neutral-700">{JSON.stringify(responseAI.tasks)}</p> */}
-
-
-
      
-      </div>
-       
-
-       
-      }
 
 
       </div>
@@ -401,12 +387,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
    </div> */}
    
-  <div className="sm:mt-8  mt-32 ">
+  <div className="sm:mt-2  mt-20 ">
    
   <p className=' text-4xl   font-normal'>{greeting}, You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p>
 
 
-  <div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[25%] sm:mx-5 mt-10" id="to-dos container ">
+  <div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[10%] sm:mx-5 mt-10" id="to-dos container ">
 
   <Container isRes={false} setTodos={setTodos} boards={boards} todos={todos} todayEnd={todayEnd} todayStart={todayStart} />
 
@@ -439,7 +425,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       )} */}
 
       {/* All dis code is for the bottom section */}
-     <motion.div className=" md:ml-32 lg:ml-64  xl:ml-72 2xl:ml-32 fixed flex-col mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
+     <motion.div className=" md:ml-48 lg:ml-64  xl:ml-72 2xl:ml-[24%] fixed flex-col mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
     <div className="flex md:visible invisible mb-2 md:ml-0  xl:ml-0">
