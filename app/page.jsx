@@ -74,7 +74,7 @@ export default function Home() {
         <Section1/>
     
      </Element>
-      <Section1/>
+    
 
       <Section2/>
 

@@ -77,9 +77,11 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
   //min-h-[180px] shadow-md max-h-[200px] sm:min-h-[120px] xl:min-h-[124px] xl:max-h-[145px] md:min-h-[125px]
 
   
+
+  
   return (
-    <div>
-        <div className={`  w-full h-[350px]    mt-20 lg:mt-0`}>
+    
+        <div className={`  w-full h-[450px]   mt-20 lg:mt-0`}>
   <div
     className="w-full h-full overflow-y-auto    p-3  "
  >
@@ -108,7 +110,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full lg:w-[70%] lg:ml-36 xl:w-full xl:ml-0  h-self pb-10 p-2 rounded-[20px] mb-3 bg-white border  border-neutral-600/20">
+    id='to-do container' className="w-full lg:w-[70%] lg:ml-36 xl:w-full xl:ml-0  h-self pb-10 p-2 rounded-[30px] mb-3 bg-white/40 border  border-neutral-600/20">
     <div className="flex">
       {/* <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
         <p className="-mt-1 text-sm font-normal text-left text-gray-700">{i.board} </p>
@@ -132,7 +134,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
 
 
       
-      }} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[6%] ml-[80%] cursor-pointer rounded-md border shadow-sm border-neutral-600/50  ${i.completed? 'bg-neutral-600/[0.3]':'bg-white/0]'} `}></motion.div>
+      }} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[6%] ml-[80%] cursor-pointer rounded-md border shadow-sm border-neutral-600/50  ${i.completed? 'bg-neutral-600/[0.3]':'bg-white/0]'} `}> </motion.div>
   </motion.div>
    )
   })}
@@ -152,7 +154,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     </div>
  
 </div>
-    </div>
+  
   )
 }
 

@@ -299,10 +299,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
          </header>
          <main 
         
-         className=' bg-gray-100 flex text-neutral-900  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' bg-stone-300 flex text-neutral-900  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
-     <div className="fixed inset-0   bg-black opacity-10"></div>
+     
 
    
 
@@ -316,14 +316,14 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     <div className='w-[70%] mx-[10%]'>
 
-<div className="md:mt-[10%]  2xl:ml-48  mt-[30%] bg-white/40 border shadow-inner   border-white/[0.06] p-10  w-[350px] h-self  backdrop-blur-sm text-left   text-xl rounded-[20px] ">
+<div className="md:mt-[5%]  2xl:ml-48  mt-[30%] bg-white/40 border shadow-inner float-right   border-white/[0.06] p-6  w-[350px] h-self  backdrop-blur-sm text-left   text-lg rounded-[40px] ">
 
    {prompt}
 
   </div>
 
 
-        <div className="md:mt-[3%] sm:ml-[40%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-right  shadow-inner  rounded-[20px] bg-white/30 border p-3  border-white/[0.06]">
+        <div className="md:mt-[20%] sm:ml-[20%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-left  shadow-inner  rounded-[20px] bg-white/30 border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>
@@ -394,7 +394,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   <div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[10%] sm:mx-5 mt-10" id="to-dos container ">
 
-  <Container isRes={false} setTodos={setTodos} boards={boards} todos={todos} todayEnd={todayEnd} todayStart={todayStart} />
+  <Container  setTodos={setTodos} boards={boards} todos={todos}  />
 
 
   
