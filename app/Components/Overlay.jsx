@@ -95,7 +95,7 @@ function Overlay({boards, setQueried, setBoardQuery}) {
 
 
     <div className='fixed top-80 z-20 left-8 '>
-    <motion.button onClick={()=>{setShowModal(true)}} className='invisible flex md:visible p-2 rounded-lg ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ml-1 mt-[1px]">
+    <motion.button onClick={()=>{setShowModal(true)}} className='invisible flex md:visible p-2 rounded-lg text-white/50 ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 ml-1 mt-[1px]">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
  </svg>
 </motion.button>

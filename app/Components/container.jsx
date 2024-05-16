@@ -110,16 +110,16 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full lg:w-[70%] lg:ml-36 xl:w-full xl:ml-0  h-self pb-10 p-2 rounded-[30px] mb-3 bg-white border  border-neutral-600/20">
+    id='to-do container' className="w-full lg:w-[70%] lg:ml-36 xl:w-full xl:ml-0  h-self pb-10 p-2 rounded-[30px] mb-3 bg-white/50 border  border-neutral-600/20">
     <div className="flex">
       {/* <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
         <p className="-mt-1 text-sm font-normal text-left text-gray-700">{i.board} </p>
       </div> */}
-      <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg ">
+      <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg  ">
         <p className="-mt-1 text-sm font-light text-left text-neutral-600">{convertTimestampToDateTime(i.due_date)}</p>
       </div>
     </div>
-    <p className="w-[70%]  p-2 ml-5  h-12 text-[17px] font-normal text-left ">
+    <p className="w-[70%] text-neutral-700  p-2 ml-5  h-12 text-[17px] font-normal text-left ">
       {i.content}
     </p>
 

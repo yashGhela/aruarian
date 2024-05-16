@@ -301,7 +301,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 
          
-         className=' bg-stone-100/50 flex text-neutral-900  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' bg-gradient-to-b from-orange-300 to-neutral-400 flex text-neutral-700  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      
@@ -431,9 +431,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
     <div className="flex md:visible invisible mb-2 md:ml-0  xl:ml-0">
-    <motion.button onClick={()=>{setPrompt(' What work do I have for today?'); }} whileHover={{scale:1.03}} className='  w-1/6 focus:outline-none p-2 rounded-lg  bg-neutral-200/50   hover:bg-neutral-200/70 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
-    <motion.button onClick={()=>{setPrompt(' What tasks are overdue?'); }} whileHover={{scale:1.03}} className=' ml-2  w-1/6 focus:outline-none p-2 rounded-lg bg-neutral-200/50   hover:bg-neutral-200/70 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
-    <motion.button onClick={()=>{setPrompt(' Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='ml-2  w-1/6 focus:outline-none p-2 rounded-lg bg-neutral-200/50   hover:bg-neutral-200/70 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>
+    <motion.button onClick={()=>{setPrompt(' What work do I have for today?'); }} whileHover={{scale:1.03}} className='  w-1/6 focus:outline-none p-2 rounded-2xl  bg-neutral-200/50   hover:bg-neutral-200/70 border border-white/[0.06]  backdrop-blur-sm   "'>What work do I have for today? </motion.button>
+    <motion.button onClick={()=>{setPrompt(' What tasks are overdue?'); }} whileHover={{scale:1.03}} className=' ml-2  w-1/6 focus:outline-none p-2 rounded-2xl bg-neutral-200/50   hover:bg-neutral-200/70 border border-white/[0.06]  backdrop-blur-sm   "'>What tasks are overdue? </motion.button>
+    <motion.button onClick={()=>{setPrompt(' Whats up for tomorrow?');}} whileHover={{scale:1.03}} className='ml-2  w-1/6 focus:outline-none p-2 rounded-2xl bg-neutral-200/50   hover:bg-neutral-200/70 border border-white/[0.06]  backdrop-blur-sm   "'>Whats up for tomorrow? </motion.button>
 
 
     </div>
