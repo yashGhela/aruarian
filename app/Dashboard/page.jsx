@@ -299,10 +299,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
          </header>
          <main  
 
-         style={{backgroundImage:'url(https://i.imgur.com/LghEnRy.jpeg)'}}
 
          
-         className=' bg-black/10 flex text-neutral-900  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' bg-stone-100/50 flex text-neutral-900  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      
@@ -319,14 +318,14 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     <div className='w-[70%] mx-[10%]'>
 
-<div className="md:mt-[5%]  2xl:ml-48  mt-[30%] bg-neutral-100/50   border  float-right   border-white/[0.06] p-6  w-self h-self  backdrop-blur-sm text-left   text-lg rounded-[40px] ">
+<div className="md:mt-[5%]  2xl:ml-48  mt-[30%] bg-neutral-300/50   border  float-right   border-white/[0.06] p-6  w-self h-self  backdrop-blur-sm text-left   text-lg rounded-[40px] ">
 
    {prompt}
 
   </div>
 
 
-        <div className="md:mt-[14%] sm:ml-[20%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-left    rounded-[20px] bg-neutral-100/50    border p-3  border-white/[0.06]">
+        <div className="md:mt-[14%] sm:ml-[20%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-left    rounded-[20px] bg-neutral-300/50    border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>
@@ -392,7 +391,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
    
   <div className="sm:mt-2  mt-20 ">
    
-  <p className=' text-4xl text-white   font-normal'>{greeting}, You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p>
+  <p className=' text-4xl   font-normal'>{greeting}, You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p>
 
 
   <div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[10%] sm:mx-5 mt-10" id="to-dos container ">
