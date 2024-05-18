@@ -9,8 +9,7 @@ export default function LandingFooter(){
 
     return(
 
-        <div className="mt-[10%] bg-neutral-900 -mb-5 text-neutral-100">
-            <hr />
+        <div className="mt-[10%]  text-neutral-700/50 -mb-5">
             
             <div
               className=' mt-[50px] mb-[50px] flex-col md:grid md:grid-cols-2 '

@@ -6,7 +6,7 @@ export default function Interest(){
         initial={{ opacity: 0 }}
 whileInView={{ opacity: 1 }}
 viewport={{ once: false  }} 
-        className="my-[20%] mx-10 md:mx-40  flex-col text-2xl sm:text-5xl md:text-8xl italic">
+        className="mt-[85%] mx-10 md:mx-40  flex-col text-2xl sm:text-5xl md:text-8xl italic">
 
             What if you never had to schedule again? <br/><br/>
             Aruarian is the first companion built for task management and productivity <br/>
