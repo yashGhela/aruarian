@@ -81,7 +81,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
   
   return (
     
-        <div className={`  w-full h-[450px]  xl:w-1/2 2xl:w-full xl:ml-64 2xl:ml-0 border border-neutral-400/20  bg-white/50 rounded-[30px]  mt-20 lg:mt-0`}>
+        <div className={`  w-full h-[550px]  xl:w-1/2 2xl:w-full xl:ml-64 2xl:ml-0 border border-neutral-400/20  bg-white/50 rounded-[30px]  mt-20 lg:mt-0`}>
   <div
     className="w-full h-full overflow-y-auto     p-3  "
  >

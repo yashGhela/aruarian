@@ -37,6 +37,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     const [currentTime, setCurrentTime] = useState('');
     const [greeting, setGreeting]=useState('')
     const [todos, setTodos]=useState([])
+    const [tommorowtodos, settomorrowtodos]=useState([])
     const [mesSent, setMesSent]=useState(false)
 
     const [boards, setBoards]=useState([])
@@ -51,7 +52,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     const [isQueried, setQueried]=useState(false)
 
-    const [AIData, setAIData]=useState([])
+  
 
     const [prediction, setPrediction]=useState('')
     const [error,setError]=useState('')
@@ -230,6 +231,37 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     }
 
 
+    const getTomorrowTodos = async () => {
+      // Get today's date
+      const today = new Date();
+      
+      // Calculate the start of tomorrow
+      const tomorrowStart = new Date(today);
+      tomorrowStart.setDate(today.getDate() + 1);
+      tomorrowStart.setHours(0, 0, 0, 0);
+    
+      // Calculate the end of tomorrow
+      const tomorrowEnd = new Date(today);
+      tomorrowEnd.setDate(today.getDate() + 1);
+      tomorrowEnd.setHours(23, 59, 59, 999);
+      
+      // Fetch todos for tomorrow
+      const { data, error } = await supabase.from('To-Dos')
+        .select('*')
+        .eq("UID", user)
+        .eq('completed', false)
+        .gte('due_date', tomorrowStart.toISOString())
+        .lt('due_date', tomorrowEnd.toISOString());
+    
+      if (error) {
+        console.log(error);
+      } else {
+        settomorrowtodos(data);
+        console.log(data);
+      }
+    };
+
+
 
           
         const getUserBoards=async()=>{
@@ -257,7 +289,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   
      
         
-      getUser().then(()=>{getTodos()})
+      getUser().then(()=>{getTodos(); getTomorrowTodos()})
       getGreeting()
 
       getUserBoards()
@@ -308,7 +340,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
    
 
-     <div className=' md:w-[70rem] inset-1 lg:w-full w-[50rem] mr-0 flex-col'>
+     <div className=' md:w-[70rem] inset-1 xl:w-[70rem] lg:w-full w-[50rem] mr-0 flex-col'>
         
     {mesSent ?
 
@@ -393,7 +425,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
    
   {/* <p className=' text-4xl   font-normal'>{greeting}, You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p> */}
 
-  <p className='text-xl 2xl:ml-[25%] xl:ml-[30%] lg:ml-[25%] md:ml-[15%]   font-bold text-left'>Today</p>
+  <p className='text-xl 2xl:ml-[25%] xl:ml-[30%] lg:ml-[25%] md:ml-[15%]   font-bold text-left'>Today ({todos.length})</p>
 
 
   <div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[10%]  sm:mx-5 md:mt-5" id="to-dos container ">
@@ -401,12 +433,23 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   <Container  setTodos={setTodos} boards={boards} todos={todos}  />
 
 
+  </div>
+
+  {/* <p className='text-xl 2xl:ml-[25%] xl:ml-[30%] lg:ml-[25%] md:ml-[15%]  mt-10  font-bold text-left'>Tomorrow</p>
+
+  <div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[10%]  sm:mx-5 md:mt-5" id="to-dos container ">
+  <Container  setTodos={settomorrowtodos} boards={boards} todos={tommorowtodos}  />
+    
+
+    </div> */}
+
+    {/* <p className='text-xl 2xl:ml-[25%] xl:ml-[30%] lg:ml-[25%] md:ml-[15%]  mt-10  font-bold text-left'>Tomorrow</p>
+
+<div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[10%]  sm:mx-5 md:mt-5" id="to-dos container ">
+<Container  setTodos={setTodos} boards={boards} todos={todos}  />
   
 
-   
-
-
-  </div>
+  </div> */}
 
 
   </div>
@@ -429,7 +472,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       )} */}
 
       {/* All dis code is for the bottom section */}
-     <motion.div className=" md:ml-48 lg:ml-64  xl:ml-72 2xl:ml-[24%] fixed flex-col mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
+     <motion.div className=" md:ml-48 lg:ml-64 absolute   xl:ml-72 2xl:ml-[5%]  flex-col mt-[90%] w-full bottom-8" initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}>
     <div className="flex md:visible invisible mb-2 md:ml-0  xl:ml-0">
