@@ -110,7 +110,7 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     
-    id='to-do container' className="w-full lg:w-full  xl:w-full xl:ml-0  h-self pb-10 p-2 rounded-[30px] mb-3 bg-white/50 border  border-neutral-600/20">
+    id='to-do container' className="w-full lg:w-full  xl:w-full xl:ml-0  h-self pb-5 p-2 rounded-[30px] mb-3 bg-white border  border-neutral-600/20">
     <div className="flex">
       <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg bg-gray-200/[0.38]">
         <p className="-mt-1 text-sm font-normal text-left text-gray-700">{i.board} </p>
@@ -119,12 +119,10 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
         <p className="-mt-1 text-sm font-light text-left text-neutral-600">{convertTimestampToDateTime(i.due_date)}</p>
       </div>
     </div>
-    <p className="w-[70%] text-neutral-700  p-2 ml-5  h-12 text-[17px] font-normal text-left ">
-      {i.content}
-    </p>
 
-  
-    <motion.div onClick={()=>{
+      
+   <div className="flex">
+   <motion.div onClick={()=>{
       
       completeToDo({id: i.tid})
 
@@ -134,7 +132,13 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
 
 
       
-      }} whileTap={{scale:1.04}}  className={`w-10 h-[33px] -mt-[6%] ml-[80%] cursor-pointer rounded-md border shadow-sm border-neutral-600/50  ${i.completed? 'bg-neutral-600/[0.3]':'bg-white/0]'} `}> </motion.div>
+      }} whileTap={{scale:1.04}}  className={`w-8 h-8 ml-5 mt-5 cursor-pointer rounded-2xl border shadow-sm border-neutral-600/50  ${i.completed? 'bg-neutral-600/[0.3]':'bg-white/0]'} `}> </motion.div>
+    <p className="w-[70%] text-neutral-700  p-2 ml-5  mt-4 h-12 text-[17px] font-normal text-left ">
+      {i.content}
+    </p>
+   </div>
+
+
   </motion.div>
    )
   })}
