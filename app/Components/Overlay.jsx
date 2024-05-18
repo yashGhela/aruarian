@@ -6,7 +6,7 @@ import EmojiPicker from 'emoji-picker-react';
 import { supabase } from '../lib/supabase';
 import { BlockPicker } from 'react-color';
 
-function Overlay({boards, setQueried, setBoardQuery}) {
+function Overlay({boards,   setBoardtype, setTodos}) {
 
   
 
@@ -17,6 +17,8 @@ function Overlay({boards, setQueried, setBoardQuery}) {
 
 
    const [showModal, setShowModal]=useState(false)
+
+   
 
    
       
@@ -36,6 +38,44 @@ function Overlay({boards, setQueried, setBoardQuery}) {
 
      
    }
+
+   let todayStart= new Date()
+    let todayEnd= new Date()
+
+   
+   const getQueryTodos=async({board})=>{
+
+
+    await getUser().then(async ()=>{
+
+
+    todayStart.setHours(0, 0, 0, 0);
+ 
+
+
+    todayEnd.setHours(23, 59, 59, 999); 
+  
+    
+    const {data, error} = await supabase.from('To-Dos')
+    .select('*')
+    .eq("UID", user)
+    .eq('completed', false)
+    .eq('board',board)
+
+
+    if(error){
+      console.log(error)
+    }else{
+      setTodos(data)
+      setBoardtype(board)
+      console.log(data)
+      
+      
+    }
+  })
+
+
+  }
 
    const addBoard= async()=>{
 
@@ -75,7 +115,7 @@ function Overlay({boards, setQueried, setBoardQuery}) {
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
     className=' bg-neutral-300   h-self w-self'>
-        <motion.div whileHover={{scale:1.05}}    className={`flex z-20 fixed cursor-pointer hover:shadow-inner  top-8 left-8 rounded-full p-1 `}>
+        <motion.div whileHover={{scale:1.05}}  onClick={()=>{getQueryTodos({board:'General'})}}   className={`flex z-20 fixed cursor-pointer hover:shadow-inner  top-8 left-8 rounded-full p-1 `}>
 
         <svg
   className='w-8 h-10 text-white/40'
@@ -107,7 +147,7 @@ function Overlay({boards, setQueried, setBoardQuery}) {
  <div className='mt-20 invisible  md:visible'>
  {boards.map((i)=>{
       return(
-        <motion.button whileHover={{scale:1.02, rotate:1}} className='flex mt-5 rounded-lg  w-full p-1  '>
+        <motion.button onClick={()=>{getQueryTodos({board:i.name})}} whileHover={{scale:1.02, rotate:1}} className='flex mt-5 rounded-lg  w-full p-1  '>
           <img src={i.icon} className=' w-6 h-6 ml-2 ' />
           {/* <p className='text-md  font-light  invisible lg:visible  ml-4   text-left '>{i.name}</p> */}
   

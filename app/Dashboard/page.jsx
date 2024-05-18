@@ -38,6 +38,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     const [greeting, setGreeting]=useState('')
     const [todos, setTodos]=useState([])
     const [tommorowtodos, settomorrowtodos]=useState([])
+    const [boardtype, setBoardtype]=useState('Today')
     const [mesSent, setMesSent]=useState(false)
 
     const [boards, setBoards]=useState([])
@@ -231,35 +232,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     }
 
 
-    const getTomorrowTodos = async () => {
-      // Get today's date
-      const today = new Date();
-      
-      // Calculate the start of tomorrow
-      const tomorrowStart = new Date(today);
-      tomorrowStart.setDate(today.getDate() + 1);
-      tomorrowStart.setHours(0, 0, 0, 0);
-    
-      // Calculate the end of tomorrow
-      const tomorrowEnd = new Date(today);
-      tomorrowEnd.setDate(today.getDate() + 1);
-      tomorrowEnd.setHours(23, 59, 59, 999);
-      
-      // Fetch todos for tomorrow
-      const { data, error } = await supabase.from('To-Dos')
-        .select('*')
-        .eq("UID", user)
-        .eq('completed', false)
-        .gte('due_date', tomorrowStart.toISOString())
-        .lt('due_date', tomorrowEnd.toISOString());
-    
-      if (error) {
-        console.log(error);
-      } else {
-        settomorrowtodos(data);
-        console.log(data);
-      }
-    };
+
+
+
+
 
 
 
@@ -289,7 +265,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   
      
         
-      getUser().then(()=>{getTodos(); getTomorrowTodos()})
+      getUser().then(()=>{getTodos()})
       getGreeting()
 
       getUserBoards()
@@ -335,7 +311,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
          
          className=' bg-gradient-to-b from-orange-300 to-neutral-400 flex text-neutral-700  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
-     <Overlay boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
+     <Overlay setBoardtype={setBoardtype} setTodos={setTodos}  boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      
 
    
@@ -425,7 +401,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
    
   {/* <p className=' text-4xl   font-normal'>{greeting}, You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p> */}
 
-  <p className='text-xl 2xl:ml-[25%] xl:ml-[30%] lg:ml-[25%] md:ml-[15%]   font-bold text-left'>Today ({todos.length})</p>
+  <p className='text-xl 2xl:ml-[25%] xl:ml-[30%] lg:ml-[25%] md:ml-[15%]   font-bold text-left'>{boardtype} ({todos.length})</p>
 
 
   <div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[10%]  sm:mx-5 md:mt-5" id="to-dos container ">
