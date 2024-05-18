@@ -20,6 +20,7 @@ import CancelSub from '../Components/CancelSub'
 import { grid } from 'ldrs'
 import Feedback from '../Components/Feedback'
 
+
 // grid.register()
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -333,27 +334,27 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   </div>
 
 
-        <div className="md:mt-[14%] sm:ml-[20%] mt-32 -ml-10 w-[350px] sm:w-[450px]  sm:h-self  backdrop-blur-sm  float-left    rounded-[20px] bg-neutral-300/50    border p-3  border-white/[0.06]">
+        <div className="md:mt-[14%] sm:ml-[20%] mt-32 -ml-10 w-[350px] sm:w-[450px]  sm:h-self  backdrop-blur-sm  float-left    rounded-[30px] bg-neutral-300/50    border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>
             <div className=' p-2'>
              
-             <p className=" text-xl text-left mb-4"> {prediction.status!==201?<div className='flex'>
+             <p className=" text-xl text-left"> {prediction.status!==201?<div className='flex'>
               <p>{prediction.status}</p>
-              {/* <l-grid
+              <l-grid
               size="30"
               speed="1.5"
               className='ml-5' 
               color="black" 
-            ></l-grid> */}
+            ></l-grid>
              </div>:prediction.message}</p>
 
-             {prediction.tasks&&<Container todos={prediction.tasks} isRes={true}/>}
+             {prediction.tasks&& <div className='mt-4'><Container todos={prediction.tasks} isRes={true}/></div>}
              </div>
 
 
-             { <button onClick={()=>{setMesSent(false); setPrompt('')}} className='  p-4 mt-5 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
+             {prediction.status!==201? null: <button onClick={()=>{setMesSent(false); setPrompt(''); setPrediction('')}} className='  p-4 mt-5 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
       }
        
         </div>
