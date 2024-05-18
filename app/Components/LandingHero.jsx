@@ -11,8 +11,8 @@ export default function LandingHero(){
     const router=useRouter()
     return(
         <motion.div 
-        style={{backgroundImage: 'url(https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}
-        className=' -mt-20 mb-[10%] xs:-ml-20   pb-[60%] sm:-ml-[35%] lg:-ml-0 xl:ml-0 w-[110vw] md:w-full h-screen  md:mx-0  float-left text-center  md:items-center items-center  p-5 flex-col '
+        
+        className=' bg-gradient-to-b from-orange-300 to-neutral-400 -mt-20 mb-[10%] xs:-ml-20   pb-[60%] sm:-ml-[35%] lg:-ml-0 xl:ml-0 w-[110vw] md:w-full h-screen  md:mx-0  float-left text-center  md:items-center items-center  p-5 flex-col '
         
         
       
@@ -36,7 +36,7 @@ export default function LandingHero(){
 
       
 
-      <p className='  md:-mt-20  lg:px-64 -ml-10  text-white/50   text-xl font-normal'>Aruarian AI is an AI powered task management companion</p>
+      <p className='  md:-mt-20  lg:px-64 -ml-10  text-white/50   text-xl font-normal'>Never schedule again</p>
 
 {/* //Discover serenity with your intuitive AI-powered task manager, */}
    

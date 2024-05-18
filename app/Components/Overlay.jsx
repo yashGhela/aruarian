@@ -119,9 +119,13 @@ function Overlay({boards, setQueried, setBoardQuery}) {
 
 <Modal setShowModal={setShowModal} showModal={showModal} height={'h-self'} thin={true} Header={'Add a new board'}>
 
-<p className='text-md text-neutral-200  p-2 mt-2  text-left '>Icon</p>
+<div className='flex-col'>
+  
 
-<motion.button onClick={()=>{if(emojiopen){setEmojiOpen(false)}else{setEmojiOpen(true)}}} className=' text-white p-2 rounded-lg bg-white/20 border  float-left  border-white/[0.06] ' whileHover={{scale:1.02}}>{icon===''?"Choose an Icon":<img src={icon}/>}
+<motion.button onClick={()=>{if(emojiopen){setEmojiOpen(false)}else{setEmojiOpen(true)}}} className=' text-white p-2 rounded-lg bg-white/20 border  float-left  border-white/[0.06] ' whileHover={{scale:1.02}}>{icon===''?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+</svg>
+:<img src={icon}/>}
 </motion.button><br/><br/>
 
 <EmojiPicker
@@ -131,21 +135,23 @@ style={{
   backgroundColor: 'rgba(255, 255, 255, 0.4)',
   border: '1px solid #fff',
   color: '#fff',
+  top:'5px'
   
 
-}} className=' mt-2  EmojiPickerReact ' open={emojiopen} onEmojiClick={(e)=>{setEmojiOpen(false); setIcon(e.imageUrl); console.log(icon)}} />
+}} className=' mt-2  EmojiPickerReact ' reactions={false} open={emojiopen} onEmojiClick={(e)=>{setEmojiOpen(false); setIcon(e.imageUrl); console.log(icon)}} />
 
-<p className='text-md text-neutral-200  p-2 mt-2  text-left '>Color</p>
+{/* <p className='text-md text-neutral-200  p-2 mt-2  text-left '>Color</p>
 
 <motion.button onClick={()=>{if(colorOpen){setColorOpen(false)}else{setColorOpen(true)}}} className=' text-white p-2 rounded-lg bg-white/20 border  float-left  border-white/[0.06] ' whileHover={{scale:1.02}}>{color===''?"Choose a color":`${color}`}
 </motion.button><br/><br/>
 
-{/* <BlockPicker /> */}
+<BlockPicker /> */}
 
-<p className='text-md text-neutral-200  p-2 mt-10  text-left '>Name your board</p>
 
-<input onChange={(e)=>{setboardname(e.target.value)}}  type="text"  className="  w-full focus:outline-none p-2 rounded-lg bg-white/20 border text-white  border-white/[0.06]" />
 
+<input onChange={(e)=>{setboardname(e.target.value)}}  type="text" placeholder='Work'  className="  w-full  mt-5 focus:outline-none p-2 rounded-lg bg-white/20 border placeholder:text-white/50 text-white  border-white/[0.06]" />
+
+</div>
 <motion.button onClick={()=>{addBoard()}} className=' text-white p-4 mt-5 w-full rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] ' whileHover={{scale:1.02}}>Add board
 </motion.button>
    

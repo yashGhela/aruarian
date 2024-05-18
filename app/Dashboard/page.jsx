@@ -357,7 +357,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   </div>
 
 
-        <div className="md:mt-[14%] sm:ml-[20%] mt-[30%] -mr-10 w-[350px] sm:w-[450px] h-self  backdrop-blur-sm  float-left    rounded-[20px] bg-neutral-300/50    border p-3  border-white/[0.06]">
+        <div className="md:mt-[14%] sm:ml-[20%] mt-32 -ml-10 w-[350px] sm:w-[450px]  sm:h-self  backdrop-blur-sm  float-left    rounded-[20px] bg-neutral-300/50    border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>
@@ -495,7 +495,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
    <div className="invisible md:visible">
     
    <LogOut/>
-   <CancelSub/>
+   {/* <CancelSub/> */}
    <Feedback/>
    </div>
      

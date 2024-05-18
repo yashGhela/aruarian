@@ -17,7 +17,7 @@ export default function Modal({showModal,setShowModal, children, Header, thin, h
 
     return(
         <div>
-            {showModal &&<div className="fixed inset-0   bg-black opacity-40"></div>}
+            {showModal &&<div className="fixed inset-0 z-20   bg-black opacity-40"></div>}
 
             
 
@@ -27,7 +27,7 @@ export default function Modal({showModal,setShowModal, children, Header, thin, h
              animate={showModal ? "open" : "closed"}
             variants={variants}>
             <div className='grid grid-cols-2  p-2'>
-            <p className='text-white font-normal text-lg p-2'>{Header}</p>
+            <p className='text-white font-normal text-md p-2'>{Header}</p>
             <button onClick={()=>{setShowModal(false)}} className={`rounded-md  md:ml-[70%] ml-[30%]  text-white  p-2`}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
