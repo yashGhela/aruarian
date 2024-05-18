@@ -27,7 +27,7 @@ export async function GET (req, res){
     try{
         
         const response = await fetch(
-            'https://api.lemonsqueezy.com/v1/subscriptions',
+            'https://api.lemonsqueezy.com/v1/orders',
             {
               headers: {
                 Accept: 'application/vnd.api+json',
