@@ -371,7 +371,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
      </div>:
      
-     <div className="    mt-[10%]  " id="first open ">
+     <div className="   mt-10 " id="first open ">
 
      {/* <div className="flex mt-[10%] mx-20">
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  mt-[2px] font-thin ">
@@ -389,12 +389,14 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
    </div> */}
    
-  <div className="sm:mt-2  mt-20 ">
+  <div >
    
-  <p className=' text-4xl   font-normal'>{greeting}, You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p>
+  {/* <p className=' text-4xl   font-normal'>{greeting}, You have  <span className="font-bold">{todos.length} To-Dos </span> left for <br/> the day</p> */}
+
+  <p className='text-xl 2xl:ml-[25%] xl:ml-[30%] lg:ml-[25%] md:ml-[15%]   font-bold text-left'>Today</p>
 
 
-  <div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[10%] sm:mx-5 mt-10" id="to-dos container ">
+  <div className=" 2xl:mx-[25%] lg:mx-64 md:mx-24  xl:mx-[10%]  sm:mx-5 md:mt-5" id="to-dos container ">
 
   <Container  setTodos={setTodos} boards={boards} todos={todos}  />
 
