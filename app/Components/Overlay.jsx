@@ -118,7 +118,7 @@ function Overlay({boards,   setBoardtype, setTodos}) {
         <motion.div whileHover={{scale:1.05}}  onClick={()=>{getQueryTodos({board:'General'})}}   className={`flex z-20 fixed cursor-pointer hover:shadow-inner  top-8 left-8 rounded-full p-1 `}>
 
         <svg
-  className='w-8 h-10 text-white/40'
+  className='w-8 h-10 text-white/40 hidden  sm:visible'
   viewBox="0 0 57 79"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
