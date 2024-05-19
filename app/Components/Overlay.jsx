@@ -138,7 +138,7 @@ function Overlay({boards,   setBoardtype, setTodos}) {
 
 
     <div className='fixed  top-40 z-20 left-8 '>
-    <motion.button onClick={()=>{setShowModal(true)}} className='invisible bg-white/50 flex md:visible p-2 rounded-[20px] text-black/50 ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6  mt-[1px]">
+    <motion.button onClick={()=>{setShowModal(true)}} className='invisible bg-white/50 flex md:visible border-white/30 border-2  p-2 rounded-[20px] text-black/50 ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6  mt-[1px]">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
  </svg>
  {/* <p className='text-md  font-light invisible 2xl:visible  ml-4 mt-[2px]   text-left '>Add Board</p> */}

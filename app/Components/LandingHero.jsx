@@ -32,7 +32,7 @@ export default function LandingHero(){
        */}
 
      
-      <p className='  mt-32  pb-10    md:text-[10rem]    md:-ml-0 xl:text-[10rem] text-[4rem]     font-bold'>No more scheduling</p>
+      <p className='  mt-64  pb-10    md:text-[10rem]    md:-ml-0 xl:text-[7rem] text-[4rem]     font-bold'>Never schedule again</p>
 
       
 
