@@ -32,13 +32,13 @@ export default function LandingHero(){
        */}
 
      
-      <p className='  mt-64  pb-10    md:text-[10rem]    md:-ml-0 xl:text-[7rem] text-[4rem]     font-bold'>Never schedule again</p>
+      <p className='  mt-64  pb-10    md:text-[10rem]    md:-ml-0 xl:text-[7rem] text-[4rem]     font-bold'>Chat with your to-do list</p>
 
       
 
       
 
-      <p className='  md:-mt-10  lg:px-64 -ml-10  text-black/50   text-xl font-normal'>Never schedule again</p>
+      <p className='  md:-mt-10  lg:px-64 -ml-10  text-black/50   text-xl font-normal'>Your own AI powered personal assistant is waiting for you in your pocket</p>
 
       <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className='  p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-neutral-300/50 border font-bold   border-white/[0.06] '>Join Now</motion.button>
        
