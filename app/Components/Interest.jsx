@@ -5,8 +5,9 @@ export default function Interest(){
         <motion.div
         initial={{ opacity: 0 }}
 whileInView={{ opacity: 1 }}
-viewport={{ once: false  }} 
-        className="mt-[55%] mx-10 md:mx-72  flex-col text-2xl sm:text-5xl md:text-6xl italic">
+viewport={{ once: false  }}
+
+        className="mt-[55%] md:mt-[30%] mx-10 md:mx-72  flex-col text-2xl sm:text-5xl md:text-6xl italic">
 
             You know how it goes 💨<br/><br/>
             You have thousands of things to do and no time to plan it all out 🤯 <br/>
