@@ -68,7 +68,7 @@ export default function Home() {
       <Interest/>
 
 
-      <p className=" text-7xl mt-20 font-bold">How it works </p>
+      <p className=" text-7xl mt-[25%] font-bold">How it works </p>
 
      <Element id='How-it-works'>
         <Section1/>

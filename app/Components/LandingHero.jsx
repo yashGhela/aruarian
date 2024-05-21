@@ -36,7 +36,7 @@ export default function LandingHero(){
       initial={{ y:'50%', opacity:0 }}
       whileInView={{ y:'-50%', opacity:1 }}
       viewport={{ once: false  }}
-       className='  mt-[25rem] md:mt-[35%] lg:mt-[35%] xl:mt-[20%] pb-10 -ml-6    md:text-[5rem]    xl:text-[6rem] text-[4rem]     font-bold'>The AI for your to-do list</motion.p>
+       className='  mt-[25rem] md:mt-[35%] lg:mt-[35%] xl:mt-[20%]  -ml-6    md:text-[5rem]    xl:text-[6rem] text-[4rem]     font-bold'>The AI for your to-do list</motion.p>
 
       
 
@@ -46,13 +46,13 @@ export default function LandingHero(){
       initial={{ y:'50%', opacity:0  }}
       whileInView={{ y:'-50%', opacity:1 }}
       transition={{delay:0.3}}
-       className='  md:-mt-10  lg:px-64 px-10   text-black/50   text-xl font-normal'>Your own AI powered personal assistant is waiting for you in your pocket</motion.p>
+       className='  md:-mt-5  lg:px-64 px-10   text-black/50   text-xl font-normal'>Your own AI powered personal assistant is waiting for you in your pocket</motion.p>
 
       <motion.button 
        initial={{ y:'50%', opacity:0 }}
        whileInView={{ y:'-50%', opacity:1 }}
       
-      transition={{delay:0.5}} whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' -ml-2  p-4 mt-8 w-self md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-neutral-300/50 border font-bold   border-white/[0.06] '>Join Now</motion.button>
+      transition={{delay:0.5}} whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' -ml-2  p-4 mt-12 w-self md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-neutral-300/50 border font-bold   border-white/[0.06] '>Join Now</motion.button>
        
 
       <motion.img 
