@@ -73,6 +73,13 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
     }
 
   }
+
+  const deleteToDo=async({id})=>{
+
+    console.log(id)
+
+    const {error}= await supabase.from('To-Dos').delete().eq('tid',id)
+  }
   //shadow-inner    rounded-[20px]  bg-white/40  border-2   border-white/10
   //min-h-[180px] shadow-md max-h-[200px] sm:min-h-[120px] xl:min-h-[124px] xl:max-h-[145px] md:min-h-[125px]
 
@@ -117,6 +124,23 @@ function Container({todos, todayStart, todayEnd, isRes, setTodos}) {
       </div>
       <div className="w-self ml-5 h-[20px] mt-2 p-1 rounded-lg  ">
         <p className="-mt-1 text-sm font-light text-left text-neutral-600">{convertTimestampToDateTime(i.due_date)}</p>
+      </div>
+      <div onClick={()=>{
+
+        deleteToDo({id:i.tid})
+
+
+      const updatedTodos = todos.filter((item) => item.tid !== i.tid);
+
+      setTodos(updatedTodos)
+
+
+      }} className="w-self  cursor-pointer text-red-300  mt-1 p-1 rounded-lg  ">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+
       </div>
     </div>
 
