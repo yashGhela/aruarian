@@ -21,7 +21,7 @@ export default function LandingBar({isLand}){
       
      
         {isLand?
-      <div className=' mt-0 float-right left-[10%] absolute  flex'>
+      <div className=' mt-0 float-right md:left-[20%] left-[10%] absolute  flex'>
       <SmoothScrollLink to='about'>About</SmoothScrollLink>
        <SmoothScrollLink to='pricing'>Pricing</SmoothScrollLink>
         

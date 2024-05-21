@@ -12,7 +12,7 @@ export default function LandingHero(){
     return(
         <motion.div 
         
-        className='  -mt-20 mb-[10%] xs:-ml-20   pb-[60%] sm:-ml-[35%] lg:-ml-0 xl:ml-0 w-[110vw] md:w-full h-screen  md:mx-0  float-left text-center  md:items-center items-center  p-5 flex-col '
+        className='  -mt-20 mb-[10%]    pb-[60%] sm:mx-0 lg:-ml-0 xl:ml-0 w-full md:w-full h-screen   md:px-16   text-center  md:items-center items-center  p-5 flex-col '
         
         
       
@@ -32,18 +32,33 @@ export default function LandingHero(){
        */}
 
      
-      <p className='  mt-64  pb-10    md:text-[10rem]    md:-ml-0 xl:text-[7rem] text-[4rem]     font-bold'>Chat with your to-do list</p>
+      <motion.p
+      initial={{ y:'50%', opacity:0 }}
+      whileInView={{ y:'-50%', opacity:1 }}
+      viewport={{ once: false  }}
+       className='  mt-[25rem] md:mt-[35%] lg:mt-[35%] xl:mt-[20%] pb-10 -ml-6    md:text-[5rem]    xl:text-[6rem] text-[4rem]     font-bold'>The AI for your to-do list</motion.p>
 
       
 
       
 
-      <p className='  md:-mt-10  lg:px-64 -ml-10  text-black/50   text-xl font-normal'>Your own AI powered personal assistant is waiting for you in your pocket</p>
+      <motion.p
+      initial={{ y:'50%', opacity:0  }}
+      whileInView={{ y:'-50%', opacity:1 }}
+      transition={{delay:0.3}}
+       className='  md:-mt-10  lg:px-64 px-10   text-black/50   text-xl font-normal'>Your own AI powered personal assistant is waiting for you in your pocket</motion.p>
 
-      <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className='  p-4 mt-8 w-full md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-neutral-300/50 border font-bold   border-white/[0.06] '>Join Now</motion.button>
+      <motion.button 
+       initial={{ y:'50%', opacity:0 }}
+       whileInView={{ y:'-50%', opacity:1 }}
+      
+      transition={{delay:0.5}} whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' -ml-2  p-4 mt-8 w-self md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-neutral-300/50 border font-bold   border-white/[0.06] '>Join Now</motion.button>
        
 
-      <motion.img   className="h-[80%] w-[80%] mx-[10%]  shadow-2xl mt-20 rounded-xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Screenshot%202024-05-18%20204514.png' alt="" />
+      <motion.img 
+       initial={{ y:'10%', opacity:0 }}
+       whileInView={{ y:'-1%', opacity:1 }}
+        transition={{delay:0.7}}  className="h-[80%] w-[80%] mx-[10%]  shadow-2xl mt-20 rounded-xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Screenshot%202024-05-18%20204514.png' alt="" />
 
 
 {/* //Discover serenity with your intuitive AI-powered task manager, */}

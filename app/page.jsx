@@ -80,7 +80,7 @@ export default function Home() {
 
       <Section3/>
 
-      <LandingFeatures/>
+      {/* <LandingFeatures/> */}
 
       <Element id='pricing'>
       <Pricing landing={true}/>
