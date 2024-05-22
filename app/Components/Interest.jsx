@@ -9,11 +9,10 @@ viewport={{ once: false  }}
 
         className="mt-[55%] md:mt-[30%] mx-10 md:mx-72  flex-col text-2xl sm:text-5xl md:text-6xl italic">
 
-            You know how it goes 💨<br/><br/>
-            You have thousands of things to do and no time to plan it all out 🤯 <br/>
+            Do you ever feel like you have a thousand things to do but no time to plan it all out? 💨  <br/>
             <br/>
-            So start forgetting things you're supposed to do and every thing goes off the rails 🏃‍♂️<br/><br/>
-            But what if you didnt have to schedule ever again? 🤔
+            Tasks start slipping through the cracks and everything goes off the rails 🤯🏃‍♂️<br/><br/>
+            What if you could say goodbye to scheduling stress forever? 🤔
             <br/><br/>
             <span className="font-bold">Introducing AruarianAI 🍀</span>
    
