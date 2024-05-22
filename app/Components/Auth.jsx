@@ -80,6 +80,7 @@ export default function Auth() {
       }
 
       if(data){
+        console.log(data)
         const {error}=await supabase.
         from('Users')
         .insert({
