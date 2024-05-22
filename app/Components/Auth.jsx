@@ -35,28 +35,31 @@ export default function Auth() {
         console.log(error)
       }else{
         
+
+
+        router.push('/Dashboard')
   
 
 
-      const {data, error} = await supabase.from('Users').select('*').eq('email',email)
+      // const {data, error} = await supabase.from('Users').select('*').eq('email',email)
 
-      console.log(data[0].paid)
+      // console.log(data[0].paid)
 
-      if (error){
-        console.log(error)
-      }else{
-        if (data[0].paid){
-          router.push('/Dashboard')
+      // if (error){
+      //   console.log(error)
+      // }else{
+      //   if (data[0].paid){
+      //     router.push('/Dashboard')
        
-          console.log(data)
-        }else{
-          setCookie('nP',true)
-          router.push('/Payment')
-        }
+      //     console.log(data)
+      //   }else{
+      //     setCookie('nP',true)
+      //     router.push('/Payment')
+      //   }
         
 
         
-      }
+      // }
 
       
     
