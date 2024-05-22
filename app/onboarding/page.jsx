@@ -38,7 +38,7 @@ export default function Build(){
     
 
     return(
-        <main className={`flex self-center place-content-center  bg-gradient-to-b from-slate-300 via-red-100 to-zinc-200 text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full  overflow-hidden`}>
+        <main className={`flex self-center place-content-center  bg-gradient-to-b from-orange-400 to-stone-400/70  text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full  overflow-hidden`}>
            
 
                 
@@ -48,12 +48,14 @@ export default function Build(){
                 <p className="text-2xl mt-2 ">Welcome to Aruarian! </p>
                 <p className="mt-2 text-left text-lg p-10">
 
-                    We're so excited to have you join us! <br/>
+                    
                     Aruarian is an early stage AI productivity tool. <br/>
-                    Ari can schedule your tasks for you, <br/> tell you what's coming up for the week  and give you specific details on your upcoming tasks on the fly. <br/>
+                    Ari can schedule your tasks for you, change your schedule on the fly, <br/> tell you what's coming up for the week  and give you specific details on your upcoming tasks. <br/>
                      Ari is still in the early stages of development and as such there may be bugs and/or errors. <br/>
-                     Ari currently cannot update tasks or batch create tasks but these features are being built <br/>
-                     Ari has 2 basic commands /add and /read <br/>
+                
+                     Ari can add tasks, update tasks, read lists and batch add your tasks <br/>
+
+                     Ari can also organize your tasks into  boards you've added <br/>
 
 
                     To get started click the button below. <br/>
@@ -64,7 +66,7 @@ export default function Build(){
 
                 </p>
 
-                <button onClick={()=>{router.push('/Dashboard')}} className='  p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Thanks!</button>
+                <button onClick={()=>{router.push('/Dashboard')}} className='  p-4 mt-14 w-full rounded-2xl bg-white/40 border font-bold  float-left  border-white/[0.06] '> Get Started</button>
         
    
             </div>
