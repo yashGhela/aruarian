@@ -13,16 +13,16 @@ export default function LandingBar({isLand}){
   const [aboutOpen, setAboutOpen] = useState(false)
   const router = useRouter()
     return(
-        <div className={`flex fixed inset-2 justify-center items-center -ml-2 backdrop-blur-sm p-0 w-full md:w-[90%] lg:w-full h-20 border-b-0 rounded-md -mt-2 text-center`}>
+        <div className={`flex fixed z-20 inset-2  justify-center items-center -ml-2 backdrop-blur-sm p-0 w-full md:w-[90%] lg:w-full h-20 border-b-0 rounded-md -mt-2 text-center`}>
        {/*
      */}
 
-     <p className="absolute left-5 text-neutral-700/50 text-lg font-bold mt-12">AruarianAI</p>
+     <p className="absolute left-5 text-neutral-700 text-lg font-bold mt-12">myari</p>
       
      
         {isLand?
       <div className=' mt-0 float-right md:left-[20%] left-[10%] absolute  flex'>
-      <SmoothScrollLink to='about'>About</SmoothScrollLink>
+      <SmoothScrollLink to='How-it-works'>How it works</SmoothScrollLink>
        <SmoothScrollLink to='pricing'>Pricing</SmoothScrollLink>
         
        </div>:null}
