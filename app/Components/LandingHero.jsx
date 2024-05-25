@@ -5,10 +5,25 @@ import TestimonialAvatars from './TestimonialAvatars';
 import LogoFeature from './LogoFeature';
 import TestimonialBar from './TestimonialBar';
 import { SmoothScrollLink } from './SmoothScrollLink';
+import { useEffect, useState } from 'react';
+import ReactTypingEffect from 'react-typing-effect';
 
 export default function LandingHero(){
 
+    const variant=['Organize', 'Track', 'Complete']
+
+
     const router=useRouter()
+
+    const [number, setNumber] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNumber(prevNumber => (prevNumber + 1) % variant.length);
+    }, 2000);
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
     return(
         <motion.div 
         
@@ -36,7 +51,20 @@ export default function LandingHero(){
       initial={{ y:'50%', opacity:0 }}
       whileInView={{ y:'-50%', opacity:1 }}
       viewport={{ once: false  }}
-       className='  mt-[25rem] md:mt-[35%] lg:mt-[35%] xl:mt-[20%]  -ml-6    md:text-[5rem]    xl:text-[6rem] text-[4rem]     font-bold'>The AI for your to-do list</motion.p>
+       className='  mt-[25rem] md:mt-[35%] lg:mt-[35%] xl:mt-[20%]  -ml-6    md:text-[5rem]    xl:text-[6rem] text-[4rem]     font-bold'>
+
+        <ReactTypingEffect
+          text={[`${variant[number]}`]}
+          speed={100}
+          eraseSpeed={50}
+          eraseDelay={500}
+          typingDelay={100}
+          cursorClassName="TypingCursor"
+        />
+         your to-do list with AI
+
+
+       </motion.p>
 
       
 
@@ -46,7 +74,7 @@ export default function LandingHero(){
       initial={{ y:'50%', opacity:0  }}
       whileInView={{ y:'-50%', opacity:1 }}
       transition={{delay:0.3}}
-       className='  md:-mt-5  lg:px-64 px-10   text-black/50   text-xl font-normal'>Your own AI powered personal assistant is waiting for you in your pocket</motion.p>
+       className='  md:-mt-5  lg:px-64 px-10   text-black/50   text-xl font-normal'> Your AI-powered personal assistant, always within reach</motion.p>
 
       <motion.button 
        initial={{ y:'50%', opacity:0 }}
