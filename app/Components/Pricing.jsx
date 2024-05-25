@@ -34,7 +34,7 @@ export default function Pricing({landing}){
 
     return(
 
-        <div className={`${landing?"mt-[60%] md:mt-[60%] lg:mt-[40%] sm:mt-[150%]":"mt-10"} flex-col`} >
+        <div className={`${landing?"mt-[60%] md:mt-[60%] lg:mt-[20%] sm:mt-[150%]":"mt-10"} flex-col`} >
 
 <p className=" text-8xl text-center font-bold">Pricing</p>
             
@@ -51,11 +51,11 @@ export default function Pricing({landing}){
 
                     <p className='font-bold text-2xl text-left text-neutral-700  p-6 '>Lifetime price</p>
 
-                    <p className='font-bold text-2xl text-left ml-10  line-through text-neutral-600 mt-2  '>$40</p>
+                    <p className='font-bold text-2xl text-left ml-10  line-through text-neutral-600 mt-2  '>$25</p>
 
                     
 
-                    <p className='font-bold text-6xl text-center text-neutral-700 mt-2 '>$25</p>
+                    <p className='font-bold text-6xl text-center text-neutral-700 mt-2 '>$10</p>
                     <p className="mt-10  px-10">All features, future updates and personal support for a lifetime. </p>
                     
                     <div className=" ml-20">
@@ -81,7 +81,7 @@ export default function Pricing({landing}){
                    
                     Join Now
                     </button>:
-                    <button onClick={()=>{window.location.href='https://yashmakesstuff.lemonsqueezy.com/buy/2a15f43c-fe5e-414d-b437-c6c0a13ff5f4'}} className=" w-[90%] mt-10 font-bold  p-5 rounded-2xl  bg-white/40 hover:bg-white/50 ">
+                    <button onClick={()=>{window.location.href=' https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c'}} className=" w-[90%] mt-10 font-bold  p-5 rounded-2xl  bg-white/40 hover:bg-white/50 ">
                         {/* Subscribe   <a href="https://artfolio.lemonsqueezy.com/checkout/buy/c9ae10bc-5a85-4896-9730-4a4a195bd4fd?embed=1" class="lemonsqueezy-button"> Subscribe</a><script src="https://assets.lemonsqueezy.com/lemon.js" defer></script> */}
                         Purchase
                     </button>

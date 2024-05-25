@@ -12,7 +12,7 @@ export default function LandingHero(){
     return(
         <motion.div 
         
-        className='  -mt-20 mb-[10%]    pb-[60%] sm:mx-0 lg:-ml-0 xl:ml-0 w-full md:w-full h-screen   md:px-16   text-center  md:items-center items-center  p-5 flex-col '
+        className='  -mt-20 mb-[10%]    pb-[60%] sm:mx-0 lg:-ml-0 xl:ml-0 w-full md:w-full h-screen   md:px-24   text-center  md:items-center items-center  p-5 flex-col '
         
         
       

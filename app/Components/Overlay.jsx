@@ -199,6 +199,31 @@ style={{
 </Modal>
 
 
+ {/* Purchase section */}
+
+<div className="sm:w-[15rem]   md:mt-10 mt-10 lg:mt-0  fixed left-8 bottom-8 bg-white/40 rounded-xl h-[15rem] shadow-2xl  border-2 border-white/[0.13] ">
+
+                
+
+<p className='font-bold text-lg text-left text-neutral-700  p-6 '>Become a member</p>
+
+
+
+
+
+<p className='font-bold text-6xl text-center text-neutral-700 mt-2 '>$10</p>
+
+
+
+
+<button onClick={()=>{window.location.href=' https://yashmakesstuff.lemonsqueezy.com/buy/56f369c1-f57b-4f99-8aae-d91c74626c7c'}} className=" w-[90%] mt-4 font-bold  p-5 rounded-2xl  bg-white/40 hover:bg-white/50 ">
+    {/* Subscribe   <a href="https://artfolio.lemonsqueezy.com/checkout/buy/c9ae10bc-5a85-4896-9730-4a4a195bd4fd?embed=1" class="lemonsqueezy-button"> Subscribe</a><script src="https://assets.lemonsqueezy.com/lemon.js" defer></script> */}
+    Purchase
+</button>
+
+</div>
+
+
 
       {/* <div className='fixed flex bottom-8 z-50 left-8 invisible md:visible '>
 
