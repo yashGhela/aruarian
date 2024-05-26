@@ -16,7 +16,7 @@ export default function LandingFaq(){
   ];
 
   const answers = [
-    'Aruarian can schedule tasks and to-do lists for you, update your schedule on the fly and find you specifics  on your schedule on the fly , you can just speak to it normally ',
+    'Aruarian can schedule tasks and to-do lists for you, update your schedule on the fly and find you specifics  on your schedule on the fly , all in natural language ',
     'Aruarian can save you  time and help you live a more prioritized, zen lifestyle , and if you join us now you can help me grow it and make it better!',
     'Aruarian isn\'t a big team, its actually just one guy which is me, Yash! As such I can\'t continue development without some sort of financial support!  ',
     'Aruarian can help you figure out which tasks to prioritize first and how to schedule them out in a mindful way, in the future I hope to add more in depth conversations with Aruarian along with voice chat, dynamic lists and more! ',
