@@ -74,7 +74,7 @@ export async function POST(req, res) {
             +'///userboards:'+JSON.stringify(bdata),
             
             temperature: 0.8,
-            max_tokens: 6000
+            max_tokens: 7500
      
         
         },
