@@ -320,7 +320,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 
          
-         className=' bg-gradient-to-b from-slate-400 to-orange-400 flex text-neutral-700  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
+         className=' bg-gradient-to-r from-neutral-300 via-orange-400/30  to-neutral-300 flex text-neutral-700  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay setBoardtype={setBoardtype} setTodos={setTodos}  boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      
