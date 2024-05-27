@@ -31,7 +31,7 @@ export default function LandingBar({isLand}){
 
        <div className={`flex mt-8 absolute right-10`}>
        {/* <Link href='/auth?state=Login'  className={`  ml-2 md:ml-4  pt-1 underline   p-4 mt-10 font-normal  rounded-md`}>Login</Link> */}
-       <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className='  p-4 mt-5 w-full ml-2 rounded-2xl bg-gray-300/20 border font-bold  float-left  border-white/[0.06] '>Join Now</motion.button>
+       <motion.button whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className='  p-4 mt-5 w-full ml-2 rounded-2xl bg-white/20 border font-bold  float-left  border-white/[0.06] '>Join Now</motion.button>
         
 
        </div>

@@ -80,7 +80,7 @@ export default function LandingHero(){
        initial={{ y:'50%', opacity:0 }}
        whileInView={{ y:'-50%', opacity:1 }}
       
-      transition={{delay:0.5}} whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' -ml-2  p-4 mt-12 w-self md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-neutral-300/50 border font-bold   border-white/[0.06] '>Join Now</motion.button>
+      transition={{delay:0.5}} whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' -ml-2  p-4 mt-12 w-self md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-white/30 border font-bold   border-white/[0.06] '>Join Now</motion.button>
        
 
       <motion.img 

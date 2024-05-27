@@ -51,7 +51,7 @@ export default function Home() {
       <main
        
       
-      className=' flex px-0  self-center place-content-center text-neutral-900 bg-gray-100 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      className=' flex px-0  self-center place-content-center text-neutral-900 bg-gradient-to-r from-orange-200/20 via-orange-400/50 to-orange-200/20 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    

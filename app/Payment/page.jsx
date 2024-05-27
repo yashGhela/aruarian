@@ -131,7 +131,7 @@ export default function Payment(){
     return(
 
 
-        <main  className=' flex self-center place-content-center  text-neutral-700 bg-gradient-to-b from-orange-300 to-neutral-400 text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+        <main  className=' flex self-center place-content-center  text-neutral-700 bg-gradient-to-r from-orange-200/20 via-orange-400/50 to-orange-200/20 text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
 
           {IsLoading&&<div className="fixed inset-0   bg-black opacity-40"> <div className="mt-[25%]">
                     <p className='text-3xl mt-20  font-normal text-black '>Loading</p>

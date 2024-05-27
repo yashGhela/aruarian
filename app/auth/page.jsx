@@ -19,7 +19,7 @@ export default function AuthPage() {
 
 
   return (
-    <div    className={`flex  self-center place-content-center bg-gray-100 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
+    <div    className={`flex  self-center place-content-center bg-gradient-to-r from-orange-200/20 via-orange-400/50 to-orange-200/20 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
 
     <SEO title={'Auth'}/>
 
