@@ -32,7 +32,7 @@ export default function LandingVideo(){
       <motion.button 
     
       
-       whileHover={{scale:1.05}} onClick={()=>{setShowModal(true)}} className=' -ml-6  p-4 mt-40 w-self md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-white/30 border font-bold   border-white/[0.06] '>Watch the video</motion.button>
+       whileHover={{scale:1.05}} onClick={()=>{setShowModal(true)}} className=' -ml-6  p-4 xl:mt-96 mt-48 w-self md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-white/30 border font-bold   border-white/[0.06] '>Watch the video</motion.button>
        
 
        <Modal showModal={showModal} Header={'Demo Video'} setShowModal={setShowModal}>
