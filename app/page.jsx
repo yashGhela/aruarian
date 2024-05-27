@@ -23,6 +23,7 @@ import LandingAbout from './Components/LandingAbout'
 import Section1 from './Components/Section1'
 import Section2 from './Components/Section2'
 import Section3 from './Components/Section3'
+import Interest1 from './Components/Interest1'
 
 
 
@@ -51,7 +52,7 @@ export default function Home() {
       <main
        
       
-      className=' flex px-0  self-center place-content-center text-neutral-900 bg-gradient-to-r from-orange-200/20 via-orange-400/50 to-orange-200/20 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      className=' flex px-0  self-center place-content-center text-neutral-900  bg-gradient-to-br from-neutral-300 via-orange-100  to-orange-400 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    
@@ -66,6 +67,7 @@ export default function Home() {
       {/* <LandingVideo/> */}
 
       <Interest/>
+    
 
 
       <p className=" text-7xl mt-[25%] font-bold">How it works </p>
