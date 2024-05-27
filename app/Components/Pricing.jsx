@@ -45,17 +45,17 @@ export default function Pricing({landing}){
 
                 
 
-            <div className="sm:w-[25rem] w-[23rem]  ml-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[79%] bg-white/40 rounded-xl h-[25rem] shadow-2xl  border-2 border-white/[0.13] ">
+            <div className="sm:w-[25rem] w-[23rem]  ml-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[79%] bg-white/40 rounded-xl h-[23rem] shadow-2xl  border-2 border-white/[0.13] ">
 
                 
 
                     <p className='font-bold text-2xl text-left text-neutral-700  p-6 '>Lifetime price</p>
 
-                    <p className='font-bold text-2xl text-left ml-10  line-through text-neutral-600 mt-2  '>$25</p>
+                    {/* <p className='font-bold text-2xl text-left ml-10  line-through text-neutral-600 mt-2  '>$25</p> */}
 
                     
 
-                    <p className='font-bold text-6xl text-center text-neutral-700 mt-2 '>$10</p>
+                    <p className='font-bold text-6xl text-center text-neutral-700 mt-4 '>$20</p>
                     <p className="mt-10  px-10">All features, future updates and personal support for a lifetime. </p>
                     
                     <div className=" ml-20">
