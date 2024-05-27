@@ -45,7 +45,7 @@ export default function Pricing({landing}){
 
                 
 
-            <div className="sm:w-[25rem] w-[23rem]  md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[79%] bg-white/40 rounded-xl h-[25rem] shadow-2xl  border-2 border-white/[0.13] ">
+            <div className="sm:w-[25rem] w-[23rem]  ml-2 md:mt-10 mt-10 lg:mt-0  lg:mx-[70%] xl:mx-[79%] bg-white/40 rounded-xl h-[25rem] shadow-2xl  border-2 border-white/[0.13] ">
 
                 
 

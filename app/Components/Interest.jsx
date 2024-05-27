@@ -7,7 +7,7 @@ export default function Interest(){
 whileInView={{ opacity: 1 }}
 viewport={{ once: false  }}
 
-        className="mt-[55%] md:mt-[30%] mx-10 md:mx-72  flex-col text-2xl sm:text-5xl md:text-6xl italic">
+        className="mt-[55%] md:mt-[15%] mx-10 md:mx-72  flex-col text-2xl sm:text-5xl md:text-6xl italic">
 
             Do you ever feel like you have a thousand things to do but no time to plan it all out? 💨  <br/>
             <br/>

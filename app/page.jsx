@@ -52,7 +52,7 @@ export default function Home() {
       <main
        
       
-      className=' flex px-0  self-center place-content-center text-neutral-900  bg-gradient-to-br from-neutral-300 via-orange-100  to-orange-400 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
+      className=' flex px-0  self-center place-content-center text-neutral-900  bg-gradient-to-br from-neutral-300 via-orange-100  to-orange-400/50 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
     
    
@@ -63,6 +63,7 @@ export default function Home() {
       <LandingBar isLand={true}  />
 
       <LandingHero/>
+      <LandingVideo/>
 
       {/* <LandingVideo/> */}
 
