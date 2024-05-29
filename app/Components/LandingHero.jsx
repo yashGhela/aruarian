@@ -8,6 +8,8 @@ import { SmoothScrollLink } from './SmoothScrollLink';
 import { useEffect, useState } from 'react';
 import ReactTypingEffect from 'react-typing-effect';
 
+// import myVideo from '../../public/videos'
+
 export default function LandingHero(){
 
     const variant=['Organize', 'Track', 'Complete']
@@ -84,10 +86,14 @@ export default function LandingHero(){
       transition={{delay:0.5}} whileHover={{scale:1.05}} onClick={()=>{router.push('/auth')}} className=' -ml-2  p-4 mt-12 w-self md:w-1/2 md:mx-[25%] lg:mx-[38%] lg:w-1/4   xl:mx-[38%] rounded-2xl bg-white/30 border font-bold   border-white/[0.06] '>Join Now</motion.button>
        
 
-      <motion.img 
+      {/* <motion.img 
        initial={{ y:'10%', opacity:0 }}
        whileInView={{ y:'-1%', opacity:1 }}
-        transition={{delay:0.7}}  className="h-[80%] w-[80%] mx-[10%]  shadow-2xl mt-20 rounded-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Screenshot%202024-05-18%20204514.png' alt="" />
+        transition={{delay:0.7}}  className="h-[80%] w-[80%] mx-[10%]  shadow-2xl mt-20 rounded-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Screenshot%202024-05-18%20204514.png' alt="" /> */}
+
+      <video controls  className="h-[80%] w-[80%] mx-[10%]  shadow-2xl mt-20 rounded-2xl   cursor-pointer " >
+        <source src='/Demo_video.mp4' type='video/mp4'/>
+      </video>
 
 
 {/* //Discover serenity with your intuitive AI-powered task manager, */}
