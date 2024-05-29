@@ -42,6 +42,72 @@ function Overlay({boards,   setBoardtype, setTodos}) {
    let todayStart= new Date()
     let todayEnd= new Date()
 
+
+
+    const getOverdue=async()=>{
+      await getUser().then(async ()=>{
+
+        todayStart.setHours(0, 0, 0, 0);
+ 
+
+
+        todayEnd.setHours(23, 59, 59, 999); 
+      
+        
+        const {data, error} = await supabase.from('To-Dos')
+        .select('*')
+        .eq("UID", user)
+        .eq('completed', false)
+        .or(`due_date.lt.${todayStart.toISOString()},due_date.gt.${todayEnd.toISOString()}`);
+       
+
+    
+    
+        if(error){
+          console.log(error)
+        }else{
+          setTodos(data)
+          setBoardtype('Overdue')
+          console.log(data)
+          
+          
+        }
+
+      })
+
+    }
+
+
+    const getToday=async()=>{
+      await getUser().then(async ()=>{
+
+        todayStart.setHours(0, 0, 0, 0);
+   
+
+
+      todayEnd.setHours(23, 59, 59, 999); 
+    
+      
+      const {data, error} = await supabase.from('To-Dos')
+      .select('*')
+      .eq("UID", user)
+      .eq('completed', false)
+      .gte('due_date', todayStart.toISOString())
+      .lt('due_date', todayEnd.toISOString());
+
+      if(error){
+        console.log(error)
+      }else{
+        setTodos(data)
+        console.log(data)
+        
+        
+      }
+
+      })
+      }
+    
+
    
    const getQueryTodos=async({board})=>{
 
@@ -143,6 +209,26 @@ function Overlay({boards,   setBoardtype, setTodos}) {
  </svg>
  {/* <p className='text-md  font-light invisible 2xl:visible  ml-4 mt-[2px]   text-left '>Add Board</p> */}
 </motion.button>
+
+
+<motion.button onClick={()=>{getToday()}} whileHover={{scale:1.02, rotate:1}} className='invisible  flex md:visible   mt-10 ml-1  p-2 rounded-[20px] text-black/50 '>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7  mt-[1px]">
+  <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+  <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+</svg>
+
+
+        </motion.button>
+
+<motion.button onClick={()=>{getOverdue()}} whileHover={{scale:1.02, rotate:1}} className='invisible  flex md:visible   mt-2 ml-1  p-2 rounded-[20px] text-black/50 '>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7  mt-[1px]">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+        </motion.button>
+
+
+        
 
  <div className='mt-20 invisible  md:visible'>
  {boards.map((i)=>{
