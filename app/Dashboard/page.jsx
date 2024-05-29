@@ -244,6 +244,26 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 
 
+    const subscribeToTodos = () => {
+      const subscription = supabase
+        .channel('custom-all-channel') // Create or use a channel
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'To-Dos' },
+          (payload) => {
+            console.log('Change received!', payload);
+            getTodos(); // Fetch the latest todos whenever a change occurs
+          }
+        )
+        .subscribe();
+    
+      return () => {
+        supabase.removeChannel(subscription); // Cleanup subscription on unmount
+      };
+    };
+
+
+
 
 
 
@@ -300,10 +320,15 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   
       updateTime();
       const interval = setInterval(updateTime, 1000); // Update time every second
+
+      const unsubscribe = subscribeToTodos();
   
       
   
-      return () => clearInterval(interval);
+      return () => {
+        clearInterval(interval);
+        unsubscribe();
+      }
      
     },[])
 

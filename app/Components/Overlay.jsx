@@ -18,6 +18,8 @@ function Overlay({boards,   setBoardtype, setTodos}) {
 
    const [showModal, setShowModal]=useState(false)
 
+   const [menushow, setMenuShow]=useState(false)
+
    
 
    
@@ -100,6 +102,7 @@ function Overlay({boards,   setBoardtype, setTodos}) {
       }else{
         setTodos(data)
         console.log(data)
+        setBoardtype('Today')
         
         
       }
@@ -180,11 +183,73 @@ function Overlay({boards,   setBoardtype, setTodos}) {
     <motion.div initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: false  }}
-    className=' bg-neutral-300   h-self w-self'>
-        <motion.div whileHover={{scale:1.05}}  onClick={()=>{getQueryTodos({board:'General'})}}   className={`flex z-20 fixed cursor-pointer hover:shadow-inner  top-8 left-8 rounded-full p-1 `}>
+    className=' bg-neutral-300    h-self w-self'>
+
+      <div className='visible md:invisible'>
+      <motion.button onClick={()=>{setMenuShow(true)}} className='fixed left-5 top-5'>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7  mt-[1px] ">
+  <path fillRule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+</svg>
+      </motion.button>
+
+
+      <Modal showModal={menushow} setShowModal={setMenuShow} Header={'Menu'} height={'h-[50%]'} thin={true}>
+
+        <div className="flex-col p-5">
+        <motion.button onClick={()=>{setShowModal(true)}} className='  flex   p-2 rounded-[20px] text-black/50 ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6  mt-[1px]">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+ </svg>
+ <p className='text-md  font-bold   ml-4 mt-[2px]   text-left '>Add Board</p>
+</motion.button>
+
+
+<motion.button onClick={()=>{getToday()}} whileHover={{scale:1.02, rotate:1}} className='  flex     mt-2 ml-1  p-2 rounded-[20px] text-black/50 '>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7  mt-[1px]">
+  <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+  <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+</svg>
+
+<p className='text-md  font-bold   ml-4 mt-[2px]   text-left '>Today</p>
+
+
+        </motion.button> <br/>
+
+<motion.button onClick={()=>{getOverdue()}} whileHover={{scale:1.02, rotate:1}} className=' flex   -mt-2 ml-1  p-2 rounded-[20px] text-black/50 '>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7  mt-[1px]">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+<p className='text-md  font-bold   ml-4 mt-[2px]   text-left '>Overdue</p>
+
+        </motion.button>
+
+
+        
+
+ <div >
+ {boards.map((i)=>{
+      return(
+        <motion.button onClick={()=>{getQueryTodos({board:i.name})}} whileHover={{scale:1.02, rotate:1}} className='flex mt-5 rounded-lg text-black/50  w-full p-1  '>
+          <img src={i.icon} className=' w-6 h-6 ml-2 ' />
+          <p className='text-md  font-bold   ml-4   text-left '>{i.name}</p>
+  
+        </motion.button>
+      )
+    })}
+ </div>
+        </div>
+
+
+        
+
+
+      </Modal>
+
+      </div>
+      <div className='invisible  md:visible'>
+        <motion.div whileHover={{scale:1.05}}   className={`flex z-20  fixed cursor-pointer hover:shadow-inner  top-8 left-8 rounded-full p-1 `}>
 
         <svg
-  className='w-8 h-10 text-white/40 hidden  sm:visible'
+  className='w-8 h-10 text-white/40 '
   viewBox="0 0 57 79"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -203,24 +268,24 @@ function Overlay({boards,   setBoardtype, setTodos}) {
 
 
 
-    <div className='fixed  top-40 z-20 left-8 '>
-    <motion.button onClick={()=>{setShowModal(true)}} className='invisible bg-white/50 flex md:visible border-white/30 border-2  p-2 rounded-[20px] text-black/50 ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6  mt-[1px]">
+    <div className='fixed flex-col  top-40 z-20 left-8 '>
+    <motion.button onClick={()=>{setShowModal(true)}} className=' bg-white/50 flex  border-white/30 border-2  p-2 rounded-[20px] text-black/50 ' whileHover={{scale:1.02}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6  mt-[1px]">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
  </svg>
  {/* <p className='text-md  font-light invisible 2xl:visible  ml-4 mt-[2px]   text-left '>Add Board</p> */}
 </motion.button>
 
 
-<motion.button onClick={()=>{getToday()}} whileHover={{scale:1.02, rotate:1}} className='invisible  flex md:visible   mt-10 ml-1  p-2 rounded-[20px] text-black/50 '>
+<motion.button onClick={()=>{getToday()}} whileHover={{scale:1.02, rotate:1}} className='     mt-10 ml-1  p-2 rounded-[20px] text-black/50 '>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7  mt-[1px]">
   <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
   <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
 </svg>
 
 
-        </motion.button>
+        </motion.button> <br/>
 
-<motion.button onClick={()=>{getOverdue()}} whileHover={{scale:1.02, rotate:1}} className='invisible  flex md:visible   mt-2 ml-1  p-2 rounded-[20px] text-black/50 '>
+<motion.button onClick={()=>{getOverdue()}} whileHover={{scale:1.02, rotate:1}} className='   mt-2 ml-1  p-2 rounded-[20px] text-black/50 '>
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7  mt-[1px]">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>
@@ -230,7 +295,7 @@ function Overlay({boards,   setBoardtype, setTodos}) {
 
         
 
- <div className='mt-20 invisible  md:visible'>
+ <div className='mt-20 '>
  {boards.map((i)=>{
       return(
         <motion.button onClick={()=>{getQueryTodos({board:i.name})}} whileHover={{scale:1.02, rotate:1}} className='flex mt-5 rounded-lg  w-full p-1  '>
@@ -326,7 +391,7 @@ style={{
 </div> */}
 
 
-
+</div>
     </motion.div>
   )
 }
