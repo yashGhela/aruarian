@@ -89,7 +89,7 @@ export default function LandingHero(){
       <motion.img 
        initial={{ y:'10%', opacity:0 }}
        whileInView={{ y:'-1%', opacity:1 }}
-        transition={{delay:0.7}}  className="h-[80%] w-[80%] mx-[10%]  shadow-2xl mt-20 rounded-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Screenshot%202024-05-18%20204514.png' alt="" />
+        transition={{delay:0.7}}  className="h-[80%] w-[80%] mx-[10%]  shadow-2xl mt-20 rounded-2xl   cursor-pointer " src='https://umgfpsbrmtrjeeyygfyc.supabase.co/storage/v1/object/public/LandingPageBucket/Screenshot_2024-05-29_131510.png' alt="" />
 
       {/* <video controls  className="h-[80%] w-[80%] mx-[10%]  shadow-2xl mt-20 rounded-2xl   cursor-pointer " >
         <source src='/Demo_video.mp4' type='video/mp4'/>
