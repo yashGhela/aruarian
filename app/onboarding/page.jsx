@@ -38,7 +38,7 @@ export default function Build(){
     
 
     return(
-        <main className={`flex self-center place-content-center  bg-gradient-to-b from-orange-400 to-stone-400/70  text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full  overflow-hidden`}>
+        <main className={`flex self-center place-content-center  bg-gradient-to-r from-neutral-300 via-orange-400/30  to-neutral-300  text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full  overflow-hidden`}>
            
 
                 

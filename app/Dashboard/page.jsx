@@ -62,6 +62,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   
     const [boardquery, setBoardQuery]=useState('')
 
+    const [ispaid, setIsPaid]=useState(false)
+
 
     const placeholders=[
       'Remind me to go to the grocery store',
@@ -71,6 +73,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     ]
 
     let rand= Math.floor(Math.random() * 3);
+
+
+    
  
   
 
@@ -108,6 +113,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       user= data.data.user.id
       console.log(user)
 
+     
+
 
      
 
@@ -116,6 +123,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       
 
       
+    }
+
+
+    const getPaid=async()=>{
+
+      const {data,error}= await supabase.from('Users').select('*').eq('UID', user)
+  
+      console.log(data)
+        if (data[0].paid){
+          setIsPaid(true)
+          
+        }
     }
     
 
@@ -296,10 +315,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   
      
         
-      getUser().then(()=>{getTodos()})
+      getUser().then(()=>{getTodos(); getPaid()})
       getGreeting()
 
       getUserBoards()
+
+    
 
       let cook= getCookie('nP')
 
@@ -347,7 +368,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
          
          className=' bg-gradient-to-r from-neutral-300 via-orange-400/30  to-neutral-300 flex text-neutral-700  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
-     <Overlay setBoardtype={setBoardtype} setTodos={setTodos}  boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
+     <Overlay ispaid={ispaid} setBoardtype={setBoardtype} setTodos={setTodos}  boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
      
 
    
