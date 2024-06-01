@@ -32,10 +32,10 @@ export async function POST(req, res) {
   const {data, error} = await supabase.from('To-Dos').select('*').eq('UID', body.userid).limit(50).order('due_date', {ascending:false})
 
 
-  const {paiddata,paiderror}= await supabase.from('Users').select('*').eq('UID', user)
+  const {paiddata,paiderror}= await supabase.from('Users').select('*').eq('UID', userid)
   
       console.log(data)
-        if (data[0].paid){
+        if (paiddata[0].paid){
           isPaid=true
           
         }
