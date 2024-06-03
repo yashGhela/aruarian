@@ -28,7 +28,8 @@ export default function LandingHero(){
   }, []);
     return(
         <motion.div 
-        
+        style={{
+          background: 'radial-gradient(circle, rgba(255,162,122,1) 0%, rgba(221,221,221,1) 29%)'}}
         className='  -mt-20 mb-[10%]    pb-[60%] sm:mx-0 lg:-ml-0 xl:ml-0 w-full md:w-full h-screen   md:px-24   text-center  md:items-center items-center  p-5 flex-col '
         
         
