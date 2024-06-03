@@ -3,15 +3,15 @@ import Head from 'next/head';
 //import favicon from 
 
 const SEO = ({ title, description, image, url, keywords }) => {
-  const siteName = 'Home'; // Replace with your website name
-  const siteUrl = 'https://www.yourwebsite.com'; // Replace with your website URL
+  const siteName = 'Ari by AruarianAI || Ari, the world\'s first AI to-do list assistant'; // Replace with your website name
+  const siteUrl = 'https://www.aruarianai.xyz'; // Replace with your website URL
   const defaultImage = '/default-image.jpg'; // Replace with a default image URL for social sharing
 
-  const pageTitle = title || 'Default Page Title';
-  const pageDescription = description || 'Default page description';
+  const pageTitle = title || 'Ari by AruarianAI ';
+  const pageDescription = description || 'Complete, Track and organize your to-do list with AI';
   const pageImage = image || `${defaultImage}`;
   const pageUrl = url || siteUrl;
-  const pageKeywords = keywords || 'default, keywords, for, your, page'; // Replace with your desired keywords
+  const pageKeywords = keywords || 'Ari, Aruarian AI, AI to-dos, to-dos AI, To-dos with AI, AI, Ari by Arua, Ari by Aruarian, AI with to-dos'; // Replace with your desired keywords
 
   return (
     <head>
