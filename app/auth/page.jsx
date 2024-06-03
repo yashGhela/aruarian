@@ -19,7 +19,9 @@ export default function AuthPage() {
 
 
   return (
-    <div    className={`flex  self-center place-content-center bg-gradient-to-r from-neutral-300 via-orange-400/30  to-neutral-300 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
+    <div  
+    style={{
+      background: 'radial-gradient(circle, rgba(255,162,122,1) 0%, rgba(221,221,221,1) 29%)'}}  className={`flex  self-center place-content-center bg-gradient-to-r from-neutral-300 via-orange-400/30  to-neutral-300 text-center p-5 max-w-full min-w-screen text-neutral-700  min-h-screen max-h-full overflow-y-auto`}>
 
     <SEO title={'Auth'}/>
 

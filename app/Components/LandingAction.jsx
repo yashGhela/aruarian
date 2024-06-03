@@ -6,7 +6,9 @@ import { motion } from "framer-motion"
 export default function LandingAction(){
     const router = useRouter()
     return(
-        <div className="my-[20%] ">
+        <div 
+        
+        className="my-[20%] ">
              <p className=' text-4xl font-bold '>Join the future of productivity today</p>
              <p className='font-normal italic  text-neutral-600 text-2xl mt-4 p-2 md:text-center'>What are you waiting for?</p>
          
