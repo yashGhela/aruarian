@@ -152,7 +152,10 @@ export default function Payment(){
             <div className=' md:w-full lg:w-full w-[25rem]  mr-0 flex-col'>
 
 
-            <Pricing/>
+              <p className="font-bold text-center ">processing payment</p>
+
+{/* 
+            <Pricing/> */}
 
       
  
