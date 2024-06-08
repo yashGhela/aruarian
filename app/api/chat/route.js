@@ -49,16 +49,38 @@ export async function POST(req, res) {
 
    const {bdata, berror}= await supabase.from('Boards').select('*').eq('UID', body.userid)
 
-  console.log(body.prompt);
+//   console.log(body.prompt);
   console.log(body.userid);
+
+//   console.log(body.prompt.length)
+
+
+  let array = body.prompt
+
+  console.log(array)
+
+  let arraylength =body.prompt.length
+
+  console.log(arraylength)
+
+
+
+
+  let userprompt=array[arraylength-1]
+
+  console.log(userprompt)
+
+
+  let context = array.slice(0, arraylength).join(' ');
+console.log('Context:' +context);
 
 
   let objArray=[];
     const obj = Object.fromEntries(data.entries());
     objArray.push(obj);
 
-  console.log(body.prompt);
-  console.log(body.userid);
+//   console.log(body.prompt);
+//   console.log(body.userid);
 
   let messages;
 
@@ -76,8 +98,10 @@ export async function POST(req, res) {
            
           
            
-            "Prompt:"+ body.prompt
+            "Prompt:"+ userprompt
+            +'////Context: '+JSON.stringify(context)
             +`/////  Today is  ${today}`
+            
             
             +'////Data Chunk for reading: '
             +JSON.stringify(objArray)
