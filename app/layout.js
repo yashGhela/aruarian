@@ -1,5 +1,5 @@
 import './globals.css'
-import { Inter, Montserrat, Fredoka, VT323 } from 'next/font/google'
+import { Inter, Montserrat, Fredoka, VT323, Old_Standard_TT } from 'next/font/google'
 
 
 const inter = Inter({ subsets: ['latin'] })

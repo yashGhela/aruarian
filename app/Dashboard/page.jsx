@@ -365,7 +365,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
          <main  
 
 
-         
+style={{
+  background: 'radial-gradient(circle, rgba(255,162,122,1) 0%, rgba(221,221,221,1) 29%)'}}
          className=' bg-gradient-to-r from-neutral-300 via-orange-400/30  to-neutral-300 flex text-neutral-700  bg-cover bg-no-repeat self-center place-content-center  backdrop-blur-md     text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden'>
      
      <Overlay ispaid={ispaid} setBoardtype={setBoardtype} setTodos={setTodos}  boards={boards} setBoardQuery={setBoardQuery} setQueried={setQueried} />
