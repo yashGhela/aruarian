@@ -173,11 +173,13 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       setPrediction(prediction);
       console.log(prediction.id)
       console.log(prediction.urls.get)
+
+      let predictionStatus = prediction.status;
   
   
       while (
-        prediction.status!=='succeeded' && 
-        prediction.status!=='failed'
+        predictionStatus!=='succeeded' && 
+        predictionStatus!=='failed'
       ){
         await sleep(1000);
   
@@ -193,17 +195,23 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   
         if(response.status===201){
           setIsLoading(false)
+          messagesArry.push('Ari:'+prediction.message)
+          console.log(messagesArry)
           
         }
         console.log(prediction)
         setPrediction(prediction)
+
+      
        
       }
 
-      // if (prediction.status==='succeeded'){
-      //   messagesArry.push(prediction)
-      //     console.log(messagesArry)
-      // }
+      
+
+      if (predictionStatus==='succeeded'){
+        messagesArry.push('Ari:'+prediction.message)
+        console.log(messagesArry)
+      }
       
 
       
@@ -526,7 +534,7 @@ style={{
     <div className="flex">
    
        <textarea placeholder={placeholders[rand]} cols={1} rows={1} value={prompt}   onChange={(e)=>{setPrompt(e.target.value)}} type="text"  className=" placeholder:text-stone-400  md:w-1/2 w-[80%] focus:outline-none p-2 pl-5 pr-5 rounded-2xl bg-white/70   backdrop-blur-sm    border-white/30 border-2 " />
-     <motion.button onClick={()=>{sendPrompt(); setMesSent(true); setIsLoading(true); messagesArry.push(prompt); console.log(messagesArry)}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-2xl bg-white/70   hover:bg-neutral-200/70  text-black/50  border-white/30 border-2 " ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" /></svg> </motion.button>
+     <motion.button onClick={()=>{sendPrompt(); setMesSent(true); setIsLoading(true); messagesArry.push('User:'+prompt); console.log(messagesArry)}} whileHover={{scale:1.02}} className=" ml-2  w-10 focus:outline-none p-2 rounded-2xl bg-white/70   hover:bg-neutral-200/70  text-black/50  border-white/30 border-2 " ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" /></svg> </motion.button>
      
     </div>
     {/* <p className='italic  text-neutral-700'>Aruarian is in early development and bugs may occur </p> */}
