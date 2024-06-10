@@ -202,7 +202,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         setPrediction(prediction)
 
         if (prediction.message!==undefined){
-          messagesArry.current.push('Ari:'+{message: prediction.message, tasks: prediction.tasks})
+          messagesArry.current.push(`Ari:${JSON.stringify({ message: prediction.message, tasks: prediction.tasks })}`);
           console.log(messagesArry)
         }
 
@@ -406,34 +406,33 @@ style={{
      <div>
 
      
-
-    <div className='w-[70%] mx-[10%] overflow-auto h-full'>
+     <button className='fixed left-8 top-10 text-black' onClick={()=>{setMesSent(false)}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+</button>
+    <div className='w-[70%] mx-[10%] overflow-y-auto  h-[800px]'>
 
     {messagesToShow.map((mess)=>{
 
 const isUser = mess.startsWith('User:');
+const messageContent = isUser ? mess.split(':')[1].trim() : JSON.parse(mess.slice(4)).message;
+
 
 
 
       return(
-        <div className={`  2xl:ml-48   bg-white/70  border  ${isUser?'float-right mt-[30%] md:mt-[5%]':'float-left mt-[15%]'}   border-white/[0.06] p-6  w-self h-self  backdrop-blur-sm text-left   text-lg rounded-[30px] `}>
+        <div className={`  2xl:ml-48   bg-white/70  border  ${isUser?'float-right mt-[30%] md:mt-[5%]':'float-left mt-[5%]'}   border-white/[0.06] p-6  w-self h-self  backdrop-blur-sm text-left   text-lg rounded-[30px] `}>
 
-{typeof mess === 'string' ? (
-      mess
-    ) : (
-      // If mess.message is an object, stringify it
-      // You can access specific properties of mess.message as needed
-      JSON.stringify(mess.message)
-    )}
+{messageContent}
 
-    {mess.tasks&& <div className='mt-4'><Container todos={mess.tasks} isRes={true}/></div>}
+    {messageContent.tasks&& <div className='mt-4'><Container todos={messageContent.tasks} isRes={true}/></div>}
 
   </div>
       )
     })}
 
 
-        <div className="md:mt-[15%] sm:ml-[20%] mt-10 -ml-10 w-[350px] sm:w-[450px]  sm:h-self  backdrop-blur-sm  float-left    rounded-[30px] bg-white/70    border p-3  border-white/[0.06]">
+        <div className="md:mt-[15%] sm:ml-[24%] mt-10 -ml-10 w-[350px] sm:w-[450px]  sm:h-self  backdrop-blur-sm  float-left    rounded-[30px] bg-white/70    border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>
