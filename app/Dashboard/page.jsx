@@ -202,7 +202,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         setPrediction(prediction)
 
         if (prediction.message!==undefined){
-          messagesArry.current.push('Ari:'+prediction.message)
+          messagesArry.current.push('Ari:'+{message: prediction.message, tasks: prediction.tasks})
           console.log(messagesArry)
         }
 
@@ -373,6 +373,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     },[])
 
 
+    const messagesToShow = messagesArry.current.slice();
+    if (messagesToShow.length > 0 && messagesToShow[messagesToShow.length - 1].startsWith('Ari:')) {
+      messagesToShow.pop();
+    }
+
+
     
 
     //const user= auth.currentUser
@@ -401,16 +407,33 @@ style={{
 
      
 
-    <div className='w-[70%] mx-[10%]'>
+    <div className='w-[70%] mx-[10%] overflow-auto h-full'>
 
-<div className="md:mt-[5%]  2xl:ml-48  mt-[30%] bg-white/70  border  float-right   border-white/[0.06] p-6  w-self h-self  backdrop-blur-sm text-left   text-lg rounded-[40px] ">
+    {messagesToShow.map((mess)=>{
 
-   {prompt}
+const isUser = mess.startsWith('User:');
+
+
+
+      return(
+        <div className={`  2xl:ml-48   bg-white/70  border  ${isUser?'float-right mt-[30%] md:mt-[5%]':'float-left mt-[15%]'}   border-white/[0.06] p-6  w-self h-self  backdrop-blur-sm text-left   text-lg rounded-[30px] `}>
+
+{typeof mess === 'string' ? (
+      mess
+    ) : (
+      // If mess.message is an object, stringify it
+      // You can access specific properties of mess.message as needed
+      JSON.stringify(mess.message)
+    )}
+
+    {mess.tasks&& <div className='mt-4'><Container todos={mess.tasks} isRes={true}/></div>}
 
   </div>
+      )
+    })}
 
 
-        <div className="md:mt-[14%] sm:ml-[20%] mt-10 -ml-10 w-[350px] sm:w-[450px]  sm:h-self  backdrop-blur-sm  float-left    rounded-[30px] bg-white/70    border p-3  border-white/[0.06]">
+        <div className="md:mt-[15%] sm:ml-[20%] mt-10 -ml-10 w-[350px] sm:w-[450px]  sm:h-self  backdrop-blur-sm  float-left    rounded-[30px] bg-white/70    border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>

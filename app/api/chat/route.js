@@ -59,7 +59,7 @@ export async function POST(req, res) {
 
   console.log(array)
 
-  let arraylength =body.prompt.length
+  let arraylength =body.prompt.current.length
 
   console.log(arraylength)
 
@@ -68,7 +68,7 @@ export async function POST(req, res) {
 
   let userprompt=array[arraylength-1]
 
-  console.log(userprompt)
+  console.log(JSON.stringify(userprompt))
 
 
   let context = array.slice(0, arraylength).join(' ');
