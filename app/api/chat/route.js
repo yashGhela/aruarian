@@ -55,7 +55,7 @@ export async function POST(req, res) {
 //   console.log(body.prompt.length)
 
 
-  let array = body.prompt
+  let array = body.prompt.current
 
   console.log(array)
 
