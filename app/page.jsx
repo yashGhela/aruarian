@@ -56,16 +56,7 @@ export default function Home() {
       
       className=' flex px-0  self-center place-content-center text-neutral-900  bg-stone-300/50 bg-cover text-center p-5 max-w-full min-w-screen  min-h-screen max-h-full overflow-hidden '>
       
-     <head>
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8HTEWKHSM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D8HTEWKHSM');
-</script>
-     </head>
+    
    
 
      <div className=' md:w-[70rem] lg:w-full justify-center w-[25rem] mr-0 flex-col '>

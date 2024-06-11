@@ -1,3 +1,4 @@
+import GoogleAnalytics from './Components/GoogleAnalytics'
 import './globals.css'
 import { Inter, Montserrat, Fredoka, VT323, Old_Standard_TT } from 'next/font/google'
 
@@ -12,6 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+        <GoogleAnalytics />
       
       
       <body  className={inter.className}>{children}</body>
