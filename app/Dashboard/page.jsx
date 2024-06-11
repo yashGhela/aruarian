@@ -406,11 +406,12 @@ style={{
      <div>
 
      
-     <button className='fixed left-8 top-10 text-black' onClick={()=>{setMesSent(false)}}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+    
+<button onClick={()=>{setMesSent(false), setPrompt('')}} className='text-left float-left mt-10'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 </svg>
 </button>
-    <div className='w-[70%] mx-[10%] overflow-y-auto  h-[800px]'>
+    <div className='w-[90%] md:w-[70%] mx-[10%] overflow-y-auto  h-[800px]'>
 
     {messagesToShow.map((mess)=>{
 
@@ -432,7 +433,7 @@ const messageContent = isUser ? mess.split(':')[1].trim() : JSON.parse(mess.slic
     })}
 
 
-        <div className="md:mt-[15%] sm:ml-[24%] mt-10 -ml-10 w-[350px] sm:w-[450px]  sm:h-self  backdrop-blur-sm  float-left    rounded-[30px] bg-white/70    border p-3  border-white/[0.06]">
+        <div className="md:mt-[15%] sm:ml-[24%] mt-10  w-[300px] sm:w-[450px]  sm:h-self  backdrop-blur-sm  float-left    rounded-[30px] bg-white/70    border p-3  border-white/[0.06]">
 
         {prediction && (
         <div>
@@ -455,11 +456,19 @@ const messageContent = isUser ? mess.split(':')[1].trim() : JSON.parse(mess.slic
              
        
         </div>
+        
       )}
+      
+
+      
 
         </div>
+       
+        
+        
 
       </div>
+      
 
         
         
