@@ -79,6 +79,15 @@ export default function LandingHero(){
       whileInView={{ y:'-50%', opacity:1 }}
       transition={{delay:0.3}}
        className='  md:-mt-5  lg:px-64 px-10   text-black/50   text-xl font-normal'> Your AI-powered personal assistant, always within reach</motion.p>
+       <motion.div
+       initial={{ y:'50%', opacity:0 }}
+       whileInView={{ y:'-50%', opacity:1 }}
+       transition={{delay:0.8}} >
+        
+       <LogoFeature/> 
+       <TestimonialBar/>
+       </motion.div>
+       
 
       <motion.button 
        initial={{ y:'50%', opacity:0 }}

@@ -1,6 +1,6 @@
 export default function LogoFeature(){
     return(
-        <div className="flex items-center text-gray-300 mt-10 ">
+        <div className="flex items-center mx-[46%] text-neutral-700 mt-10 ">
        
         <div className="flex space-x-2">
           {/* Twitter Logo */}

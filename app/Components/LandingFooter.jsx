@@ -28,6 +28,8 @@ export default function LandingFooter(){
             <SmoothScrollLink to='How-it-works'  >How it works</SmoothScrollLink><br/>
 
             <SmoothScrollLink to='Examples'  >Examples</SmoothScrollLink><br/>
+            <a onClick={()=>{window.open('https://www.instagram.com/try_arii/')}}  className=' hover:underline  py-3 cursor-pointer'>Instagram</a><br/>
+            <a onClick={()=>{window.open('https://x.com/tryariai')}}  className=' hover:underline  py-3 cursor-pointer'>Twitter</a>
             </div>
                
 
