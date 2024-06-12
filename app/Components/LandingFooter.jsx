@@ -25,9 +25,9 @@ export default function LandingFooter(){
             <p className="font-bold  py-3 flex-col ">Links</p>
             <SmoothScrollLink to='features' >Features</SmoothScrollLink><br/>
              <SmoothScrollLink to='pricing' >Pricing</SmoothScrollLink><br/>
-            {/* <SmoothScrollLink to='How-it-works'  >How it works</SmoothScrollLink><br/>
+            <SmoothScrollLink to='about'  >About</SmoothScrollLink><br/>
 
-            <SmoothScrollLink to='Examples'  >Examples</SmoothScrollLink><br/> */}
+            {/* <SmoothScrollLink to='Examples'  >Examples</SmoothScrollLink><br/> */}
             <a onClick={()=>{window.open('https://www.instagram.com/try_arii/')}}  className='  py-3 cursor-pointer'>Instagram</a><br/>
             <a onClick={()=>{window.open('https://x.com/tryariai')}}  className='   py-3 cursor-pointer'>Twitter</a> <br/>
             <a onClick={()=>{window.open('https://youtu.be/bt-DrJeAMxg')}}  className='   py-3 cursor-pointer'>Demo</a> <br/>

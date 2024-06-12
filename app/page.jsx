@@ -98,6 +98,10 @@ export default function Home() {
 
       <LandingFaq/>
 
+      <Element id='about'>
+      <LandingAbout/>
+      </Element>
+
 
       <LandingAction/>
 
