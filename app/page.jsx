@@ -59,7 +59,7 @@ export default function Home() {
     
    
 
-     <div className=' md:w-[70rem] lg:w-full justify-center w-[25rem] mr-0 flex-col '>
+     <div className=' md:w-[70rem] lg:w-[90rem] justify-center w-[25rem] mr-0 flex-col '>
 
 
       <LandingBar isLand={true}  />
