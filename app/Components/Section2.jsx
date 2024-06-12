@@ -9,7 +9,7 @@ function Section2() {
     viewport={{ once: false  }}>
         <div 
        
-        className=' md:mx-[25%] p-5 h-screen md:flex mt-32 w-full md:w-1/2 bg-cover rounded-[40px]  backdrop-blur-lg'>
+        className=' md:mx-[25%] p-5 h-screen md:flex mt-5 w-full md:w-1/2 bg-cover rounded-[40px]  backdrop-blur-lg'>
 
        <div className='text-center md:text-left w-full md:flex lg:-ml-[20%] md:-ml-[35%]   mt-[5%]'>
 

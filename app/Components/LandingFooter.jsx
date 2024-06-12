@@ -30,7 +30,9 @@ export default function LandingFooter(){
             <SmoothScrollLink to='Examples'  >Examples</SmoothScrollLink><br/> */}
             <a onClick={()=>{window.open('https://www.instagram.com/try_arii/')}}  className='  py-3 cursor-pointer'>Instagram</a><br/>
             <a onClick={()=>{window.open('https://x.com/tryariai')}}  className='   py-3 cursor-pointer'>Twitter</a> <br/>
-            <a onClick={()=>{window.open('https://youtu.be/bt-DrJeAMxg')}}  className='   py-3 cursor-pointer'>Demo</a>
+            <a onClick={()=>{window.open('https://youtu.be/bt-DrJeAMxg')}}  className='   py-3 cursor-pointer'>Demo</a> <br/>
+            <a onClick={()=>{window.open('https://x.com/yashmakesstuff')}}  className='   py-3 cursor-pointer'>Speak to the founder</a>
+            
             </div>
                
 
