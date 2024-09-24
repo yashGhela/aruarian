@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#Aruarian is a natural language AI tool to interact with your to-do list, the project is currently still available at: https://aruarianai.xyz/
 
-## Getting Started
+In 2024, with an interest in AI I built a tool to manage my to-dos in natural language. The tool allowed users to text/communicate with an AI bot in natural language that would then convert that natural language into database instructions. Along with that the AI tool could spontaneously remind a user of their to-dos and help them rearrange their schedule based on the day. This project used NextJS, supabase and the Replicate API with Meta LLama 3 
 
-First, run the development server:
+![Screenshot 2024-06-12 112230](https://github.com/user-attachments/assets/3e95f0c3-5bb6-4a55-8f5e-32f77f382bf1)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Screenshot 2024-06-12 110444](https://github.com/user-attachments/assets/e4615827-cbce-418d-aee9-5e3d3793cc38)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+#What can Aruarian do? 
+1. Add tasks
+2. Delete tasks
+3. Reschedule tasks
+4. Add a entire list at once
+5. Give you advice on how to better manage your schedule
+6. Organize your day for you, based on past behaviors
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#The code for the OpenAI implementation is still in the files
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
